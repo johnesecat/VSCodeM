@@ -1,0 +1,28 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "psychedelicraft:obsidian_dust_to_obsidian"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "pattern": [
+      "###",
+      "###",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "psychedelicraft:obsidian_dust"
+      }
+    },
+    "result": {
+      "item": "minecraft:obsidian",
+      "count": 1
+    }
+  }
+}

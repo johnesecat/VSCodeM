@@ -1,0 +1,398 @@
+{
+  "texture_name": "atlas.terrain",
+  "texture_data": {
+    "agave_fan": {
+      "textures": "textures/blocks/agave_fan"
+    },
+    "agave_flower": {
+      "textures": "textures/blocks/agave_flower"
+    },
+    "agave_leaves": {
+      "textures": "textures/blocks/agave_leaves"
+    },
+    "beer_flow": {
+      "textures": "textures/blocks/fluid/beer_flow"
+    },
+    "beer_still": {
+      "textures": "textures/blocks/fluid/beer_still"
+    },
+    "belladonna_stage7": {
+      "textures": "textures/blocks/belladonna_stage7"
+    },
+    "bottle_rack": {
+      "textures": "textures/blocks/bottle_rack"
+    },
+    "burner_base_top": {
+      "textures": "textures/blocks/burner_base_top"
+    },
+    "burner_leg": {
+      "textures": "textures/blocks/burner_leg"
+    },
+    "cannabis_stage0": {
+      "textures": "textures/blocks/cannabis_stage0"
+    },
+    "cannabis_stage1": {
+      "textures": "textures/blocks/cannabis_stage1"
+    },
+    "cannabis_stage2": {
+      "textures": "textures/blocks/cannabis_stage2"
+    },
+    "cannabis_stage3": {
+      "textures": "textures/blocks/cannabis_stage3"
+    },
+    "cider_flow": {
+      "textures": "textures/blocks/fluid/cider_flow"
+    },
+    "cider_still": {
+      "textures": "textures/blocks/fluid/cider_still"
+    },
+    "clear_flow": {
+      "textures": "textures/blocks/fluid/clear_flow"
+    },
+    "clear_still": {
+      "textures": "textures/blocks/fluid/clear_still"
+    },
+    "coca_stage0": {
+      "textures": "textures/blocks/coca_stage0"
+    },
+    "coca_stage1": {
+      "textures": "textures/blocks/coca_stage1"
+    },
+    "coca_stage2": {
+      "textures": "textures/blocks/coca_stage2"
+    },
+    "coca_stage3": {
+      "textures": "textures/blocks/coca_stage3"
+    },
+    "coffea_stage0": {
+      "textures": "textures/blocks/coffea_stage0"
+    },
+    "coffea_stage1": {
+      "textures": "textures/blocks/coffea_stage1"
+    },
+    "coffea_stage2": {
+      "textures": "textures/blocks/coffea_stage2"
+    },
+    "coffea_stage3": {
+      "textures": "textures/blocks/coffea_stage3"
+    },
+    "coffea_stage4": {
+      "textures": "textures/blocks/coffea_stage4"
+    },
+    "coffea_stage5": {
+      "textures": "textures/blocks/coffea_stage5"
+    },
+    "coffea_stage6": {
+      "textures": "textures/blocks/coffea_stage6"
+    },
+    "coffea_stage7": {
+      "textures": "textures/blocks/coffea_stage7"
+    },
+    "coffea_top_stage0": {
+      "textures": "textures/blocks/coffea_top_stage0"
+    },
+    "coffea_top_stage1": {
+      "textures": "textures/blocks/coffea_top_stage1"
+    },
+    "coffea_top_stage2": {
+      "textures": "textures/blocks/coffea_top_stage2"
+    },
+    "coffea_top_stage3": {
+      "textures": "textures/blocks/coffea_top_stage3"
+    },
+    "coffee_flow": {
+      "textures": "textures/blocks/fluid/coffee_flow"
+    },
+    "coffee_still": {
+      "textures": "textures/blocks/fluid/coffee_still"
+    },
+    "distillery": {
+      "textures": "textures/blocks/distillery"
+    },
+    "drying_table": {
+      "textures": "textures/blocks/drying_table"
+    },
+    "drying_table_bottom": {
+      "textures": "textures/blocks/drying_table_bottom"
+    },
+    "drying_table_top": {
+      "textures": "textures/blocks/drying_table_top"
+    },
+    "flask": {
+      "textures": "textures/blocks/flask"
+    },
+    "fruiting_juniper_leaves": {
+      "textures": "textures/blocks/fruiting_juniper_leaves"
+    },
+    "glitch": {
+      "textures": "textures/blocks/glitch"
+    },
+    "hop_stage0": {
+      "textures": "textures/blocks/hop_stage0"
+    },
+    "hop_stage1": {
+      "textures": "textures/blocks/hop_stage1"
+    },
+    "hop_stage2": {
+      "textures": "textures/blocks/hop_stage2"
+    },
+    "hop_stage3": {
+      "textures": "textures/blocks/hop_stage3"
+    },
+    "iron_drying_table": {
+      "textures": "textures/blocks/iron_drying_table"
+    },
+    "iron_drying_table_bottom": {
+      "textures": "textures/blocks/iron_drying_table_bottom"
+    },
+    "iron_drying_table_top": {
+      "textures": "textures/blocks/iron_drying_table_top"
+    },
+    "jimsonweed_stage0": {
+      "textures": "textures/blocks/jimsonweed_stage0"
+    },
+    "jimsonweed_stage1": {
+      "textures": "textures/blocks/jimsonweed_stage1"
+    },
+    "jimsonweed_stage2": {
+      "textures": "textures/blocks/jimsonweed_stage2"
+    },
+    "jimsonweed_stage3": {
+      "textures": "textures/blocks/jimsonweed_stage3"
+    },
+    "jimsonweed_stage4": {
+      "textures": "textures/blocks/jimsonweed_stage4"
+    },
+    "jimsonweed_stage5": {
+      "textures": "textures/blocks/jimsonweed_stage5"
+    },
+    "jimsonweed_stage6": {
+      "textures": "textures/blocks/jimsonweed_stage6"
+    },
+    "jimsonweed_stage7": {
+      "textures": "textures/blocks/jimsonweed_stage7"
+    },
+    "juniper_door_bottom": {
+      "textures": "textures/blocks/juniper_door_bottom"
+    },
+    "juniper_door_top": {
+      "textures": "textures/blocks/juniper_door_top"
+    },
+    "juniper_leaves": {
+      "textures": "textures/blocks/juniper_leaves"
+    },
+    "juniper_log": {
+      "textures": "textures/blocks/juniper_log"
+    },
+    "juniper_log_top": {
+      "textures": "textures/blocks/juniper_log_top"
+    },
+    "juniper_planks": {
+      "textures": "textures/blocks/juniper_planks"
+    },
+    "juniper_sapling": {
+      "textures": "textures/blocks/juniper_sapling"
+    },
+    "juniper_trapdoor": {
+      "textures": "textures/blocks/juniper_trapdoor"
+    },
+    "ketchup_flow": {
+      "textures": "textures/blocks/fluid/ketchup_flow"
+    },
+    "ketchup_still": {
+      "textures": "textures/blocks/fluid/ketchup_still"
+    },
+    "lattice": {
+      "textures": "textures/blocks/lattice"
+    },
+    "mead_flow": {
+      "textures": "textures/blocks/fluid/mead_flow"
+    },
+    "mead_still": {
+      "textures": "textures/blocks/fluid/mead_still"
+    },
+    "morning_glory_connection": {
+      "textures": "textures/blocks/morning_glory_connection"
+    },
+    "morning_glory_lattice_0": {
+      "textures": "textures/blocks/morning_glory_lattice_0"
+    },
+    "morning_glory_lattice_1": {
+      "textures": "textures/blocks/morning_glory_lattice_1"
+    },
+    "morning_glory_lattice_2": {
+      "textures": "textures/blocks/morning_glory_lattice_2"
+    },
+    "morning_glory_lattice_3": {
+      "textures": "textures/blocks/morning_glory_lattice_3"
+    },
+    "morning_glory_stage0": {
+      "textures": "textures/blocks/morning_glory_stage0"
+    },
+    "morning_glory_stage1": {
+      "textures": "textures/blocks/morning_glory_stage1"
+    },
+    "morning_glory_stage2": {
+      "textures": "textures/blocks/morning_glory_stage2"
+    },
+    "morning_glory_stage3": {
+      "textures": "textures/blocks/morning_glory_stage3"
+    },
+    "pale_stripped_juniper_log_top": {
+      "textures": "textures/blocks/pale_stripped_juniper_log_top"
+    },
+    "rice_wine_flow": {
+      "textures": "textures/blocks/fluid/rice_wine_flow"
+    },
+    "rice_wine_still": {
+      "textures": "textures/blocks/fluid/rice_wine_still"
+    },
+    "rift_jar": {
+      "textures": "textures/blocks/rift_jar"
+    },
+    "rum_mature_flow": {
+      "textures": "textures/blocks/fluid/rum_mature_flow"
+    },
+    "rum_mature_still": {
+      "textures": "textures/blocks/fluid/rum_mature_still"
+    },
+    "rum_semi_mature_flow": {
+      "textures": "textures/blocks/fluid/rum_semi_mature_flow"
+    },
+    "rum_semi_mature_still": {
+      "textures": "textures/blocks/fluid/rum_semi_mature_still"
+    },
+    "slurry_flow": {
+      "textures": "textures/blocks/fluid/slurry_flow"
+    },
+    "slurry_still": {
+      "textures": "textures/blocks/fluid/slurry_still"
+    },
+    "stripped_juniper_log": {
+      "textures": "textures/blocks/stripped_juniper_log"
+    },
+    "stripped_juniper_log_top": {
+      "textures": "textures/blocks/stripped_juniper_log_top"
+    },
+    "tea_flow": {
+      "textures": "textures/blocks/fluid/tea_flow"
+    },
+    "tea_still": {
+      "textures": "textures/blocks/fluid/tea_still"
+    },
+    "tobacco_stage0": {
+      "textures": "textures/blocks/tobacco_stage0"
+    },
+    "tobacco_stage1": {
+      "textures": "textures/blocks/tobacco_stage1"
+    },
+    "tobacco_stage2": {
+      "textures": "textures/blocks/tobacco_stage2"
+    },
+    "tobacco_stage3": {
+      "textures": "textures/blocks/tobacco_stage3"
+    },
+    "tobacco_top_stage0": {
+      "textures": "textures/blocks/tobacco_top_stage0"
+    },
+    "tobacco_top_stage1": {
+      "textures": "textures/blocks/tobacco_top_stage1"
+    },
+    "tobacco_top_stage2": {
+      "textures": "textures/blocks/tobacco_top_stage2"
+    },
+    "tobacco_top_stage3": {
+      "textures": "textures/blocks/tobacco_top_stage3"
+    },
+    "tomato_juice_flow": {
+      "textures": "textures/blocks/fluid/tomato_juice_flow"
+    },
+    "tomato_juice_still": {
+      "textures": "textures/blocks/fluid/tomato_juice_still"
+    },
+    "tomatoes_stage5": {
+      "textures": "textures/blocks/tomatoes_stage5"
+    },
+    "tomatoes_stage6": {
+      "textures": "textures/blocks/tomatoes_stage6"
+    },
+    "tomatoes_stage7": {
+      "textures": "textures/blocks/tomatoes_stage7"
+    },
+    "tray": {
+      "textures": "textures/blocks/tray"
+    },
+    "wine_flow": {
+      "textures": "textures/blocks/fluid/wine_flow"
+    },
+    "wine_grape_lattice_0": {
+      "textures": "textures/blocks/wine_grape_lattice_0"
+    },
+    "wine_grape_lattice_1": {
+      "textures": "textures/blocks/wine_grape_lattice_1"
+    },
+    "wine_grape_lattice_2": {
+      "textures": "textures/blocks/wine_grape_lattice_2"
+    },
+    "wine_grape_lattice_3": {
+      "textures": "textures/blocks/wine_grape_lattice_3"
+    },
+    "wine_still": {
+      "textures": "textures/blocks/fluid/wine_still"
+    },
+    "wooden_vat": {
+      "textures": "textures/blocks/wooden_vat"
+    },
+    "oak_barrel": {
+      "textures": "textures/items/oak_barrel"
+    },
+    "spruce_barrel": {
+      "textures": "textures/items/spruce_barrel"
+    },
+    "birch_barrel": {
+      "textures": "textures/items/birch_barrel"
+    },
+    "jungle_barrel": {
+      "textures": "textures/items/jungle_barrel"
+    },
+    "acacia_barrel": {
+      "textures": "textures/items/acacia_barrel"
+    },
+    "dark_oak_barrel": {
+      "textures": "textures/items/dark_oak_barrel"
+    },
+    "mug_placed": {
+      "textures": "textures/items/mug_placed"
+    },
+    "peyote": {
+      "textures": "textures/items/peyote"
+    },
+    "juniper_door": {
+      "textures": "textures/items/juniper_door"
+    },
+    "flower_pot": {
+      "textures": "textures/blocks/flower_pot"
+    },
+    "acacia_planks": {
+      "textures": "textures/blocks/acacia_planks"
+    },
+    "birch_planks": {
+      "textures": "textures/blocks/birch_planks"
+    },
+    "dark_oak_planks": {
+      "textures": "textures/blocks/dark_oak_planks"
+    },
+    "jungle_planks": {
+      "textures": "textures/blocks/jungle_planks"
+    },
+    "oak_planks": {
+      "textures": "textures/blocks/oak_planks"
+    },
+    "glass": {
+      "textures": "textures/blocks/glass"
+    },
+    "spruce_planks": {
+      "textures": "textures/blocks/spruce_planks"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "psychedelicraft:juniper_sign"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "pattern": [
+      "###",
+      "###",
+      " X "
+    ],
+    "key": {
+      "#": {
+        "item": "psychedelicraft:juniper_planks"
+      },
+      "X": {
+        "item": "minecraft:stick"
+      }
+    },
+    "result": {
+      "item": "psychedelicraft:juniper_sign",
+      "count": 3
+    }
+  }
+}

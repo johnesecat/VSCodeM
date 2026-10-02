@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "psychedelicraft:juniper_wood",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "juniper_log"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.psychedelicraft:juniper_wood.name"
+      },
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

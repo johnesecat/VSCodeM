@@ -1,0 +1,1476 @@
+{
+  "placeable_drinks": {
+    "glass_chalice": {
+      "height": 0.4,
+      "fluid_origin": 3.5
+    },
+    "wooden_mug": {
+      "height": 0.25,
+      "fluid_origin": 0.5
+    }
+  },
+  "tags": {
+    "psychedelicraft:blocks/barrels": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:oak_barrel",
+        "psychedelicraft:spruce_barrel",
+        "psychedelicraft:birch_barrel",
+        "psychedelicraft:jungle_barrel",
+        "psychedelicraft:acacia_barrel",
+        "psychedelicraft:dark_oak_barrel"
+      ]
+    },
+    "psychedelicraft:blocks/drying_tables": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:drying_table",
+        "psychedelicraft:iron_drying_table"
+      ]
+    },
+    "psychedelicraft:entity_types/multiple_entity_hallucinations": {
+      "replace": false,
+      "values": [
+        "minecraft:dolphin",
+        "minecraft:cod",
+        "minecraft:salmon",
+        "minecraft:tropical_fish"
+      ]
+    },
+    "psychedelicraft:entity_types/single_entity_hallucinations": {
+      "replace": false,
+      "values": [
+        "minecraft:creeper",
+        "minecraft:zombie",
+        "minecraft:blaze",
+        "minecraft:enderman",
+        "minecraft:cow",
+        "minecraft:sheep",
+        "minecraft:pig",
+        "minecraft:ocelot",
+        "minecraft:wolf",
+        "minecraft:silverfish",
+        "minecraft:villager",
+        "minecraft:iron_golem",
+        "minecraft:snow_golem",
+        "minecraft:horse",
+        "minecraft:allay",
+        "minecraft:bee",
+        "minecraft:axolotl",
+        "minecraft:camel",
+        "minecraft:dolphin",
+        "minecraft:wither",
+        "minecraft:warden",
+        "minecraft:glow_squid"
+      ]
+    },
+    "psychedelicraft:items/barrels": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:oak_barrel",
+        "psychedelicraft:spruce_barrel",
+        "psychedelicraft:birch_barrel",
+        "psychedelicraft:jungle_barrel",
+        "psychedelicraft:acacia_barrel",
+        "psychedelicraft:dark_oak_barrel"
+      ]
+    },
+    "psychedelicraft:items/bottles": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:molotov_cocktail",
+        "psychedelicraft:bottle"
+      ]
+    },
+    "psychedelicraft:items/can_go_into_paper_bag": {
+      "replace": false,
+      "values": [
+        "minecraft:cookie",
+        "minecraft:nether_wart",
+        "minecraft:sweet_berries",
+        "minecraft:red_mushroom",
+        "minecraft:brown_mushroom",
+        "#minecraft:villager_plantable_seeds",
+        "minecraft:spider_eye",
+        "minecraft:cod",
+        "minecraft:cooked_cod",
+        "minecraft:salmon",
+        "minecraft:cooked_salmon",
+        "minecraft:tropical_fish",
+        "minecraft:pufferfish",
+        "minecraft:dried_kelp",
+        "minecraft:golden_carrot",
+        "#minecraft:buttons",
+        "#minecraft:small_flowers",
+        "minecraft:chain",
+        "minecraft:melon_slice",
+        "minecraft:poisonous_potato",
+        "minecraft:baked_potato",
+        "minecraft:beetroot",
+        "minecraft:chorus_fruit",
+        "minecraft:rotten_flesh",
+        "#c:apples",
+        "#c:dyes",
+        "psychedelicraft:hash_muffin",
+        "psychedelicraft:bottle",
+        "psychedelicraft:red_magic_mushrooms",
+        "psychedelicraft:brown_magic_mushrooms",
+        "psychedelicraft:tomato",
+        "psychedelicraft:belladonna_berries",
+        "psychedelicraft:cocaine_powder",
+        "psychedelicraft:agave_leaf",
+        "psychedelicraft:syringe",
+        "psychedelicraft:joint",
+        "psychedelicraft:cigar",
+        "psychedelicraft:cigarette",
+        "psychedelicraft:smoking_pipe",
+        "psychedelicraft:morning_glory",
+        "psychedelicraft:obsidian_dust"
+      ]
+    },
+    "psychedelicraft:items/drink_recepticals": {
+      "replace": false,
+      "values": [
+        "#psychedelicraft:suitable_hot_drink_recepticals",
+        "#psychedelicraft:suitable_alcoholic_drink_recepticals"
+      ]
+    },
+    "psychedelicraft:items/drug_crop_seeds": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:cannabis_seeds",
+        "psychedelicraft:hop_seeds",
+        "psychedelicraft:tobacco_seeds",
+        "psychedelicraft:coca_seeds",
+        "psychedelicraft:coffea_cherries",
+        "psychedelicraft:morning_glory_seeds"
+      ]
+    },
+    "psychedelicraft:items/drug_recepticals": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:syringe"
+      ]
+    },
+    "psychedelicraft:items/drying_tables": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:drying_table",
+        "psychedelicraft:iron_drying_table"
+      ]
+    },
+    "psychedelicraft:items/grapes": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:wine_grapes"
+      ]
+    },
+    "psychedelicraft:items/honey": {
+      "replace": false,
+      "values": [
+        "minecraft:honey_bottle",
+        "minecraft:honeycomb"
+      ]
+    },
+    "psychedelicraft:items/morning_glories": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:morning_glory",
+        "psychedelicraft:morning_glory_seeds"
+      ]
+    },
+    "psychedelicraft:items/placeable": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:wooden_mug",
+        "psychedelicraft:stone_cup",
+        "psychedelicraft:glass_chalice",
+        "psychedelicraft:bottle",
+        "psychedelicraft:shot_glass"
+      ]
+    },
+    "psychedelicraft:items/suitable_alcoholic_drink_recepticals": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:shot_glass",
+        "psychedelicraft:glass_chalice",
+        "psychedelicraft:wooden_mug",
+        "psychedelicraft:filled_bucket",
+        "psychedelicraft:filled_bowl",
+        "psychedelicraft:filled_glass_bottle",
+        "#psychedelicraft:bottles"
+      ]
+    },
+    "psychedelicraft:items/suitable_hot_drink_recepticals": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:stone_cup"
+      ]
+    },
+    "minecraft:blocks/flower_pots": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:potted_morning_glory",
+        "psychedelicraft:potted_juniper_sapling",
+        "psychedelicraft:potted_cannabis",
+        "psychedelicraft:potted_hop",
+        "psychedelicraft:potted_tobacco",
+        "psychedelicraft:potted_coca",
+        "psychedelicraft:potted_coffea"
+      ]
+    },
+    "minecraft:blocks/leaves": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_leaves"
+      ]
+    },
+    "minecraft:blocks/logs": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_log",
+        "psychedelicraft:juniper_wood",
+        "psychedelicraft:stripped_juniper_log",
+        "psychedelicraft:stripped_juniper_wood"
+      ]
+    },
+    "minecraft:blocks/logs_that_burn": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_log",
+        "psychedelicraft:juniper_wood",
+        "psychedelicraft:stripped_juniper_log",
+        "psychedelicraft:stripped_juniper_wood"
+      ]
+    },
+    "minecraft:blocks/mineable/axe": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:drying_table",
+        "#psychedelicraft:barrels",
+        "psychedelicraft:mash_tub",
+        "psychedelicraft:mash_tub_edge",
+        "psychedelicraft:distillery",
+        "psychedelicraft:flask"
+      ]
+    },
+    "minecraft:blocks/mineable/pickaxe": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:iron_drying_table"
+      ]
+    },
+    "minecraft:blocks/nightshade": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:belladonna",
+        "psychedelicraft:jimsonweed",
+        "psychedelicraft:tomatoes"
+      ]
+    },
+    "minecraft:blocks/planks": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_planks"
+      ]
+    },
+    "minecraft:blocks/standing_signs": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_sign"
+      ]
+    },
+    "minecraft:blocks/wall_signs": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_wall_sign"
+      ]
+    },
+    "minecraft:blocks/wooden_buttons": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_button"
+      ]
+    },
+    "minecraft:blocks/wooden_doors": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_door"
+      ]
+    },
+    "minecraft:blocks/wooden_fence_gates": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_fence_gate"
+      ]
+    },
+    "minecraft:blocks/wooden_fences": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_fence"
+      ]
+    },
+    "minecraft:blocks/wooden_pressure_plates": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_pressure_plate"
+      ]
+    },
+    "minecraft:blocks/wooden_slabs": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_slab"
+      ]
+    },
+    "minecraft:blocks/wooden_stairs": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_stairs"
+      ]
+    },
+    "minecraft:blocks/wooden_trapdoors": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_trapdoor"
+      ]
+    },
+    "minecraft:damage_type/bypasses_armor": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:alcohol_poisoning",
+        "psychedelicraft:respiratory_failure",
+        "psychedelicraft:stroke",
+        "psychedelicraft:heart_failure",
+        "psychedelicraft:heart_attack",
+        "psychedelicraft:kidney_failure",
+        "psychedelicraft:in_sleep",
+        "psychedelicraft:over_eating",
+        "psychedelicraft:molotov",
+        "psychedelicraft:self_molotov"
+      ]
+    },
+    "minecraft:damage_type/bypasses_shield": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:alcohol_poisoning",
+        "psychedelicraft:respiratory_failure",
+        "psychedelicraft:stroke",
+        "psychedelicraft:heart_failure",
+        "psychedelicraft:heart_attack",
+        "psychedelicraft:kidney_failure",
+        "psychedelicraft:in_sleep",
+        "psychedelicraft:over_eating",
+        "psychedelicraft:molotov",
+        "psychedelicraft:self_molotov"
+      ]
+    },
+    "minecraft:fluids/water": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:wheat_hop",
+        "psychedelicraft:flowing_wheat_hop",
+        "psychedelicraft:wheat",
+        "psychedelicraft:flowing_wheat",
+        "psychedelicraft:potato",
+        "psychedelicraft:flowing_potato",
+        "psychedelicraft:red_grapes",
+        "psychedelicraft:flowing_red_grapes",
+        "psychedelicraft:rice",
+        "psychedelicraft:flowing_rice",
+        "psychedelicraft:juniper",
+        "psychedelicraft:flowing_juniper",
+        "psychedelicraft:honey",
+        "psychedelicraft:flowing_honey",
+        "psychedelicraft:sugar_cane",
+        "psychedelicraft:flowing_sugar_cane",
+        "psychedelicraft:corn",
+        "psychedelicraft:flowing_corn",
+        "psychedelicraft:apple",
+        "psychedelicraft:flowing_apple",
+        "psychedelicraft:pineapple",
+        "psychedelicraft:flowing_pineapple",
+        "psychedelicraft:banana",
+        "psychedelicraft:flowing_banana",
+        "psychedelicraft:milk",
+        "psychedelicraft:flowing_milk",
+        "psychedelicraft:coffee",
+        "psychedelicraft:flowing_coffee",
+        "psychedelicraft:coca_tea",
+        "psychedelicraft:flowing_coca_tea",
+        "psychedelicraft:cannabis_tea",
+        "psychedelicraft:flowing_cannabis_tea",
+        "psychedelicraft:peyote_juice",
+        "psychedelicraft:flowing_peyote_juice",
+        "psychedelicraft:cocaine",
+        "psychedelicraft:flowing_cocaine",
+        "psychedelicraft:caffeine",
+        "psychedelicraft:flowing_caffeine",
+        "psychedelicraft:slurry",
+        "psychedelicraft:flowing_slurry",
+        "psychedelicraft:morning_glory_extract",
+        "psychedelicraft:flowing_morning_glory_extract",
+        "psychedelicraft:belladonna_extract",
+        "psychedelicraft:flowing_belladonna_extract",
+        "psychedelicraft:jimsonweed_extract",
+        "psychedelicraft:flowing_jimsonweed_extract",
+        "psychedelicraft:tomato",
+        "psychedelicraft:flowing_tomato"
+      ]
+    },
+    "minecraft:items/planks": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_planks"
+      ]
+    },
+    "minecraft:items/saplings": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_sapling"
+      ]
+    },
+    "minecraft:items/signs": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_sign"
+      ]
+    },
+    "minecraft:items/wooden_buttons": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_button"
+      ]
+    },
+    "minecraft:items/wooden_doors": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_door"
+      ]
+    },
+    "minecraft:items/wooden_fence_gates": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_fence_gate"
+      ]
+    },
+    "minecraft:items/wooden_fences": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_fence"
+      ]
+    },
+    "minecraft:items/wooden_pressure_plates": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_pressure_plate"
+      ]
+    },
+    "minecraft:items/wooden_slabs": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_slab"
+      ]
+    },
+    "minecraft:items/wooden_stairs": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_stairs"
+      ]
+    },
+    "minecraft:items/wooden_trapdoors": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:juniper_trapdoor"
+      ]
+    },
+    "minecraft:point_of_interest_type/acquirable_job_site": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:drug_dealer"
+      ]
+    },
+    "c:items/apples": {
+      "replace": false,
+      "values": [
+        "minecraft:apple"
+      ]
+    },
+    "c:items/bananas": {
+      "replace": false,
+      "values": []
+    },
+    "c:items/corn": {
+      "replace": false,
+      "values": []
+    },
+    "c:items/pineapples": {
+      "replace": false,
+      "values": []
+    },
+    "c:items/rice": {
+      "replace": false,
+      "values": []
+    },
+    "c:items/tomatoes": {
+      "replace": false,
+      "values": [
+        "psychedelicraft:tomato"
+      ]
+    }
+  },
+  "advancements": {
+    "all_drugs": {
+      "parent": "psychedelicraft:root",
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:jolly_rancher"
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.all_drugs.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.all_drugs.description"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+      },
+      "rewards": {
+        "experience": 1000
+      },
+      "criteria": {
+        "have_all_effects": {
+          "trigger": "psychedelicraft:drug_effects_changed",
+          "conditions": {
+            "drugs": [
+              "psychedelicraft:alcohol",
+              "psychedelicraft:cannabis",
+              "psychedelicraft:brown_shrooms",
+              "psychedelicraft:red_shrooms",
+              "psychedelicraft:tobacco",
+              "psychedelicraft:coccaine",
+              "psychedelicraft:caffeine",
+              "psychedelicraft:sugar",
+              "psychedelicraft:bath_salts",
+              "psychedelicraft:lsd",
+              "psychedelicraft:kava",
+              "psychedelicraft:warmth",
+              "psychedelicraft:peyote",
+              "psychedelicraft:zero",
+              "psychedelicraft:power",
+              "psychedelicraft:harmonium"
+            ]
+          }
+        }
+      },
+      "requirements": [
+        [
+          "have_all_effects"
+        ]
+      ]
+    },
+    "cannabis_buds": {
+      "parent": "psychedelicraft:make_drying_table",
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:cannabis_buds"
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.cannabis_buds.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.cannabis_buds.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+      },
+      "criteria": {
+        "has_the_thing": {
+          "trigger": "minecraft:inventory_changed",
+          "conditions": {
+            "items": [
+              {
+                "items": [
+                  "psychedelicraft:cannabis_buds"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "requirements": [
+        [
+          "has_the_thing"
+        ]
+      ]
+    },
+    "drink_basi": {
+      "parent": "psychedelicraft:wash_sugar_cane",
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:wooden_mug",
+          "tag": {
+            "fluid": {
+              "id": "psychedelicraft:sugar_cane",
+              "fermentation": 0,
+              "maturation": 7
+            }
+          }
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.drink_basi.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.drink_basi.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+      },
+      "criteria": {
+        "drank_basi": {
+          "trigger": "minecraft:consume_item",
+          "conditions": {
+            "item": {
+              "nbt": "{\"fluid\": { \"id\": \"psychedelicraft:sugar_cane\", \"fermentation\": 0, \"maturation\": 7 } }"
+            }
+          }
+        }
+      },
+      "requirements": [
+        [
+          "drank_basi"
+        ]
+      ]
+    },
+    "drink_beer": {
+      "parent": "psychedelicraft:wash_beer",
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:wooden_mug",
+          "tag": {
+            "fluid": {
+              "id": "psychedelicraft:wheat_hop",
+              "fermentation": 0,
+              "maturation": 0
+            }
+          }
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.drink_beer.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.drink_beer.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+      },
+      "criteria": {
+        "drank_weak_beer": {
+          "trigger": "minecraft:consume_item",
+          "conditions": {
+            "item": {
+              "nbt": "{\"fluid\": { \"id\": \"psychedelicraft:wheat_hop\" } }"
+            }
+          }
+        }
+      },
+      "requirements": [
+        [
+          "drank_weak_beer"
+        ]
+      ]
+    },
+    "drink_brandy": {
+      "parent": "psychedelicraft:wash_grapes",
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:wooden_mug",
+          "tag": {
+            "fluid": {
+              "id": "psychedelicraft:red_grapes",
+              "fermentation": 1,
+              "maturation": 7
+            }
+          }
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.drink_brandy.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.drink_brandy.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+      },
+      "criteria": {
+        "drank_brandy": {
+          "trigger": "minecraft:consume_item",
+          "conditions": {
+            "item": {
+              "nbt": "{\"fluid\": { \"id\": \"psychedelicraft:red_grapes\", \"fermentation\": 1, \"maturation\": 7 } }"
+            }
+          }
+        }
+      },
+      "requirements": [
+        [
+          "drank_brandy"
+        ]
+      ]
+    },
+    "drink_mature_beer": {
+      "parent": "psychedelicraft:drink_beer",
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:wooden_mug",
+          "tag": {
+            "fluid": {
+              "id": "psychedelicraft:wheat_hop",
+              "fermentation": 0,
+              "maturation": 7
+            }
+          }
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.drink_mature_beer.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.drink_mature_beer.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+      },
+      "criteria": {
+        "drank_strong_beer": {
+          "trigger": "minecraft:consume_item",
+          "conditions": {
+            "item": {
+              "nbt": "{\"fluid\": { \"id\": \"psychedelicraft:wheat_hop\", \"maturation\": 7 } }"
+            }
+          }
+        }
+      },
+      "requirements": [
+        [
+          "drank_strong_beer"
+        ]
+      ]
+    },
+    "drink_rum": {
+      "parent": "psychedelicraft:wash_sugar_cane",
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:wooden_mug",
+          "tag": {
+            "fluid": {
+              "id": "psychedelicraft:sugar_cane",
+              "fermentation": 1,
+              "maturation": 7
+            }
+          }
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.drink_rum.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.drink_rum.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+      },
+      "criteria": {
+        "drank_rum": {
+          "trigger": "minecraft:consume_item",
+          "conditions": {
+            "item": {
+              "nbt": "{\"fluid\": { \"id\": \"psychedelicraft:sugar_cane\", \"fermentation\": 1, \"maturation\": 7 } }"
+            }
+          }
+        }
+      },
+      "requirements": [
+        [
+          "drank_rum"
+        ]
+      ]
+    },
+    "drink_wine": {
+      "parent": "psychedelicraft:wash_grapes",
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:wooden_mug",
+          "tag": {
+            "fluid": {
+              "id": "psychedelicraft:red_grapes",
+              "fermentation": 0,
+              "maturation": 7
+            }
+          }
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.drink_wine.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.drink_wine.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+      },
+      "criteria": {
+        "drank_wine": {
+          "trigger": "minecraft:consume_item",
+          "conditions": {
+            "item": {
+              "nbt": "{\"fluid\": { \"id\": \"psychedelicraft:red_grapes\", \"fermentation\": 0, \"maturation\": 7 } }"
+            }
+          }
+        }
+      },
+      "requirements": [
+        [
+          "drank_wine"
+        ]
+      ]
+    },
+    "dry_brown_mushroom": {
+      "parent": "psychedelicraft:make_drying_table",
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:brown_magic_mushrooms"
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.dry_brown_mushrooms.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.dry_brown_mushrooms.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+      },
+      "criteria": {
+        "consumed_the_thing": {
+          "trigger": "minecraft:inventory_changed",
+          "conditions": {
+            "items": [
+              {
+                "items": [
+                  "psychedelicraft:brown_magic_mushrooms"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "requirements": [
+        [
+          "consumed_the_thing"
+        ]
+      ]
+    },
+    "dry_cannabis_buds": {
+      "parent": "psychedelicraft:cannabis_buds",
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:dried_cannabis_buds"
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.dry_cannabis_buds.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.dry_cannabis_buds.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+      },
+      "criteria": {
+        "consumed_the_thing": {
+          "trigger": "minecraft:consume_item",
+          "conditions": {
+            "item": {
+              "items": [
+                "psychedelicraft:dried_cannabis_buds"
+              ]
+            }
+          }
+        }
+      },
+      "requirements": [
+        [
+          "consumed_the_thing"
+        ]
+      ]
+    },
+    "dry_red_mushroom": {
+      "parent": "psychedelicraft:make_drying_table",
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:red_magic_mushrooms"
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.dry_red_mushrooms.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.dry_red_mushrooms.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+      },
+      "criteria": {
+        "consumed_the_thing": {
+          "trigger": "minecraft:inventory_changed",
+          "conditions": {
+            "items": [
+              {
+                "items": [
+                  "psychedelicraft:red_magic_mushrooms"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "requirements": [
+        [
+          "consumed_the_thing"
+        ]
+      ]
+    },
+    "feed_a_villager": {
+      "parent": "psychedelicraft:hash_a_muffin",
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:hash_muffin"
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.feed_a_villager.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.feed_a_villager.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+      },
+      "criteria": {
+        "done_the_thing": {
+          "trigger": "psychedelicraft:custom",
+          "conditions": {
+            "event": "feed_villager"
+          }
+        }
+      },
+      "requirements": [
+        [
+          "done_the_thing"
+        ]
+      ]
+    },
+    "grapes": {
+      "parent": "psychedelicraft:make_mash_tub",
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:wine_grapes"
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.grapes.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.grapes.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+      },
+      "criteria": {
+        "has_the_thing": {
+          "trigger": "minecraft:inventory_changed",
+          "conditions": {
+            "items": [
+              {
+                "items": [
+                  "psychedelicraft:wine_grapes"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "requirements": [
+        [
+          "has_the_thing"
+        ]
+      ]
+    },
+    "hangover": {
+      "parent": "psychedelicraft:wash_grapes",
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:bottle"
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.splitting_headache.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.splitting_headache.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+      },
+      "criteria": {
+        "done_the_thing": {
+          "trigger": "psychedelicraft:custom",
+          "conditions": {
+            "event": "get_hangover"
+          }
+        }
+      },
+      "requirements": [
+        [
+          "done_the_thing"
+        ]
+      ]
+    },
+    "hash_a_muffin": {
+      "parent": "psychedelicraft:dry_cannabis_buds",
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:hash_muffin"
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.hash_a_muffin.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.hash_a_muffin.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+      },
+      "criteria": {
+        "has_the_thing": {
+          "trigger": "minecraft:inventory_changed",
+          "conditions": {
+            "items": [
+              {
+                "items": [
+                  "psychedelicraft:hash_muffin"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "requirements": [
+        [
+          "has_the_thing"
+        ]
+      ]
+    },
+    "hop_cones": {
+      "parent": "psychedelicraft:make_mash_tub",
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:hop_cones"
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.hop_cones.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.hop_cones.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+      },
+      "criteria": {
+        "has_the_thing": {
+          "trigger": "minecraft:inventory_changed",
+          "conditions": {
+            "items": [
+              {
+                "items": [
+                  "psychedelicraft:hop_cones"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "requirements": [
+        [
+          "has_the_thing"
+        ]
+      ]
+    },
+    "make_distillery": {
+      "parent": "psychedelicraft:make_mash_tub",
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:distillery"
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.make_distillery.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.make_distillery.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+      },
+      "criteria": {
+        "has_the_thing": {
+          "trigger": "minecraft:inventory_changed",
+          "conditions": {
+            "items": [
+              {
+                "items": [
+                  "psychedelicraft:distillery"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "requirements": [
+        [
+          "has_the_thing"
+        ]
+      ]
+    },
+    "make_drying_table": {
+      "parent": "psychedelicraft:root",
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:drying_table"
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.make_drying_table.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.make_drying_table.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+      },
+      "criteria": {
+        "has_the_thing": {
+          "trigger": "minecraft:inventory_changed",
+          "conditions": {
+            "items": [
+              {
+                "tag": "psychedelicraft:drying_tables"
+              }
+            ]
+          }
+        }
+      },
+      "requirements": [
+        [
+          "has_the_thing"
+        ]
+      ]
+    },
+    "make_mash_tub": {
+      "parent": "psychedelicraft:root",
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:mash_tub"
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.make_mash_tub.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.make_mash_tub.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+      },
+      "criteria": {
+        "has_the_thing": {
+          "trigger": "minecraft:inventory_changed",
+          "conditions": {
+            "items": [
+              {
+                "items": [
+                  "psychedelicraft:mash_tub"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "requirements": [
+        [
+          "has_the_thing"
+        ]
+      ]
+    },
+    "roll_joint": {
+      "parent": "psychedelicraft:dry_cannabis_buds",
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:joint"
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.roll_joint.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.roll_joint.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+      },
+      "criteria": {
+        "has_the_thing": {
+          "trigger": "minecraft:inventory_changed",
+          "conditions": {
+            "items": [
+              {
+                "items": [
+                  "psychedelicraft:joint"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "requirements": [
+        [
+          "has_the_thing"
+        ]
+      ]
+    },
+    "root": {
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:cannabis_leaf"
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.root.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.root.description"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": false,
+        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+      },
+      "criteria": {
+        "crafting_table": {
+          "trigger": "minecraft:inventory_changed",
+          "conditions": {
+            "items": [
+              {
+                "item": "minecraft:crafting_table"
+              }
+            ]
+          }
+        }
+      },
+      "requirements": [
+        [
+          "crafting_table"
+        ]
+      ]
+    },
+    "wash_beer": {
+      "parent": "psychedelicraft:hop_cones",
+      "display": {
+        "icon": {
+          "item": "minecraft:wheat"
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.wash_beer.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.wash_beer.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+      },
+      "criteria": {
+        "mashed_item": {
+          "trigger": "psychedelicraft:mashed_item",
+          "conditions": {
+            "fluid": "psychedelicraft:wheat",
+            "fermentation": 2
+          }
+        }
+      },
+      "requirements": [
+        [
+          "mashed_item"
+        ]
+      ]
+    },
+    "wash_grapes": {
+      "parent": "psychedelicraft:grapes",
+      "display": {
+        "icon": {
+          "item": "psychedelicraft:wine_grapes"
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.wash_grapes.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.wash_grapes.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+      },
+      "criteria": {
+        "mashed_item": {
+          "trigger": "psychedelicraft:mashed_item",
+          "conditions": {
+            "fluid": "psychedelicraft:red_grapes",
+            "fermentation": 0
+          }
+        }
+      },
+      "requirements": [
+        [
+          "mashed_item"
+        ]
+      ]
+    },
+    "wash_sugar_cane": {
+      "parent": "psychedelicraft:make_mash_tub",
+      "display": {
+        "icon": {
+          "item": "minecraft:sugar_cane"
+        },
+        "title": {
+          "translate": "advancements.psychedelicraft.wash_sugar_cane.title"
+        },
+        "description": {
+          "translate": "advancements.psychedelicraft.wash_sugar_cane.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+      },
+      "criteria": {
+        "mashed_item": {
+          "trigger": "psychedelicraft:mashed_item",
+          "conditions": {
+            "fluid": "psychedelicraft:sugar_cane",
+            "fermentation": 2
+          }
+        }
+      },
+      "requirements": [
+        [
+          "mashed_item"
+        ]
+      ]
+    }
+  },
+  "template_pools": {
+    "decor": {
+      "name": "psychedelicraft:village/desert/decor",
+      "fallback": "minecraft:empty",
+      "elements": [
+        {
+          "element": {
+            "element_type": "minecraft:feature_pool_element",
+            "feature": "psychedelicraft:agave_patch_unchecked",
+            "projection": "terrain_matching"
+          },
+          "weight": 10
+        },
+        {
+          "element": {
+            "element_type": "minecraft:feature_pool_element",
+            "feature": "psychedelicraft:peyote_patch_unchecked",
+            "projection": "terrain_matching"
+          },
+          "weight": 1
+        }
+      ]
+    },
+    "houses": {
+      "name": "psychedelicraft:village/plains/hot_houses",
+      "fallback": "minecraft:empty",
+      "elements": [
+        {
+          "weight": 50,
+          "element": {
+            "location": "psychedelicraft:village/plains/houses/plains_hot_house_1",
+            "processors": "minecraft:empty",
+            "projection": "rigid",
+            "element_type": "minecraft:single_pool_element"
+          }
+        },
+        {
+          "weight": 50,
+          "element": {
+            "location": "psychedelicraft:village/plains/houses/plains_hot_house_2",
+            "processors": "minecraft:empty",
+            "projection": "rigid",
+            "element_type": "minecraft:single_pool_element"
+          }
+        },
+        {
+          "weight": 25,
+          "element": {
+            "location": "psychedelicraft:village/plains/houses/plains_vineyard",
+            "processors": "minecraft:empty",
+            "projection": "rigid",
+            "element_type": "minecraft:single_pool_element"
+          }
+        },
+        {
+          "weight": 15,
+          "element": {
+            "location": "psychedelicraft:village/plains/houses/lattice_wall_1",
+            "processors": "minecraft:empty",
+            "projection": "rigid",
+            "element_type": "minecraft:single_pool_element"
+          }
+        }
+      ]
+    }
+  }
+}

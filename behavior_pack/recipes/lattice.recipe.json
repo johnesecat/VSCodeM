@@ -1,0 +1,31 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "psychedelicraft:lattice"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "pattern": [
+      "III",
+      "IOI",
+      "OIO"
+    ],
+    "key": {
+      "I": {
+        "item": "minecraft:stick"
+      },
+      "O": {
+        "tag": "minecraft:planks"
+      }
+    },
+    "result": {
+      "item": "psychedelicraft:lattice",
+      "count": 1
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "psychedelicraft:hash_muffin"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "pattern": [
+      "LLL",
+      "#X#",
+      "LLL"
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:light_blue_dye"
+      },
+      "#": {
+        "item": "minecraft:wheat"
+      },
+      "L": {
+        "item": "psychedelicraft:dried_cannabis_leaf"
+      }
+    },
+    "result": {
+      "item": "psychedelicraft:hash_muffin",
+      "count": 1
+    }
+  }
+}

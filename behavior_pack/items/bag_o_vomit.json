@@ -1,0 +1,33 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "psychedelicraft:bag_o_vomit",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "bag_o_vomit"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.psychedelicraft:bag_o_vomit.name"
+      },
+      "minecraft:max_stack_size": 64,
+      "minecraft:food": {
+        "nutrition": 8,
+        "saturation_modifier": 0.8
+      },
+      "minecraft:use_modifiers": {
+        "use_duration": 32,
+        "movement_modifier": 0.35
+      },
+      "minecraft:custom_components": [
+        "psychedelicraft:suspicious"
+      ]
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.reality_rift": {
+      "geometry": "Geometry.default",
+      "materials": [{ "*": "Material.glow" }],
+      "textures": ["Texture.default"]
+    },
+    "controller.render.reality_rift_screen": {
+      "geometry": "Geometry.screen",
+      "materials": [{ "*": "Material.glow" }],
+      "textures": [
+        "Texture.screen0",
+        "Texture.screen1",
+        "Texture.screen2",
+        "Texture.screen3",
+        "Texture.screen4",
+        "Texture.screen5",
+        "Texture.screen6",
+        "Texture.screen7"
+      ],
+      "arrays": {
+        "textures": {
+          "Array.screens": [
+            "Texture.screen0",
+            "Texture.screen1",
+            "Texture.screen2",
+            "Texture.screen3",
+            "Texture.screen4",
+            "Texture.screen5",
+            "Texture.screen6",
+            "Texture.screen7"
+          ]
+        }
+      }
+    },
+    "controller.render.hallucination": {
+      "geometry": "Geometry.default",
+      "materials": [{ "*": "Material.default" }],
+      "textures": ["Texture.default"]
+    },
+    "controller.render.molotov": {
+      "geometry": "Geometry.default",
+      "materials": [{ "*": "Material.default" }],
+      "textures": ["Texture.default"]
+    }
+  }
+}

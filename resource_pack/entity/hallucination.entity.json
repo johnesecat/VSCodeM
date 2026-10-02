@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "psychedelicraft:hallucination",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/particles/rasta_head_hallucination",
+        "alt1": "textures/particles/overlay",
+        "alt2": "textures/particles/particle"
+      },
+      "geometry": {
+        "default": "geometry.hallucination"
+      },
+      "animations": {
+        "float": "animation.hallucination.float",
+        "spin": "animation.hallucination.spin"
+      },
+      "scripts": {
+        "animate": ["float", "spin"]
+      },
+      "render_controllers": ["controller.render.hallucination"]
+    }
+  }
+}

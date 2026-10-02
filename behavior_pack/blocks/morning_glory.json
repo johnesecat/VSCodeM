@@ -1,0 +1,115 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:block": {
+    "description": {
+      "identifier": "psychedelicraft:morning_glory",
+      "menu_category": {
+        "category": "nature"
+      },
+      "states": {
+        "psychedelicraft:age": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    "components": {
+      "minecraft:geometry": "psychedelicraft:geometry.cross",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "morning_glory_stage0",
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0.6666666666666666
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 5
+      },
+      "minecraft:collision_box": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "size": [
+          0,
+          0,
+          0
+        ]
+      },
+      "minecraft:selection_box": {
+        "origin": [
+          -4,
+          0,
+          -4
+        ],
+        "size": [
+          8,
+          12,
+          8
+        ]
+      },
+      "minecraft:tick": {
+        "interval_range": [
+          20,
+          20
+        ],
+        "looping": true
+      },
+      "minecraft:custom_components": [
+        "psychedelicraft:vine"
+      ]
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('psychedelicraft:age') == 0",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "morning_glory_stage0",
+              "render_method": "alpha_test"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:age') == 1",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "morning_glory_stage1",
+              "render_method": "alpha_test"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:age') == 2",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "morning_glory_stage2",
+              "render_method": "alpha_test"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:age') == 3 || q.block_state('psychedelicraft:age') == 4",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "morning_glory_stage3",
+              "render_method": "alpha_test"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

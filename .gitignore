@@ -1,0 +1,9 @@
+# local Bedrock server test scratch (bds.zip, boot logs)
+.runtime/
+
+# upstream Java source snapshot used as forensic evidence root
+# (clone github.com/Sollace/Psychedelicraft branch 1.20.1 @ 319a4ea0160d6600cffcd5f5cc9e363ceaab44a1)
+reference/
+
+# transient validation scratch
+.validate-tmp/

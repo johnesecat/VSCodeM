@@ -1,0 +1,20 @@
+{
+  "geometry.format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "psychedelicraft:geometry.rift_jar_0",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 3,
+        "visible_bounds_offset": [
+          0,
+          1,
+          0
+        ]
+      },
+      "cubes": []
+    }
+  ]
+}

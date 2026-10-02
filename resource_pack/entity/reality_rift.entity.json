@@ -1,0 +1,40 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "psychedelicraft:reality_rift",
+      "materials": {
+        "default": "entity_alphatest",
+        "glow": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/misc/entity/reality_rift/zero_center",
+        "screen0": "textures/misc/entity/reality_rift/zero_screen_0",
+        "screen1": "textures/misc/entity/reality_rift/zero_screen_1",
+        "screen2": "textures/misc/entity/reality_rift/zero_screen_2",
+        "screen3": "textures/misc/entity/reality_rift/zero_screen_3",
+        "screen4": "textures/misc/entity/reality_rift/zero_screen_4",
+        "screen5": "textures/misc/entity/reality_rift/zero_screen_5",
+        "screen6": "textures/misc/entity/reality_rift/zero_screen_6",
+        "screen7": "textures/misc/entity/reality_rift/zero_screen_7"
+      },
+      "geometry": {
+        "default": "geometry.reality_rift",
+        "screen": "geometry.reality_rift_screen"
+      },
+      "animations": {
+        "spin": "animation.reality_rift.spin",
+        "bob": "animation.reality_rift.bob",
+        "screen_pulse": "animation.reality_rift.screen_pulse"
+      },
+      "scripts": {
+        "animate": ["bob", { "spin": "query.modified_move_speed" }, "screen_pulse"]
+      },
+      "render_controllers": ["controller.render.reality_rift", "controller.render.reality_rift_screen"],
+      "spawn_egg": {
+        "base_color": "#2A0A4A",
+        "overlay_color": "#B44CFF"
+      }
+    }
+  }
+}

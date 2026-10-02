@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "psychedelicraft:dried_coca_leaves",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "dried_coca_leaves"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.psychedelicraft:dried_coca_leaves.name"
+      },
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

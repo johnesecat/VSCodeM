@@ -1,0 +1,40 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "psychedelicraft:molotov_cocktail",
+      "is_spawnable": false,
+      "is_summonable": true
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["projectile", "psychedelicraft_molotov"]
+      },
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:projectile": {
+        "gravity": 0.05,
+        "uncertainty_base": 0,
+        "uncertainty_multiplier": 0,
+        "anchor": 1,
+        "offset": [0, 0.2, 0],
+        "on_hit": {
+          "catch_fire": {
+            "fire_affected_by_griefing": true
+          },
+          "impact_damage": {
+            "damage": [2, 2],
+            "catch_fire": true
+          },
+          "remove_on_hit": {}
+        }
+      }
+    }
+  }
+}

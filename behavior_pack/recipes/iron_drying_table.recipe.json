@@ -1,0 +1,33 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "psychedelicraft:iron_drying_table"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "pattern": [
+      "#I#",
+      "IRI"
+    ],
+    "key": {
+      "#": {
+        "tag": "minecraft:planks"
+      },
+      "R": {
+        "item": "minecraft:redstone"
+      },
+      "I": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "psychedelicraft:iron_drying_table",
+      "count": 1
+    }
+  }
+}

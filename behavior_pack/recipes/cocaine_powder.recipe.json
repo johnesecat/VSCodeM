@@ -1,0 +1,23 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "psychedelicraft:cocaine_powder"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "ingredients": [
+      {
+        "item": "psychedelicraft:dried_coca_leaves"
+      }
+    ],
+    "result": {
+      "item": "psychedelicraft:cocaine_powder",
+      "count": 1
+    }
+  }
+}

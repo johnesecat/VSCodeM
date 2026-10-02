@@ -1,0 +1,81 @@
+{
+  "psybed:breath": {
+    "category": "player",
+    "sounds": [
+      "sounds/breath.ogg"
+    ]
+  },
+  "psybed:drugs.generic": {
+    "category": "player",
+    "sounds": [
+      "sounds/drugs/generic.ogg"
+    ]
+  },
+  "psybed:heart_beat": {
+    "category": "player",
+    "sounds": [
+      "sounds/heart_beat.ogg"
+    ]
+  },
+  "psybed:rift_jar.jar_open": {
+    "category": "player",
+    "sounds": [
+      "sounds/rift_jar/jar_open.ogg"
+    ]
+  },
+  "psybed:entity.player.heartbeat": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "sounds/heart_beat"
+      }
+    ]
+  },
+  "psybed:entity.player.breath": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "sounds/breath"
+      }
+    ]
+  },
+  "psybed:block.rift_jar.toggle": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "sounds/minecraft:block/end_portal/eyeplace1"
+      },
+      {
+        "name": "sounds/minecraft:block/end_portal/eyeplace2"
+      },
+      {
+        "name": "sounds/minecraft:block/end_portal/eyeplace3"
+      }
+    ]
+  },
+  "psybed:block.rift_jar.open": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "sounds/rift_jar/jar_open"
+      }
+    ]
+  },
+  "psybed:block.rift_jar.close": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "sounds/rift_jar/jar_open"
+      }
+    ]
+  },
+  "psybed:drug.generic": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "sounds/drugs/generic",
+        "stream": true
+      }
+    ]
+  }
+}

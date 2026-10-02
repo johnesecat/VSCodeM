@@ -1,0 +1,158 @@
+[
+  {
+    "atlas_tile": "beer_flow",
+    "flipbook_texture": "textures/blocks/beer_flow",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "beer_still",
+    "flipbook_texture": "textures/blocks/beer_still",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "cider_flow",
+    "flipbook_texture": "textures/blocks/cider_flow",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "cider_still",
+    "flipbook_texture": "textures/blocks/cider_still",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "clear_flow",
+    "flipbook_texture": "textures/blocks/clear_flow",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "clear_still",
+    "flipbook_texture": "textures/blocks/clear_still",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "coffee_flow",
+    "flipbook_texture": "textures/blocks/coffee_flow",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "coffee_still",
+    "flipbook_texture": "textures/blocks/coffee_still",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "ketchup_flow",
+    "flipbook_texture": "textures/blocks/ketchup_flow",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "ketchup_still",
+    "flipbook_texture": "textures/blocks/ketchup_still",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "mead_flow",
+    "flipbook_texture": "textures/blocks/mead_flow",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "mead_still",
+    "flipbook_texture": "textures/blocks/mead_still",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "rice_wine_flow",
+    "flipbook_texture": "textures/blocks/rice_wine_flow",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "rice_wine_still",
+    "flipbook_texture": "textures/blocks/rice_wine_still",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "rum_mature_flow",
+    "flipbook_texture": "textures/blocks/rum_mature_flow",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "rum_mature_still",
+    "flipbook_texture": "textures/blocks/rum_mature_still",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "rum_semi_mature_flow",
+    "flipbook_texture": "textures/blocks/rum_semi_mature_flow",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "rum_semi_mature_still",
+    "flipbook_texture": "textures/blocks/rum_semi_mature_still",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "slurry_flow",
+    "flipbook_texture": "textures/blocks/slurry_flow",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "slurry_still",
+    "flipbook_texture": "textures/blocks/slurry_still",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "tea_flow",
+    "flipbook_texture": "textures/blocks/tea_flow",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "tea_still",
+    "flipbook_texture": "textures/blocks/tea_still",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "tomato_juice_flow",
+    "flipbook_texture": "textures/blocks/tomato_juice_flow",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "tomato_juice_still",
+    "flipbook_texture": "textures/blocks/tomato_juice_still",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "wine_flow",
+    "flipbook_texture": "textures/blocks/wine_flow",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  },
+  {
+    "atlas_tile": "wine_still",
+    "flipbook_texture": "textures/blocks/wine_still",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  }
+]
