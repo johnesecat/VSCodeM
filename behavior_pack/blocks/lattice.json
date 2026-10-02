@@ -12,8 +12,7 @@
       "minecraft:material_instances": {
         "*": {
           "texture": "lattice",
-          "render_method": "opaque",
-          "sound": "wood"
+          "render_method": "opaque"
         }
       },
       "minecraft:destructible_by_mining": {

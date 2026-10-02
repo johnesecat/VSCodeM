@@ -4,7 +4,11 @@
 distinguishes EXECUTED tests (real results) from PENDING-RUNTIME tests (procedures defined, results
 NOT yet claimed). No test result on this page is simulated.
 
-## EXECUTED — static/validation suite (`tools/validate.mjs`, run at final build)
+## Compatibility correction (2026-10-02)
+
+Prior static PASS results did not imply Bedrock runtime compatibility. See docs/09 for the repaired geometry, item events, persistence, fluid and UI defects and the new nine-test Node mock suite. Container aux packing below is historical and **incorrect** for full 0–16 stages: four bits cannot retain stage 16. Runtime containers now use ItemStack dynamic properties. All client/server-engine tests remain pending.
+
+## EXECUTED — historical static/validation suite (`tools/validate.mjs`, run at final build)
 
 | Check | Result |
 |---|---|

@@ -8,15 +8,14 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "flask"
-        }
-      },
+      "minecraft:icon": "flask",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:flask.name"
       },
-      "minecraft:max_stack_size": 16
+      "minecraft:max_stack_size": 16,
+      "minecraft:block_placer": {
+        "block": "psychedelicraft:flask"
+      }
     }
   }
 }

@@ -8,22 +8,19 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "lsd_square"
-        }
-      },
+      "minecraft:icon": "lsd_square",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:lsd_square.name"
       },
       "minecraft:max_stack_size": 64,
+      "minecraft:use_animation": "eat",
       "minecraft:food": {
         "nutrition": 1,
         "saturation_modifier": 0.1,
         "can_always_eat": true
       },
       "minecraft:use_modifiers": {
-        "use_duration": 32,
+        "use_duration": 1.6,
         "movement_modifier": 0.35
       },
       "minecraft:custom_components": [

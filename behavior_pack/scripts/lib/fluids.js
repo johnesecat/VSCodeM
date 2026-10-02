@@ -210,6 +210,10 @@ export function drugInfluencesPerLiter(fluid) {
     out.push(new DrugInfluence("alcohol", 20, 0.003, 0.002, alcohol));
     const variant = resolveVariant(fluid);
     if (variant.extraDrug) out.push(DrugInfluence.fromArray(variant.extraDrug));
+  } else if (fluid.id === "coffee") {
+    const warmth = Math.min(2, Math.max(0, fluid.warmth ?? fluid.temperature ?? 0)) / 2;
+    out.push(new DrugInfluence("caffeine", 20, 0.002, 0.001, 0.25 + warmth * 0.05));
+    out.push(new DrugInfluence("warmth", 0, 0, 0.1, 0.8 * warmth));
   } else if (def && def.drug) {
     out.push(DrugInfluence.fromArray(def.drug));
   }
@@ -328,6 +332,26 @@ export function unpackFluid(aux, level) {
     vinegar: ((aux >> 15) & 1) === 1,
     temperature: 0,
   };
+}
+
+// ItemStack dynamic properties retain volume and full 0..16 process stages.
+// Aux/damage values cannot represent custom fluid state on Bedrock items.
+export function readItemFluid(stack) {
+  if (!stack) return null;
+  const raw = stack.getDynamicProperty("ps:fluid");
+  if (typeof raw !== "string") return null;
+  try {
+    const fluid = JSON.parse(raw);
+    if (!fluid || !Number.isFinite(fluid.level) || fluid.level <= 0) return null;
+    if (!fluidDef(fluid.id) && !["minecraft:water", "minecraft:lava"].includes(fluid.id)) return null;
+    return fluid;
+  } catch { return null; }
+}
+
+export function writeItemFluid(stack, fluid) {
+  stack.setDynamicProperty("ps:fluid", fluid?.level > 0 ? JSON.stringify(fluid) : undefined);
+  stack.setLore(fluid?.level > 0 ? [`${fluidDisplayName(fluid)} — ${fluid.level} mB`] : []);
+  return stack;
 }
 
 export function clampLevel(fluid) {

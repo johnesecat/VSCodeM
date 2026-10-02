@@ -8,17 +8,14 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "bottle_liquid"
-        }
-      },
+      "minecraft:icon": "bottle_liquid",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:filled_glass_bottle.name"
       },
-      "minecraft:max_stack_size": 64,
+      "minecraft:max_stack_size": 1,
+      "minecraft:use_animation": "drink",
       "minecraft:use_modifiers": {
-        "use_duration": 32,
+        "use_duration": 1.6,
         "movement_modifier": 0.35
       },
       "minecraft:custom_components": [

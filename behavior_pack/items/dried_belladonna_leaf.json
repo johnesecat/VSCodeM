@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "dried_belladonna_leaf"
-        }
-      },
+      "minecraft:icon": "dried_belladonna_leaf",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:dried_belladonna_leaf.name"
       },

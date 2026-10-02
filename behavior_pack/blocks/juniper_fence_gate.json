@@ -5,12 +5,32 @@
       "identifier": "psychedelicraft:juniper_fence_gate",
       "menu_category": {
         "category": "nature"
+      },
+      "states": {
+        "psychedelicraft:facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "psychedelicraft:in_wall": [
+          false,
+          true
+        ],
+        "psychedelicraft:open": [
+          false,
+          true
+        ]
       }
     },
     "components": {
       "minecraft:geometry": "psychedelicraft:geometry.juniper_fence_gate_0",
       "minecraft:material_instances": {
         "*": {
+          "texture": "juniper_planks",
+          "render_method": "opaque"
+        },
+        "tex_juniper_planks": {
           "texture": "juniper_planks",
           "render_method": "opaque"
         }
@@ -20,7 +40,496 @@
       },
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 10
+      },
+      "minecraft:tick": {
+        "interval_range": [
+          1,
+          1
+        ],
+        "looping": true
+      },
+      "minecraft:loot": "loot_tables/empty.json",
+      "minecraft:flammable": {
+        "catch_chance_modifier": 5,
+        "destroy_chance_modifier": 20
+      },
+      "minecraft:custom_components": [
+        "psychedelicraft:wood"
+      ]
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'east' && q.block_state('psychedelicraft:in_wall') == false && q.block_state('psychedelicraft:open') == false",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_fence_gate_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -270,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:collision_box": {
+            "origin": [
+              -8,
+              0,
+              -2
+            ],
+            "size": [
+              16,
+              16,
+              4
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'east' && q.block_state('psychedelicraft:in_wall') == false && q.block_state('psychedelicraft:open') == true",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_fence_gate_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -270,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:collision_box": false
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'east' && q.block_state('psychedelicraft:in_wall') == true && q.block_state('psychedelicraft:open') == false",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_fence_gate_2",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -270,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:collision_box": {
+            "origin": [
+              -8,
+              0,
+              -2
+            ],
+            "size": [
+              16,
+              16,
+              4
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'east' && q.block_state('psychedelicraft:in_wall') == true && q.block_state('psychedelicraft:open') == true",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_fence_gate_3",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -270,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:collision_box": false
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'north' && q.block_state('psychedelicraft:in_wall') == false && q.block_state('psychedelicraft:open') == false",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_fence_gate_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -180,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:collision_box": {
+            "origin": [
+              -8,
+              0,
+              -2
+            ],
+            "size": [
+              16,
+              16,
+              4
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'north' && q.block_state('psychedelicraft:in_wall') == false && q.block_state('psychedelicraft:open') == true",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_fence_gate_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -180,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:collision_box": false
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'north' && q.block_state('psychedelicraft:in_wall') == true && q.block_state('psychedelicraft:open') == false",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_fence_gate_2",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -180,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:collision_box": {
+            "origin": [
+              -8,
+              0,
+              -2
+            ],
+            "size": [
+              16,
+              16,
+              4
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'north' && q.block_state('psychedelicraft:in_wall') == true && q.block_state('psychedelicraft:open') == true",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_fence_gate_3",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -180,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:collision_box": false
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'south' && q.block_state('psychedelicraft:in_wall') == false && q.block_state('psychedelicraft:open') == false",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_fence_gate_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:collision_box": {
+            "origin": [
+              -8,
+              0,
+              -2
+            ],
+            "size": [
+              16,
+              16,
+              4
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'south' && q.block_state('psychedelicraft:in_wall') == false && q.block_state('psychedelicraft:open') == true",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_fence_gate_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:collision_box": false
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'south' && q.block_state('psychedelicraft:in_wall') == true && q.block_state('psychedelicraft:open') == false",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_fence_gate_2",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:collision_box": {
+            "origin": [
+              -8,
+              0,
+              -2
+            ],
+            "size": [
+              16,
+              16,
+              4
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'south' && q.block_state('psychedelicraft:in_wall') == true && q.block_state('psychedelicraft:open') == true",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_fence_gate_3",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:collision_box": false
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'west' && q.block_state('psychedelicraft:in_wall') == false && q.block_state('psychedelicraft:open') == false",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_fence_gate_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:collision_box": {
+            "origin": [
+              -8,
+              0,
+              -2
+            ],
+            "size": [
+              16,
+              16,
+              4
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'west' && q.block_state('psychedelicraft:in_wall') == false && q.block_state('psychedelicraft:open') == true",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_fence_gate_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:collision_box": false
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'west' && q.block_state('psychedelicraft:in_wall') == true && q.block_state('psychedelicraft:open') == false",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_fence_gate_2",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:collision_box": {
+            "origin": [
+              -8,
+              0,
+              -2
+            ],
+            "size": [
+              16,
+              16,
+              4
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'west' && q.block_state('psychedelicraft:in_wall') == true && q.block_state('psychedelicraft:open') == true",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_fence_gate_3",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:collision_box": false
+        }
       }
-    }
+    ]
   }
 }

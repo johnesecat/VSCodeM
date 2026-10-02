@@ -5,12 +5,35 @@
       "identifier": "psychedelicraft:juniper_stairs",
       "menu_category": {
         "category": "nature"
+      },
+      "states": {
+        "psychedelicraft:facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "psychedelicraft:half": [
+          "bottom",
+          "top"
+        ],
+        "psychedelicraft:shape": [
+          "inner_left",
+          "inner_right",
+          "outer_left",
+          "outer_right",
+          "straight"
+        ]
       }
     },
     "components": {
       "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_0",
       "minecraft:material_instances": {
         "*": {
+          "texture": "juniper_planks",
+          "render_method": "opaque"
+        },
+        "tex_juniper_planks": {
           "texture": "juniper_planks",
           "render_method": "opaque"
         }
@@ -20,7 +43,944 @@
       },
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 10
+      },
+      "minecraft:tick": {
+        "interval_range": [
+          1,
+          1
+        ],
+        "looping": true
+      },
+      "minecraft:loot": "loot_tables/empty.json",
+      "minecraft:flammable": {
+        "catch_chance_modifier": 5,
+        "destroy_chance_modifier": 20
+      },
+      "minecraft:custom_components": [
+        "psychedelicraft:wood"
+      ]
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'east' && q.block_state('psychedelicraft:half') == 'bottom' && q.block_state('psychedelicraft:shape') == 'inner_left'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -270,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'east' && q.block_state('psychedelicraft:half') == 'bottom' && q.block_state('psychedelicraft:shape') == 'inner_right'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'east' && q.block_state('psychedelicraft:half') == 'bottom' && q.block_state('psychedelicraft:shape') == 'outer_left'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -270,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'east' && q.block_state('psychedelicraft:half') == 'bottom' && q.block_state('psychedelicraft:shape') == 'outer_right'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'east' && q.block_state('psychedelicraft:half') == 'bottom' && q.block_state('psychedelicraft:shape') == 'straight'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_2",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'east' && q.block_state('psychedelicraft:half') == 'top' && q.block_state('psychedelicraft:shape') == 'inner_left'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_0",
+          "minecraft:transformation": {
+            "rotation": [
+              180,
+              0,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'east' && q.block_state('psychedelicraft:half') == 'top' && q.block_state('psychedelicraft:shape') == 'inner_right'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_0",
+          "minecraft:transformation": {
+            "rotation": [
+              180,
+              -90,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'east' && q.block_state('psychedelicraft:half') == 'top' && q.block_state('psychedelicraft:shape') == 'outer_left'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_1",
+          "minecraft:transformation": {
+            "rotation": [
+              180,
+              0,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'east' && q.block_state('psychedelicraft:half') == 'top' && q.block_state('psychedelicraft:shape') == 'outer_right'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_1",
+          "minecraft:transformation": {
+            "rotation": [
+              180,
+              -90,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'east' && q.block_state('psychedelicraft:half') == 'top' && q.block_state('psychedelicraft:shape') == 'straight'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_2",
+          "minecraft:transformation": {
+            "rotation": [
+              180,
+              0,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'north' && q.block_state('psychedelicraft:half') == 'bottom' && q.block_state('psychedelicraft:shape') == 'inner_left'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -180,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'north' && q.block_state('psychedelicraft:half') == 'bottom' && q.block_state('psychedelicraft:shape') == 'inner_right'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -270,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'north' && q.block_state('psychedelicraft:half') == 'bottom' && q.block_state('psychedelicraft:shape') == 'outer_left'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -180,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'north' && q.block_state('psychedelicraft:half') == 'bottom' && q.block_state('psychedelicraft:shape') == 'outer_right'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -270,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'north' && q.block_state('psychedelicraft:half') == 'bottom' && q.block_state('psychedelicraft:shape') == 'straight'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_2",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -270,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'north' && q.block_state('psychedelicraft:half') == 'top' && q.block_state('psychedelicraft:shape') == 'inner_left'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_0",
+          "minecraft:transformation": {
+            "rotation": [
+              180,
+              -270,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'north' && q.block_state('psychedelicraft:half') == 'top' && q.block_state('psychedelicraft:shape') == 'inner_right'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_0",
+          "minecraft:transformation": {
+            "rotation": [
+              180,
+              0,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'north' && q.block_state('psychedelicraft:half') == 'top' && q.block_state('psychedelicraft:shape') == 'outer_left'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_1",
+          "minecraft:transformation": {
+            "rotation": [
+              180,
+              -270,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'north' && q.block_state('psychedelicraft:half') == 'top' && q.block_state('psychedelicraft:shape') == 'outer_right'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_1",
+          "minecraft:transformation": {
+            "rotation": [
+              180,
+              0,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'north' && q.block_state('psychedelicraft:half') == 'top' && q.block_state('psychedelicraft:shape') == 'straight'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_2",
+          "minecraft:transformation": {
+            "rotation": [
+              180,
+              -270,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'south' && q.block_state('psychedelicraft:half') == 'bottom' && q.block_state('psychedelicraft:shape') == 'inner_left'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'south' && q.block_state('psychedelicraft:half') == 'bottom' && q.block_state('psychedelicraft:shape') == 'inner_right'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'south' && q.block_state('psychedelicraft:half') == 'bottom' && q.block_state('psychedelicraft:shape') == 'outer_left'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'south' && q.block_state('psychedelicraft:half') == 'bottom' && q.block_state('psychedelicraft:shape') == 'outer_right'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'south' && q.block_state('psychedelicraft:half') == 'bottom' && q.block_state('psychedelicraft:shape') == 'straight'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_2",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'south' && q.block_state('psychedelicraft:half') == 'top' && q.block_state('psychedelicraft:shape') == 'inner_left'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_0",
+          "minecraft:transformation": {
+            "rotation": [
+              180,
+              -90,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'south' && q.block_state('psychedelicraft:half') == 'top' && q.block_state('psychedelicraft:shape') == 'inner_right'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_0",
+          "minecraft:transformation": {
+            "rotation": [
+              180,
+              -180,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'south' && q.block_state('psychedelicraft:half') == 'top' && q.block_state('psychedelicraft:shape') == 'outer_left'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_1",
+          "minecraft:transformation": {
+            "rotation": [
+              180,
+              -90,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'south' && q.block_state('psychedelicraft:half') == 'top' && q.block_state('psychedelicraft:shape') == 'outer_right'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_1",
+          "minecraft:transformation": {
+            "rotation": [
+              180,
+              -180,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'south' && q.block_state('psychedelicraft:half') == 'top' && q.block_state('psychedelicraft:shape') == 'straight'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_2",
+          "minecraft:transformation": {
+            "rotation": [
+              180,
+              -90,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'west' && q.block_state('psychedelicraft:half') == 'bottom' && q.block_state('psychedelicraft:shape') == 'inner_left'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'west' && q.block_state('psychedelicraft:half') == 'bottom' && q.block_state('psychedelicraft:shape') == 'inner_right'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -180,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'west' && q.block_state('psychedelicraft:half') == 'bottom' && q.block_state('psychedelicraft:shape') == 'outer_left'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'west' && q.block_state('psychedelicraft:half') == 'bottom' && q.block_state('psychedelicraft:shape') == 'outer_right'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -180,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'west' && q.block_state('psychedelicraft:half') == 'bottom' && q.block_state('psychedelicraft:shape') == 'straight'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_2",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -180,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'west' && q.block_state('psychedelicraft:half') == 'top' && q.block_state('psychedelicraft:shape') == 'inner_left'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_0",
+          "minecraft:transformation": {
+            "rotation": [
+              180,
+              -180,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'west' && q.block_state('psychedelicraft:half') == 'top' && q.block_state('psychedelicraft:shape') == 'inner_right'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_0",
+          "minecraft:transformation": {
+            "rotation": [
+              180,
+              -270,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'west' && q.block_state('psychedelicraft:half') == 'top' && q.block_state('psychedelicraft:shape') == 'outer_left'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_1",
+          "minecraft:transformation": {
+            "rotation": [
+              180,
+              -180,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'west' && q.block_state('psychedelicraft:half') == 'top' && q.block_state('psychedelicraft:shape') == 'outer_right'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_1",
+          "minecraft:transformation": {
+            "rotation": [
+              180,
+              -270,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:facing') == 'west' && q.block_state('psychedelicraft:half') == 'top' && q.block_state('psychedelicraft:shape') == 'straight'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_stairs_2",
+          "minecraft:transformation": {
+            "rotation": [
+              180,
+              -180,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          }
+        }
       }
-    }
+    ]
   }
 }

@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "jimsonweed_leaf"
-        }
-      },
+      "minecraft:icon": "jimsonweed_leaf",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:jimsonweed_leaf.name"
       },

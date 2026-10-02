@@ -13,6 +13,7 @@ import { clamp, clamp01, nearValue } from "./util.js";
 //          functions il(x,min,max), max(a,b), min(a,b).
 // ---------------------------------------------------------------------------
 export function evalFormula(src, ctx) {
+  src = src.replace(/\s+/g, "");
   let i = 0;
   const peek = () => src[i];
   const eat = (c) => {
@@ -40,7 +41,7 @@ export function evalFormula(src, ctx) {
     return parsePrimary();
   }
   function parsePrimary() {
-    if (eat("(")) { const v = parseExpr(); eat(")"); return v; }
+    if (eat("(")) { const v = parseConditional(); eat(")"); return v; }
     if (/[0-9.]/.test(peek() ?? "")) {
       let s = "";
       while (i < src.length && /[0-9.]/.test(src[i])) s += src[i++];
@@ -50,8 +51,8 @@ export function evalFormula(src, ctx) {
       let s = "";
       while (i < src.length && /[a-zA-Z_0-9]/.test(src[i])) s += src[i++];
       if (eat("(")) {
-        const args = [parseExpr()];
-        while (eat(",")) args.push(parseExpr());
+        const args = [parseConditional()];
+        while (eat(",")) args.push(parseConditional());
         eat(")");
         switch (s) {
           case "il": return clamp01((args[0] - args[1]) / (args[2] - args[1]));
@@ -71,7 +72,21 @@ export function evalFormula(src, ctx) {
     }
     throw new Error(`parse error at ${i} in ${src}`);
   }
-  return parseExpr();
+  function parseConditional() {
+    let value = parseExpr();
+    if (eat(">")) value = value > parseExpr() ? 1 : 0;
+    else if (eat("<")) value = value < parseExpr() ? 1 : 0;
+    if (eat("?")) {
+      const yes = parseConditional();
+      if (!eat(":")) throw new Error(`missing ':' in ${src}`);
+      const no = parseConditional();
+      value = value ? yes : no;
+    }
+    return value;
+  }
+  const result = parseConditional();
+  if (i !== src.length || !Number.isFinite(result)) throw new Error(`invalid formula: ${src}`);
+  return result;
 }
 
 // ---------------------------------------------------------------------------

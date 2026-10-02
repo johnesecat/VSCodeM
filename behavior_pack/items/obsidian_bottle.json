@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "obsidian_bottle"
-        }
-      },
+      "minecraft:icon": "obsidian_bottle",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:obsidian_bottle.name"
       },

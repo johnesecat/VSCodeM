@@ -8,15 +8,17 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "rift_jar"
-        }
-      },
+      "minecraft:icon": "rift_jar",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:rift_jar.name"
       },
-      "minecraft:max_stack_size": 16
+      "minecraft:max_stack_size": 1,
+      "minecraft:block_placer": {
+        "block": "psychedelicraft:rift_jar"
+      },
+      "minecraft:custom_components": [
+        "psychedelicraft:jar_item"
+      ]
     }
   }
 }

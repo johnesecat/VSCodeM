@@ -7,3 +7,12 @@ reference/
 
 # transient validation scratch
 .validate-tmp/
+
+# mct validation report output
+out/
+
+# dev tooling (@minecraft/creator-tools for mct validate)
+node_modules/
+
+# BDS distribution readme dropped by server testing
+Dedicated_Server.txt

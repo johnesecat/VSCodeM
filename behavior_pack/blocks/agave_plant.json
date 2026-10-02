@@ -23,6 +23,10 @@
         "*": {
           "texture": "agave_fan",
           "render_method": "alpha_test"
+        },
+        "tex_agave_fan": {
+          "texture": "agave_fan",
+          "render_method": "alpha_test"
         }
       },
       "minecraft:destructible_by_mining": {
@@ -71,8 +75,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 0",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.agave_plant_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "agave_fan",
+              "render_method": "alpha_test"
+            },
+            "tex_agave_fan": {
               "texture": "agave_fan",
               "render_method": "alpha_test"
             }
@@ -83,8 +98,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 1",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.agave_plant_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "agave_fan",
+              "render_method": "alpha_test"
+            },
+            "tex_agave_fan": {
               "texture": "agave_fan",
               "render_method": "alpha_test"
             }
@@ -95,8 +121,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 2",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.agave_plant_2",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "agave_fan",
+              "render_method": "alpha_test"
+            },
+            "tex_agave_fan": {
               "texture": "agave_fan",
               "render_method": "alpha_test"
             }
@@ -107,8 +144,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 3",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.agave_plant_3",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "agave_fan",
+              "render_method": "alpha_test"
+            },
+            "tex_agave_fan": {
               "texture": "agave_fan",
               "render_method": "alpha_test"
             }
@@ -119,8 +167,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 4",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.agave_plant_4",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "agave_fan",
+              "render_method": "alpha_test"
+            },
+            "tex_agave_fan": {
               "texture": "agave_fan",
               "render_method": "alpha_test"
             }
@@ -131,8 +190,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 5",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.agave_plant_5",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "agave_fan",
+              "render_method": "alpha_test"
+            },
+            "tex_agave_fan": {
               "texture": "agave_fan",
               "render_method": "alpha_test"
             }

@@ -5,6 +5,12 @@
       "identifier": "psychedelicraft:birch_barrel",
       "menu_category": {
         "category": "construction"
+      },
+      "states": {
+        "psychedelicraft:tap_open": [
+          false,
+          true
+        ]
       }
     },
     "components": {
@@ -31,6 +37,14 @@
       "minecraft:custom_components": [
         "psychedelicraft:barrel"
       ]
-    }
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('psychedelicraft:tap_open') == true",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.birch_barrel_0_tap"
+        }
+      }
+    ]
   }
 }

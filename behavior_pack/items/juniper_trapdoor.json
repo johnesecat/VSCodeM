@@ -8,15 +8,14 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "juniper_trapdoor"
-        }
-      },
+      "minecraft:icon": "juniper_trapdoor",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:juniper_trapdoor.name"
       },
-      "minecraft:max_stack_size": 64
+      "minecraft:max_stack_size": 64,
+      "minecraft:block_placer": {
+        "block": "psychedelicraft:juniper_trapdoor"
+      }
     }
   }
 }

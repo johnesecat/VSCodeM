@@ -13,6 +13,10 @@
         "*": {
           "texture": "flask",
           "render_method": "opaque"
+        },
+        "tex_flask": {
+          "texture": "flask",
+          "render_method": "opaque"
         }
       },
       "minecraft:destructible_by_mining": {

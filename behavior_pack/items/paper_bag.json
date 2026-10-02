@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "paper_bag"
-        }
-      },
+      "minecraft:icon": "paper_bag",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:paper_bag.name"
       },

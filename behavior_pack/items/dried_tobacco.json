@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "dried_tobacco"
-        }
-      },
+      "minecraft:icon": "dried_tobacco",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:dried_tobacco.name"
       },

@@ -5,12 +5,27 @@
       "identifier": "psychedelicraft:stripped_juniper_log",
       "menu_category": {
         "category": "nature"
+      },
+      "states": {
+        "psychedelicraft:axis": [
+          "x",
+          "y",
+          "z"
+        ]
       }
     },
     "components": {
       "minecraft:geometry": "psychedelicraft:geometry.stripped_juniper_log_0",
       "minecraft:material_instances": {
         "*": {
+          "texture": "stripped_juniper_log_top",
+          "render_method": "opaque"
+        },
+        "tex_stripped_juniper_log": {
+          "texture": "stripped_juniper_log",
+          "render_method": "opaque"
+        },
+        "tex_stripped_juniper_log_top": {
           "texture": "stripped_juniper_log_top",
           "render_method": "opaque"
         }
@@ -20,7 +35,105 @@
       },
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 10
+      },
+      "minecraft:tick": {
+        "interval_range": [
+          1,
+          1
+        ],
+        "looping": true
+      },
+      "minecraft:loot": "loot_tables/empty.json",
+      "minecraft:flammable": {
+        "catch_chance_modifier": 5,
+        "destroy_chance_modifier": 5
+      },
+      "minecraft:custom_components": [
+        "psychedelicraft:wood"
+      ]
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('psychedelicraft:axis') == 'x'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.stripped_juniper_log_0",
+          "minecraft:transformation": {
+            "rotation": [
+              90,
+              -90,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "stripped_juniper_log_top",
+              "render_method": "opaque"
+            },
+            "tex_stripped_juniper_log": {
+              "texture": "stripped_juniper_log",
+              "render_method": "opaque"
+            },
+            "tex_stripped_juniper_log_top": {
+              "texture": "stripped_juniper_log_top",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:axis') == 'y'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.stripped_juniper_log_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "stripped_juniper_log_top",
+              "render_method": "opaque"
+            },
+            "tex_stripped_juniper_log": {
+              "texture": "stripped_juniper_log",
+              "render_method": "opaque"
+            },
+            "tex_stripped_juniper_log_top": {
+              "texture": "stripped_juniper_log_top",
+              "render_method": "opaque"
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:axis') == 'z'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.stripped_juniper_log_0",
+          "minecraft:transformation": {
+            "rotation": [
+              90,
+              0,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "stripped_juniper_log_top",
+              "render_method": "opaque"
+            },
+            "tex_stripped_juniper_log": {
+              "texture": "stripped_juniper_log",
+              "render_method": "opaque"
+            },
+            "tex_stripped_juniper_log_top": {
+              "texture": "stripped_juniper_log_top",
+              "render_method": "opaque"
+            }
+          }
+        }
       }
-    }
+    ]
   }
 }

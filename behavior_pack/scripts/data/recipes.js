@@ -1024,41 +1024,6 @@ export const RECIPES = {
       }
     },
     {
-      "id": "psychedelicraft:juniper_boat",
-      "blocked": "boat_entity",
-      "type": "minecraft:crafting_shaped",
-      "group": "boat",
-      "key": {
-        "#": {
-          "item": "psychedelicraft:juniper_planks"
-        }
-      },
-      "pattern": [
-        "# #",
-        "###"
-      ],
-      "result": {
-        "item": "psychedelicraft:juniper_boat"
-      }
-    },
-    {
-      "id": "psychedelicraft:juniper_chest_boat",
-      "blocked": "boat_entity",
-      "type": "minecraft:crafting_shapeless",
-      "group": "chest_boat",
-      "ingredients": [
-        {
-          "item": "minecraft:chest"
-        },
-        {
-          "item": "psychedelicraft:juniper_boat"
-        }
-      ],
-      "result": {
-        "item": "psychedelicraft:juniper_chest_boat"
-      }
-    },
-    {
       "id": "psychedelicraft:molotov_cocktail",
       "type": "psychedelicraft:crafting_shaped",
       "pattern": [

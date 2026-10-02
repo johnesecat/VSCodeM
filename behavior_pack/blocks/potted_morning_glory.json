@@ -13,6 +13,10 @@
         "*": {
           "texture": "morning_glory_stage3",
           "render_method": "opaque"
+        },
+        "tex_morning_glory_stage3": {
+          "texture": "morning_glory_stage3",
+          "render_method": "opaque"
         }
       },
       "minecraft:destructible_by_mining": {

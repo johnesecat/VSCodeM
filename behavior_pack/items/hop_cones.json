@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "hop_cones"
-        }
-      },
+      "minecraft:icon": "hop_cones",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:hop_cones.name"
       },

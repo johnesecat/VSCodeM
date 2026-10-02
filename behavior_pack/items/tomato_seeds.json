@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "tomato_seeds"
-        }
-      },
+      "minecraft:icon": "tomato_seeds",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:tomato_seeds.name"
       },

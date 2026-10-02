@@ -5,12 +5,17 @@
       "identifier": "psychedelicraft:juniper_wood",
       "menu_category": {
         "category": "nature"
-      }
+      },
+      "states": {}
     },
     "components": {
       "minecraft:geometry": "psychedelicraft:geometry.juniper_wood_0",
       "minecraft:material_instances": {
         "*": {
+          "texture": "juniper_log",
+          "render_method": "opaque"
+        },
+        "tex_juniper_log": {
           "texture": "juniper_log",
           "render_method": "opaque"
         }
@@ -20,7 +25,22 @@
       },
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 10
-      }
+      },
+      "minecraft:tick": {
+        "interval_range": [
+          1,
+          1
+        ],
+        "looping": true
+      },
+      "minecraft:loot": "loot_tables/empty.json",
+      "minecraft:flammable": {
+        "catch_chance_modifier": 5,
+        "destroy_chance_modifier": 5
+      },
+      "minecraft:custom_components": [
+        "psychedelicraft:wood"
+      ]
     }
   }
 }

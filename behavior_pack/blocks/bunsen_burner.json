@@ -13,6 +13,14 @@
         "*": {
           "texture": "burner_base_top",
           "render_method": "opaque"
+        },
+        "tex_burner_base_top": {
+          "texture": "burner_base_top",
+          "render_method": "opaque"
+        },
+        "tex_burner_leg": {
+          "texture": "burner_leg",
+          "render_method": "opaque"
         }
       },
       "minecraft:destructible_by_mining": {

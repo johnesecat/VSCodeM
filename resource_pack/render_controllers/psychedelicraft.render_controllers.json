@@ -9,16 +9,7 @@
     "controller.render.reality_rift_screen": {
       "geometry": "Geometry.screen",
       "materials": [{ "*": "Material.glow" }],
-      "textures": [
-        "Texture.screen0",
-        "Texture.screen1",
-        "Texture.screen2",
-        "Texture.screen3",
-        "Texture.screen4",
-        "Texture.screen5",
-        "Texture.screen6",
-        "Texture.screen7"
-      ],
+      "textures": ["Array.screens[math.mod(math.floor(query.life_time * 10), 8)]"],
       "arrays": {
         "textures": {
           "Array.screens": [

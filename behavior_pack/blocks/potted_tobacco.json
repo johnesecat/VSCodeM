@@ -13,6 +13,10 @@
         "*": {
           "texture": "tobacco_top_stage3",
           "render_method": "opaque"
+        },
+        "tex_tobacco_top_stage3": {
+          "texture": "tobacco_top_stage3",
+          "render_method": "opaque"
         }
       },
       "minecraft:destructible_by_mining": {

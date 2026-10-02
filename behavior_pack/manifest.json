@@ -4,21 +4,21 @@
     "name": "Psychedelicraft (Bedrock) — Behavior",
     "description": "Forensic port of Psychedelicraft (Java 1.20.1 Fabric, commit 319a4ea): drugs, alcohol production chains, machines, crops, fluids and effects. Behavior + Script API systems.",
     "uuid": "cb740714-da66-4439-b760-0fa7159b8a76",
-    "version": [1, 0, 0],
-    "min_engine_version": [1, 21, 0]
+    "version": [1, 0, 1],
+    "min_engine_version": [1, 21, 120]
   },
   "modules": [
     {
       "type": "data",
       "uuid": "055d869c-9e39-4de4-b988-6f7a8c6d7b07",
-      "version": [1, 0, 0]
+      "version": [1, 0, 1]
     },
     {
       "type": "script",
       "language": "javascript",
       "uuid": "2dae0a97-4c74-43aa-bfcf-4593a2aafa49",
       "entry": "scripts/main.js",
-      "version": [1, 0, 0]
+      "version": [1, 0, 1]
     }
   ],
   "dependencies": [
@@ -32,7 +32,7 @@
     },
     {
       "uuid": "9063380b-6261-4979-99ee-edb1fcddad3f",
-      "version": [1, 0, 0]
+      "version": [1, 0, 1]
     }
   ]
 }

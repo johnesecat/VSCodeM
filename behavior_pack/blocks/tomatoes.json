@@ -25,6 +25,10 @@
         "*": {
           "texture": "jimsonweed_stage0",
           "render_method": "alpha_test"
+        },
+        "tex_jimsonweed_stage0": {
+          "texture": "jimsonweed_stage0",
+          "render_method": "alpha_test"
         }
       },
       "minecraft:destructible_by_mining": {
@@ -73,8 +77,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 0",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.tomatoes_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "jimsonweed_stage0",
+              "render_method": "alpha_test"
+            },
+            "tex_jimsonweed_stage0": {
               "texture": "jimsonweed_stage0",
               "render_method": "alpha_test"
             }
@@ -85,8 +100,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 1",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.tomatoes_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "jimsonweed_stage1",
+              "render_method": "alpha_test"
+            },
+            "tex_jimsonweed_stage1": {
               "texture": "jimsonweed_stage1",
               "render_method": "alpha_test"
             }
@@ -97,8 +123,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 2",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.tomatoes_2",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "jimsonweed_stage2",
+              "render_method": "alpha_test"
+            },
+            "tex_jimsonweed_stage2": {
               "texture": "jimsonweed_stage2",
               "render_method": "alpha_test"
             }
@@ -109,8 +146,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 3",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.tomatoes_3",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "jimsonweed_stage3",
+              "render_method": "alpha_test"
+            },
+            "tex_jimsonweed_stage3": {
               "texture": "jimsonweed_stage3",
               "render_method": "alpha_test"
             }
@@ -121,8 +169,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 4",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.tomatoes_4",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "jimsonweed_stage4",
+              "render_method": "alpha_test"
+            },
+            "tex_jimsonweed_stage4": {
               "texture": "jimsonweed_stage4",
               "render_method": "alpha_test"
             }
@@ -133,8 +192,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 5",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.tomatoes_5",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "tomatoes_stage5",
+              "render_method": "alpha_test"
+            },
+            "tex_tomatoes_stage5": {
               "texture": "tomatoes_stage5",
               "render_method": "alpha_test"
             }
@@ -145,8 +215,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 6",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.tomatoes_6",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "tomatoes_stage6",
+              "render_method": "alpha_test"
+            },
+            "tex_tomatoes_stage6": {
               "texture": "tomatoes_stage6",
               "render_method": "alpha_test"
             }
@@ -157,8 +238,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 7",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.tomatoes_7",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "tomatoes_stage7",
+              "render_method": "alpha_test"
+            },
+            "tex_tomatoes_stage7": {
               "texture": "tomatoes_stage7",
               "render_method": "alpha_test"
             }

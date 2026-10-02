@@ -79,9 +79,9 @@ const VANILLA_PARENTS = {
   "minecraft:block/slab_top": { textures: { bottom: "", top: "", side: "" }, elements: [q([0, 8, 0], [16, 16, 16], "#side")] },
   "minecraft:block/stairs": { textures: { bottom: "", top: "", side: "" }, elements: [q([0, 0, 0], [16, 8, 16], "#side"), q([0, 8, 0], [16, 16, 8], "#side")] },
   "minecraft:block/inner_stairs": { textures: { bottom: "", top: "", side: "" }, elements: [q([0, 0, 0], [16, 8, 16], "#side"), q([0, 8, 0], [16, 16, 8], "#side"), q([0, 8, 8], [8, 16, 16], "#side")] },
-  "minecraft:block/outer_stairs": { textures: { bottom: "", top: "", side: "" }, elements: [q([0, 0, 0], [16, 8, 16], "#side"), q([0, 8, 0], [16, 16, 4], "#side")] },
+  "minecraft:block/outer_stairs": { textures: { bottom: "", top: "", side: "" }, elements: [q([0, 0, 0], [16, 8, 16], "#side"), q([0, 8, 0], [8, 16, 8], "#side")] },
   "minecraft:block/pressure_plate_up": { textures: { texture: "" }, elements: [q([1, 0, 1], [15, 1, 15], "#texture")] },
-  "minecraft:block/pressure_plate_down": { textures: { texture: "" }, elements: [q([1, 0, 1], [15, 2, 15], "#texture")] },
+  "minecraft:block/pressure_plate_down": { textures: { texture: "" }, elements: [q([1, 0, 1], [15, 0.5, 15], "#texture")] },
   "minecraft:block/button": { textures: { texture: "" }, elements: [q([6, 0, 6], [10, 2, 10], "#texture")] },
   "minecraft:block/button_pressed": { textures: { texture: "" }, elements: [q([6, 0, 6], [10, 1, 10], "#texture")] },
   "minecraft:block/button_inventory": { textures: { texture: "" }, elements: [q([5, 6, 7], [11, 10, 11], "#texture")] },
@@ -92,7 +92,7 @@ const VANILLA_PARENTS = {
   "minecraft:block/template_trapdoor_top": { textures: { texture: "" }, elements: [q([0, 13, 0], [16, 16, 16], "#texture")] },
   "minecraft:block/template_trapdoor_open": { textures: { texture: "" }, elements: [q([0, 0, 13], [16, 16, 16], "#texture")] },
   "minecraft:block/template_fence_gate": { textures: { texture: "" }, elements: [q([0, 0, 6], [2, 16, 10], "#texture"), q([14, 0, 6], [16, 16, 10], "#texture"), q([2, 6, 7], [14, 9, 9], "#texture"), q([2, 12, 7], [14, 15, 9], "#texture")] },
-  "minecraft:block/template_fence_gate_open": null,
+  "minecraft:block/template_fence_gate_open": { textures: { texture: "" }, elements: [q([0,0,6],[2,16,10],"#texture"),q([14,0,6],[16,16,10],"#texture"),q([0,6,0],[2,9,6],"#texture"),q([14,6,0],[16,9,6],"#texture"),q([0,12,0],[2,15,6],"#texture"),q([14,12,0],[16,15,6],"#texture")] },
   "minecraft:block/template_fence_gate_wall": null,
   "minecraft:block/template_fence_gate_wall_open": null,
   "minecraft:block/door_bottom_left": { textures: { bottom: "" }, elements: [q([0, 0, 13], [16, 16, 16], "#bottom")] },
@@ -108,8 +108,8 @@ const VANILLA_PARENTS = {
 VANILLA_PARENTS["minecraft:block/tinted_cross"] = VANILLA_PARENTS["minecraft:block/cross"];
 VANILLA_PARENTS["block/cube_all"] = VANILLA_PARENTS["minecraft:block/cube_all"];
 VANILLA_PARENTS["minecraft:block/cube_column_horizontal"] = VANILLA_PARENTS["minecraft:block/cube_column"];
-for (const name of ["template_fence_gate_open", "template_fence_gate_wall", "template_fence_gate_wall_open"]) {
-  VANILLA_PARENTS[`minecraft:block/${name}`] = VANILLA_PARENTS["minecraft:block/template_fence_gate"];
+for (const name of ["template_fence_gate_wall", "template_fence_gate_wall_open"]) {
+  VANILLA_PARENTS[`minecraft:block/${name}`] = VANILLA_PARENTS[name.endsWith("open") ? "minecraft:block/template_fence_gate_open" : "minecraft:block/template_fence_gate"];
 }
 for (const name of ["door_bottom_right", "door_bottom_left_open", "door_bottom_right_open"]) {
   VANILLA_PARENTS[`minecraft:block/${name}`] = VANILLA_PARENTS["minecraft:block/door_bottom_left"];
@@ -185,12 +185,24 @@ function toCube(el, textures) {
   const faces = el.faces ?? {};
   const uv = {};
   for (const face of ["north", "south", "east", "west", "up", "down"]) {
-    const f = faces[face];
-    if (f && f.uv) {
-      uv[face] = { uv: f.uv, uv_size: [f.uv[2] - f.uv[0], f.uv[3] - f.uv[1]] };
-    } else {
-      uv[face] = { uv: [0, 0, 0, 0], uv_size: [0, 0] }; // hidden face (Java omits)
-    }
+    const f = faces[face] ?? (el.texture ? { texture: el.texture } : null);
+    if (!f) continue; // Omitted Java faces must not render.
+    const auto = {
+      north: [16 - to[0], 16 - to[1], 16 - from[0], 16 - from[1]],
+      south: [from[0], 16 - to[1], to[0], 16 - from[1]],
+      east: [16 - to[2], 16 - to[1], 16 - from[2], 16 - from[1]],
+      west: [from[2], 16 - to[1], to[2], 16 - from[1]],
+      up: [from[0], from[2], to[0], to[2]],
+      down: [from[0], 16 - to[2], to[0], 16 - from[2]],
+    };
+    const rect = f.uv ?? auto[face];
+    const tex = textureName(f.texture, textures);
+    uv[face] = {
+      uv: rect.slice(0, 2),
+      uv_size: [rect[2] - rect[0], rect[3] - rect[1]],
+      ...(f.rotation ? { uv_rotation: f.rotation } : {}),
+      ...(tex ? { material_instance: `tex_${tex}` } : {}),
+    }; 
   }
   cube.uv = uv;
   return cube;
@@ -200,7 +212,7 @@ function geometryForModel(modelName, geometryName) {
   const { elements, textures } = resolveModel(modelName);
   const cubes = elements.map((el) => toCube(el, textures));
   return {
-    "geometry.format_version": "1.12.0",
+    format_version: "1.21.0",
     "minecraft:geometry": [
       {
         description: {
@@ -211,7 +223,7 @@ function geometryForModel(modelName, geometryName) {
           visible_bounds_height: 3,
           visible_bounds_offset: [0, 1, 0],
         },
-        cubes,
+        bones: [{ name: "root", pivot: [0, 0, 0], cubes }],
       },
     ],
   };
@@ -253,20 +265,26 @@ function ensureTerrainEntry(name) {
   let resolved = candidates.find((c) => fs.existsSync(path.join(RP, `${c}.png`)));
   if (!resolved) {
     // vanilla accent textures (oak_planks, glass, ...) resolve to vanilla paths
-    resolved = `textures/blocks/${name}`;
+    const vanilla = { oak_planks: "planks_oak", spruce_planks: "planks_spruce", birch_planks: "planks_birch", jungle_planks: "planks_jungle", acacia_planks: "planks_acacia", dark_oak_planks: "planks_big_oak" };
+    resolved = `textures/blocks/${vanilla[name] ?? name}`;
   }
   terrain.texture_data[name] = { textures: resolved };
   writeJson(terrainPath, terrain);
 }
 
 function materialInstances(modelName, fallbackTex, renderMethod) {
-  const faces = faceTextureMap(modelName);
+  const { elements, textures } = resolveModel(modelName);
   const main = firstTextureOf(modelName) ?? fallbackTex ?? "lattice";
   ensureTerrainEntry(main);
   const material = { "*": { texture: main, render_method: renderMethod } };
-  for (const [dir, tex] of Object.entries(faces)) {
-    ensureTerrainEntry(tex);
-    if (tex !== main) material[dir] = { texture: tex, render_method: renderMethod };
+  for (const el of elements) {
+    const refs = [el.texture, ...Object.values(el.faces ?? {}).map((f) => f.texture)];
+    for (const ref of refs) {
+      const tex = textureName(ref, textures);
+      if (!tex) continue;
+      ensureTerrainEntry(tex);
+      material[`tex_${tex}`] = { texture: tex, render_method: renderMethod };
+    }
   }
   return material;
 }
@@ -280,6 +298,24 @@ for (const file of fs.readdirSync(path.join(BP, "blocks"))) {
   if (!fs.existsSync(bsFile)) continue;
   const bs = readJson(bsFile);
 
+  // Multipart fence: post plus independently visible rails, driven by
+  // connection states refreshed by the wood component.
+  if (id === "juniper_fence" && bs.multipart) {
+    const bones = [];
+    for (const [index, part] of bs.multipart.entries()) {
+      const { elements, textures } = resolveModel(part.apply.model);
+      const name = `part_${index}`;
+      bones.push({ name, pivot: [0, 8, 0], rotation: [0, -(part.apply.y ?? 0), 0], cubes: elements.map((el) => toCube(el, textures)) });
+    }
+    writeJson(path.join(RP, "models/blocks/juniper_fence_connected.geo.json"), { format_version: "1.21.0", "minecraft:geometry": [{ description: { identifier: "psychedelicraft:geometry.juniper_fence_connected", texture_width: 16, texture_height: 16 }, bones }] });
+    const visibility = Object.fromEntries(bs.multipart.map((part, index) => [`part_${index}`, part.when ? `q.block_state('psychedelicraft:${Object.keys(part.when)[0]}')` : true]));
+    block["minecraft:block"].components["minecraft:geometry"] = { identifier: "psychedelicraft:geometry.juniper_fence_connected", bone_visibility: visibility };
+    block["minecraft:block"].components["minecraft:material_instances"] = materialInstances(bs.multipart[0].apply.model, "juniper_planks", "opaque");
+    block["minecraft:block"].components["minecraft:collision_box"] = { origin: [-2, 0, -2], size: [4, 16, 4] };
+    writeJson(blockPath, block);
+    continue;
+  }
+
   // collect per-state models
   const states = bs.variants ?? {};
   const models = new Map(); // modelName -> geometryName
@@ -288,7 +324,7 @@ for (const file of fs.readdirSync(path.join(BP, "blocks"))) {
     const model = (Array.isArray(val) ? val[0] : val).model;
     if (!model) continue;
     if (!models.has(model)) models.set(model, `${id}_${models.size}`);
-    entries.push({ key, model, condition: key });
+    entries.push({ key, model, x: (Array.isArray(val) ? val[0] : val).x ?? 0, y: (Array.isArray(val) ? val[0] : val).y ?? 0 });
   }
 
   // emit geometry for each unique model
@@ -322,7 +358,7 @@ for (const file of fs.readdirSync(path.join(BP, "blocks"))) {
       // Java-only states (facing/open/...) are not declared as Bedrock states:
       // those parts collapse (variant falls back to the declared-state model)
       if (!declared.includes(propPath)) continue;
-      condParts.push(`q.block_state('${propPath}') == ${value}`);
+      condParts.push(`q.block_state('${propPath}') == ${/^(true|false|\d+)$/.test(value) ? value : `'${value}'`}`);
     }
     if (!condParts.length) continue;
     const condition = condParts.join(" && ");
@@ -333,11 +369,44 @@ for (const file of fs.readdirSync(path.join(BP, "blocks"))) {
       condition,
       components: {
         "minecraft:geometry": `psychedelicraft:geometry.${geoName}`,
+        "minecraft:transformation": { rotation: [entry.x, -entry.y, 0] },
         "minecraft:material_instances": materialInstances(entry.model, null, renderMethod),
       },
     });
   }
   if (permutations.length) block["minecraft:block"].permutations = permutations;
+  if (id.endsWith("_barrel")) {
+    const base = geometryForModel(firstModel, baseGeo);
+    // Small visual tap handle added separately; Java BE tap mesh/animation is
+    // not in the static block model. This is a documented cosmetic equivalent.
+    base["minecraft:geometry"][0].bones.push({ name: "tap", pivot: [0, 5, -8], cubes: [{ origin: [-1,4,-9], size: [2,4,1], uv: { north: { uv: [0,0], uv_size: [2,4] } } }] });
+    writeJson(path.join(RP, "models/blocks", `${baseGeo}.geo.json`), base);
+    const opened = structuredClone(base); opened["minecraft:geometry"][0].description.identifier = `psychedelicraft:geometry.${baseGeo}_tap`;
+    opened["minecraft:geometry"][0].bones[1].rotation = [0,0,90];
+    writeJson(path.join(RP, "models/blocks", `${baseGeo}_tap.geo.json`), opened);
+    block["minecraft:block"].permutations = [{ condition: "q.block_state('psychedelicraft:tap_open') == true", components: { "minecraft:geometry": `psychedelicraft:geometry.${baseGeo}_tap` } }];
+  }
+  if (/sign$/.test(id)) {
+    const sign = geometryForModel(firstModel, baseGeo);
+    sign["minecraft:geometry"][0].bones = [{ name: "root", pivot: [0,8,0], cubes: [
+      { origin: [-8,7,-1], size: [16,9,2], uv: { north: { uv: [0,0], uv_size: [16,9] }, south: { uv: [0,0], uv_size: [16,9] } } },
+      ...(id === "juniper_sign" ? [{ origin: [-1,0,-1], size: [2,7,2], uv: [0,0] }] : []),
+    ] }];
+    writeJson(path.join(RP, "models/blocks", `${baseGeo}.geo.json`), sign);
+    block["minecraft:block"].permutations = ["north", "east", "south", "west"].map((facing, i) => ({ condition: `q.block_state('psychedelicraft:facing') == '${facing}'`, components: { "minecraft:transformation": { rotation: [0, -i * 90, 0] } } }));
+  }
+  if (["juniper_button", "juniper_pressure_plate"].includes(id)) {
+    for (const permutation of block["minecraft:block"].permutations ?? []) permutation.components["minecraft:redstone_producer"] = { power: permutation.condition.includes(":powered') == true") ? 15 : 0, strongly_powered_face: "down", transform_relative: true };
+  }
+  // Collision follows slab/door/trapdoor/gate states, rather than remaining a
+  // full cube when a player opens one. Bounding-box unions are unavailable.
+  for (const permutation of block["minecraft:block"].permutations ?? []) {
+    const c = permutation.condition;
+    if (id === "juniper_slab") permutation.components["minecraft:collision_box"] = c.includes("'double'") ? true : { origin: [-8, c.includes("'top'") ? 8 : 0, -8], size: [16, 8, 16] };
+    if (id === "juniper_fence_gate") permutation.components["minecraft:collision_box"] = c.includes(":open') == true") ? false : { origin: [-8, 0, -2], size: [16, 16, 4] };
+    if (id === "juniper_door") permutation.components["minecraft:collision_box"] = { origin: [-8, 0, 5], size: [16, 16, 3] };
+    if (id === "juniper_trapdoor") permutation.components["minecraft:collision_box"] = c.includes(":open') == true") ? { origin: [-8, 0, 5], size: [16, 16, 3] } : { origin: [-8, c.includes("'top'") ? 13 : 0, -8], size: [16, 3, 16] };
+  }
 
   writeJson(blockPath, block);
 }

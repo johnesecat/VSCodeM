@@ -374,25 +374,25 @@
       "textures": "textures/blocks/flower_pot"
     },
     "acacia_planks": {
-      "textures": "textures/blocks/acacia_planks"
+      "textures": "textures/blocks/planks_acacia"
     },
     "birch_planks": {
-      "textures": "textures/blocks/birch_planks"
+      "textures": "textures/blocks/planks_birch"
     },
     "dark_oak_planks": {
-      "textures": "textures/blocks/dark_oak_planks"
+      "textures": "textures/blocks/planks_big_oak"
     },
     "jungle_planks": {
-      "textures": "textures/blocks/jungle_planks"
+      "textures": "textures/blocks/planks_jungle"
     },
     "oak_planks": {
-      "textures": "textures/blocks/oak_planks"
+      "textures": "textures/blocks/planks_oak"
     },
     "glass": {
       "textures": "textures/blocks/glass"
     },
     "spruce_planks": {
-      "textures": "textures/blocks/spruce_planks"
+      "textures": "textures/blocks/planks_spruce"
     }
   }
 }

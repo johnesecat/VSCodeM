@@ -8,15 +8,14 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "spruce_barrel"
-        }
-      },
+      "minecraft:icon": "spruce_barrel",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:spruce_barrel.name"
       },
-      "minecraft:max_stack_size": 16
+      "minecraft:max_stack_size": 16,
+      "minecraft:block_placer": {
+        "block": "psychedelicraft:spruce_barrel"
+      }
     }
   }
 }

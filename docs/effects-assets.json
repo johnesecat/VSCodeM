@@ -1,0 +1,24 @@
+{
+  "sequences": [
+    {
+      "name": "rift",
+      "count": 8,
+      "fps": 10,
+      "width": 140,
+      "height": 224
+    },
+    {
+      "name": "power",
+      "count": 4,
+      "fps": 12,
+      "width": 300,
+      "height": 300
+    }
+  ],
+  "heatNoise": {
+    "width": 128,
+    "height": 128,
+    "samples": 64
+  },
+  "limitation": "Precomputed noise drives a camera-motion proxy. Bedrock add-ons cannot sample DiffuseSampler or DepthSampler, so this does not warp the live framebuffer. No source videos exist in the audited Java resource tree."
+}

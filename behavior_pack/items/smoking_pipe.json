@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "smoking_pipe"
-        }
-      },
+      "minecraft:icon": "smoking_pipe",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:smoking_pipe.name"
       },

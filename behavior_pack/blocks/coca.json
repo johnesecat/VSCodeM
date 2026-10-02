@@ -30,6 +30,10 @@
         "*": {
           "texture": "coca_stage0",
           "render_method": "alpha_test"
+        },
+        "tex_coca_stage0": {
+          "texture": "coca_stage0",
+          "render_method": "alpha_test"
         }
       },
       "minecraft:destructible_by_mining": {
@@ -78,8 +82,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 0",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coca_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coca_stage0",
+              "render_method": "alpha_test"
+            },
+            "tex_coca_stage0": {
               "texture": "coca_stage0",
               "render_method": "alpha_test"
             }
@@ -90,8 +105,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 1",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coca_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coca_stage0",
+              "render_method": "alpha_test"
+            },
+            "tex_coca_stage0": {
               "texture": "coca_stage0",
               "render_method": "alpha_test"
             }
@@ -102,8 +128,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 2",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coca_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coca_stage0",
+              "render_method": "alpha_test"
+            },
+            "tex_coca_stage0": {
               "texture": "coca_stage0",
               "render_method": "alpha_test"
             }
@@ -114,8 +151,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 3",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coca_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coca_stage1",
+              "render_method": "alpha_test"
+            },
+            "tex_coca_stage1": {
               "texture": "coca_stage1",
               "render_method": "alpha_test"
             }
@@ -126,8 +174,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 4",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coca_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coca_stage1",
+              "render_method": "alpha_test"
+            },
+            "tex_coca_stage1": {
               "texture": "coca_stage1",
               "render_method": "alpha_test"
             }
@@ -138,8 +197,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 5",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coca_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coca_stage1",
+              "render_method": "alpha_test"
+            },
+            "tex_coca_stage1": {
               "texture": "coca_stage1",
               "render_method": "alpha_test"
             }
@@ -150,8 +220,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 6",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coca_2",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coca_stage2",
+              "render_method": "alpha_test"
+            },
+            "tex_coca_stage2": {
               "texture": "coca_stage2",
               "render_method": "alpha_test"
             }
@@ -162,8 +243,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 7",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coca_2",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coca_stage2",
+              "render_method": "alpha_test"
+            },
+            "tex_coca_stage2": {
               "texture": "coca_stage2",
               "render_method": "alpha_test"
             }
@@ -174,8 +266,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 8",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coca_2",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coca_stage2",
+              "render_method": "alpha_test"
+            },
+            "tex_coca_stage2": {
               "texture": "coca_stage2",
               "render_method": "alpha_test"
             }
@@ -186,8 +289,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 9",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coca_3",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coca_stage3",
+              "render_method": "alpha_test"
+            },
+            "tex_coca_stage3": {
               "texture": "coca_stage3",
               "render_method": "alpha_test"
             }
@@ -198,8 +312,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 10",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coca_3",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coca_stage3",
+              "render_method": "alpha_test"
+            },
+            "tex_coca_stage3": {
               "texture": "coca_stage3",
               "render_method": "alpha_test"
             }
@@ -210,8 +335,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 11",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coca_3",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coca_stage3",
+              "render_method": "alpha_test"
+            },
+            "tex_coca_stage3": {
               "texture": "coca_stage3",
               "render_method": "alpha_test"
             }
@@ -222,8 +358,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 12",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coca_3",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coca_stage3",
+              "render_method": "alpha_test"
+            },
+            "tex_coca_stage3": {
               "texture": "coca_stage3",
               "render_method": "alpha_test"
             }

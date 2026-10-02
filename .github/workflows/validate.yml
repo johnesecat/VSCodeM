@@ -14,4 +14,6 @@ jobs:
         with:
           node-version: 20
       - name: Validate packs (JSON, manifests, identifiers, scripts, lang, data xrefs)
-        run: node tools/validate.mjs
+        run: |
+          node tools/validate.mjs
+          node --experimental-vm-modules --test tools/test-runtime.mjs

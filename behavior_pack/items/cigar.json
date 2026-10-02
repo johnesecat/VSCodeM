@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "cigar"
-        }
-      },
+      "minecraft:icon": "cigar",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:cigar.name"
       },
@@ -29,8 +25,7 @@
       },
       "minecraft:hand_equipped": true,
       "minecraft:custom_components": [
-        "psychedelicraft:smokeable",
-        "psychedelicraft:consumable"
+        "psychedelicraft:smokeable"
       ]
     }
   }

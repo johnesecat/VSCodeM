@@ -1311,6 +1311,18 @@ export const CONTENT = {
       "block": "fruiting_juniper_leaves"
     },
     {
+      "id": "juniper_boat",
+      "kind": "boat",
+      "tex": "juniper_boat",
+      "maxStack": 1
+    },
+    {
+      "id": "juniper_chest_boat",
+      "kind": "boat",
+      "tex": "juniper_chest_boat",
+      "maxStack": 1
+    },
+    {
       "id": "molotov_cocktail",
       "kind": "molotov",
       "tex": "molotov_cocktail",

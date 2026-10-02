@@ -15,7 +15,8 @@
 // Strengths come from Drug.AggregateModifier values (drug formulas in
 // data/content.js), so intensity curves match the Java source.
 
-import { system } from "@minecraft/server";
+import { system, world } from "@minecraft/server";
+import { HEAT_NOISE } from "../data/heat_noise.js";
 
 const RIFT_SPAWN_INTERVAL = 180 * 60 * 20; // PSConfig.randomTicksUntilRiftSpawn
 
@@ -34,7 +35,7 @@ function cam(player, cmd) {
 }
 
 function tintFade(player, r, g, b, seconds = 0.35) {
-  cam(player, `fade color ${r} ${g} ${b} 0.15 ${seconds} 0.25`);
+  cam(player, `fade time 0.15 ${seconds} 0.25 color ${r} ${g} ${b}`);
 }
 
 // ---------------------------------------------------------------------------
@@ -85,9 +86,9 @@ export function updateHallucinations(player, properties) {
     const loc = player.location;
     cam(
       player,
-      `set minecraft:free pos ${loc.x.toFixed(2)} ${(loc.y + 1.62).toFixed(2)} ${loc.z.toFixed(2)} facing @s ease 0.6 0.6 0.6 rot ${(Math.sin(t) * sway * 6).toFixed(2)} ${(Math.cos(t * 0.7) * sway * 6).toFixed(2)}`,
+      `set minecraft:free ease 0.6 linear pos ${loc.x.toFixed(2)} ${(loc.y + 1.62).toFixed(2)} ${loc.z.toFixed(2)} rot ${(player.getRotation().x + Math.sin(t) * sway * 6).toFixed(2)} ${(player.getRotation().y + Math.cos(t * 0.7) * sway * 6).toFixed(2)}`,
     );
-    system.runTimeout(() => cam(player, "clear @s"), 25 + Math.floor(movement * 20));
+    system.runTimeout(() => cam(player, "clear"), 25 + Math.floor(movement * 20));
   }
 
   // --- CONTEXTUAL hallucination: fake entities (EntityHallucinationList.java)
@@ -127,7 +128,7 @@ function spawnHallucination(player, strength) {
 function tickHallucinationEntities(player) {
   for (const [id, info] of state.hallucinations) {
     try {
-      const entity = player.dimension.getEntity(id);
+      const entity = world.getEntity(id);
       if (!entity) {
         state.hallucinations.delete(id);
         continue;
@@ -175,7 +176,7 @@ function spawnRealityRift(player) {
 export function tickRifts(player) {
   for (const [id, info] of state.rifts) {
     try {
-      const rift = player.dimension.getEntity(id);
+      const rift = world.getEntity(id);
       if (!rift) {
         state.rifts.delete(id);
         continue;
@@ -197,20 +198,39 @@ export function tickRifts(player) {
 
       // particle halo (zero_screen frames approximated by flickering particles)
       if (Math.random() < 0.6) {
-        player.dimension.spawnParticle("psychedelicraft:reality_rift", rift.location);
+        player.dimension.spawnParticle("psychedelicraft:rift_frames", rift.location);
       }
 
-      // jar capture
-      for (const jar of player.dimension.getEntities({ type: "psychedelicraft:rift_jar", maxDistance: 6, location: rift.location })) {
-        rift.triggerEvent("psychedelicraft:vanish");
-        rift.remove();
-        state.rifts.delete(id);
-        player.dimension.playSound("psbed:block.rift_jar.close", jar.location, { volume: 1 });
-        break;
-      }
+      // Placed jar blocks own capture/charge via riftJar.onTick. Never search
+      // for a nonexistent rift_jar entity or instantly destroy whole rifts.
     } catch {
       state.rifts.delete(id);
     }
+  }
+}
+
+// Heat-noise camera proxy: uses the original shader's two noise-sample
+// velocities. This is global camera sway, NOT per-pixel framebuffer refraction.
+export function updateHeatMotion(player, properties) {
+  let hot = player.dimension.id === "minecraft:nether";
+  try {
+    const loc = player.location;
+    for (const offset of [{ x: 0, y: -1, z: 0 }, { x: 1, y: 0, z: 0 }, { x: -1, y: 0, z: 0 }]) {
+      const block = player.dimension.getBlock({ x: Math.floor(loc.x) + offset.x, y: Math.floor(loc.y) + offset.y, z: Math.floor(loc.z) + offset.z });
+      if (/lava|fire|campfire|bunsen_burner/.test(block?.typeId ?? "")) hot = true;
+    }
+    const eye = player.dimension.getBlock(player.getHeadLocation());
+    if (/water/.test(eye?.typeId ?? "")) hot = false;
+  } catch { /* unloaded block */ }
+  const strength = hot ? 0.01 : 0;
+  if (strength > 0) {
+    const [x, y] = HEAT_NOISE[Math.floor(system.currentTick / 4) % HEAT_NOISE.length];
+    const rotation = player.getRotation();
+    player.setRotation({ x: Math.max(-90, Math.min(90, rotation.x + y * strength * 2)), y: rotation.y + x * strength * 2 });
+  }
+  if (properties.getDrugValue("power") > 0.05 && system.currentTick % 20 === 0) {
+    const loc = player.getHeadLocation(), view = player.getViewDirection();
+    player.dimension.spawnParticle("psychedelicraft:power_frames", { x: loc.x + view.x * 2, y: loc.y + view.y * 2, z: loc.z + view.z * 2 });
   }
 }
 

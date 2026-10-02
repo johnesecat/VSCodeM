@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "belladonna_seeds"
-        }
-      },
+      "minecraft:icon": "belladonna_seeds",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:belladonna_seeds.name"
       },

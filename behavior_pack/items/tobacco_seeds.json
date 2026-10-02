@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "tobacco_seeds"
-        }
-      },
+      "minecraft:icon": "tobacco_seeds",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:tobacco_seeds.name"
       },

@@ -1,20 +1,16 @@
 {
-  "format_version": "1.21.10",
+  "format_version": "1.13.0",
   "minecraft:single_block_feature": {
     "description": {
       "identifier": "psychedelicraft:peyote_patch"
     },
-    "places_block": "psychedelicraft:peyote",
-    "may_place_on": [
-      "minecraft:dirt",
-      "minecraft:grass_block",
-      "minecraft:sand",
-      "minecraft:coarse_dirt",
-      "minecraft:podzol",
-      "minecraft:mycelium",
-      "minecraft:rooted_dirt"
-    ],
+    "places_block": {
+      "name": "psychedelicraft:peyote"
+    },
     "enforce_placement_rules": true,
-    "enforce_survivability": true
+    "enforce_survivability_rules": true,
+    "may_replace": [
+      "minecraft:air"
+    ]
   }
 }

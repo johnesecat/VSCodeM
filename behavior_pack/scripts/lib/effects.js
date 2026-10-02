@@ -127,6 +127,13 @@ export function applyEffects(player, properties) {
     /* attribute API unavailable */
   }
 
+  // Stable Bedrock movement/digging equivalents; Entity.getAttribute and
+  // Java attribute modifiers are not Script API methods.
+  if (speed > 1.05) player.addEffect("speed", 25, { amplifier: Math.max(0, Math.min(3, Math.floor((speed - 1) / 0.2))), showParticles: false });
+  else if (speed < 0.95) player.addEffect("slowness", 25, { amplifier: Math.max(0, Math.min(3, Math.floor((1 - speed) / 0.15))), showParticles: false });
+  if (digSpeed > 1.05) player.addEffect("haste", 25, { amplifier: 0, showParticles: false });
+  else if (digSpeed < 0.95) player.addEffect("mining_fatigue", 25, { amplifier: 0, showParticles: false });
+
   // drowsyness -> exhaustion (Java: addExhaustion(0.05F) with chance)
   if (drowsyness > 0 && Math.random() < drowsyness) {
     tryAddExhaustion(player, 0.05);
@@ -174,7 +181,7 @@ export function applyEffects(player, properties) {
 
 function playAt(player, sound, volume) {
   try {
-    player.dimension.playSound(sound, player.location, { volume, pitch: 1 });
+    player.dimension.playSound(sound.replace(/^psbed:/, "psybed:"), player.location, { volume, pitch: 1 });
   } catch {
     /* sound unavailable */
   }
