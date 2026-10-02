@@ -71,7 +71,8 @@ function convertTextures() {
         const meta = readJson(mcmeta);
         frames = meta?.animation?.frames ?? 0;
       } catch { /* fall through */ }
-      report.animated.push({ name, frames: Number.isInteger(frames) && frames > 0 ? frames : undefined });
+      const animation = readJson(mcmeta).animation ?? {};
+      report.animated.push({ name, path: path.relative(RP, dest).replace(/\\/g, "/").replace(/\.png$/, ""), frames: animation.frames, ticks: animation.frametime ?? 1, blend: animation.interpolate ?? false });
     }
   }
 
@@ -93,10 +94,10 @@ function convertTextures() {
   // flipbook_textures.json for animated textures
   const flipbook = report.animated.map((a) => ({
     atlas_tile: a.name,
-    flipbook_texture: `textures/blocks/${a.name}`,
-    ticks_per_frame: 2,
-    ...(a.frames ? { frames: a.frames } : {}),
-    blend_frames: false,
+    flipbook_texture: a.path,
+    ticks_per_frame: a.ticks,
+    ...(Array.isArray(a.frames) ? { frames: a.frames.map((f) => typeof f === "number" ? f : f.index) } : {}),
+    blend_frames: a.blend,
   }));
   if (flipbook.length) writeJson(path.join(RP, "textures/flipbook_textures.json"), flipbook);
 }
@@ -162,7 +163,8 @@ function convertSounds() {
     report.sounds++;
     defs[`psybed:${rel.replace(/\.ogg$/, "").replace(/\//g, ".")}`] = {
       category: "player",
-      sounds: [`sounds/${rel}`],
+      // Sound entries are objects and paths omit the .ogg extension (Bedrock schema).
+      sounds: [{ name: `sounds/${rel.replace(/\.ogg$/, "")}` }],
     };
   }
   // Map PSSounds registry ids (PSSounds.java) onto the copied oggs.
@@ -170,12 +172,12 @@ function convertSounds() {
   for (const [id, def] of Object.entries(javaSounds)) {
     const sounds = (def.sounds || []).map((s) => {
       const name = typeof s === "string" ? s : s.name;
-      const ogg = name.replace(/^psychedelicraft:/, "");
+      const ogg = name.replace(/^psychedelicraft:/, "").replace(/\.ogg$/, "");
       return { name: `sounds/${ogg}`, ...(typeof s === "object" && s.stream ? { stream: true } : {}) };
     });
     defs[`psybed:${id}`] = { category: def.category || "player", sounds };
   }
-  writeJson(path.join(RP, "sounds/sound_definitions.json"), defs);
+  writeJson(path.join(RP, "sounds/sound_definitions.json"), { format_version: "1.14.0", sound_definitions: defs });
 }
 
 // ---------------------------------------------------------------------------
@@ -201,15 +203,6 @@ function convertRecipes() {
     const rel = path.relative(path.join(DATA, "psychedelicraft/recipes"), file).replace(/\\/g, "/");
     const recipe = readJson(file);
     const id = rel.replace(/\.json$/, "");
-
-    if (id === "juniper_boat" || id === "juniper_chest_boat") {
-      // TerraformBoat items need custom vehicle entities (see docs/06) - the
-      // recipes are preserved as data but not emitted as working recipes.
-      if (!tables.shaped_fluid) tables.shaped_fluid = [];
-      tables.shaped_fluid.push({ id: `psychedelicraft:${id}`, blocked: "boat_entity", ...recipe });
-      report.tables++;
-      continue;
-    }
 
     if (recipe.type === "minecraft:crafting_shaped" || recipe.type === "psychedelicraft:crafting_shaped") {
       if (recipe.type === "psychedelicraft:crafting_shaped") {

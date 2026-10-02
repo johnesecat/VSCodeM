@@ -8,15 +8,14 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "fruiting_juniper_leaves"
-        }
-      },
+      "minecraft:icon": "fruiting_juniper_leaves",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:fruiting_juniper_leaves.name"
       },
-      "minecraft:max_stack_size": 64
+      "minecraft:max_stack_size": 64,
+      "minecraft:block_placer": {
+        "block": "psychedelicraft:fruiting_juniper_leaves"
+      }
     }
   }
 }

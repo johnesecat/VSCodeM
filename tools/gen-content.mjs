@@ -85,6 +85,8 @@ function resolveTexturePath(name) {
     `textures/blocks/${name}`,
     `textures/blocks/fluid/${name}`,
     `textures/items/${name}`,
+    `textures/misc/entity/boat/${name.replace(/_boat$/, "")}`,
+    `textures/misc/entity/chest_boat/${name.replace(/_chest_boat$/, "")}`,
   ];
   for (const c of candidates) {
     if (fs.existsSync(path.join(RP, `${c}.png`))) return c;
@@ -104,7 +106,7 @@ function resolveTexturePath(name) {
 // ---------------------------------------------------------------------------
 function geo(name, cubes, textureWidth = 16, textureHeight = 16) {
   return {
-    "geometry.format_version": "1.12.0",
+    format_version: "1.21.0",
     "minecraft:geometry": [
       {
         description: {
@@ -115,7 +117,7 @@ function geo(name, cubes, textureWidth = 16, textureHeight = 16) {
           visible_bounds_height: 3,
           visible_bounds_offset: [0, 1, 0],
         },
-        cubes,
+        bones: [{ name: "root", pivot: [0, 0, 0], cubes }],
       },
     ],
   };
@@ -124,7 +126,7 @@ function geo(name, cubes, textureWidth = 16, textureHeight = 16) {
 const cube = (origin, size, uv = [0, 0, 16, 16], pivot = [0, 0, 0], rotation = undefined) => ({
   origin,
   size,
-  uv,
+  uv: Object.fromEntries(["north", "south", "east", "west", "up", "down"].map((face) => [face, { uv: uv.slice(0, 2), uv_size: [uv[2] - uv[0], uv[3] - uv[1]] }])),
   ...(pivot.some((p) => p !== 0) ? { pivot } : {}),
   ...(rotation ? { rotation } : {}),
 });
@@ -239,6 +241,7 @@ function blockGeometry(block) {
 }
 
 function generateBlocks() {
+  writeJson(path.join(BP, "loot_tables/empty.json"), { pools: [] });
   for (const block of BLOCKS) {
     const usedTextures = block.maxAge != null ? ageTextures(block) : [block.tex];
     usedTextures.forEach(ensureTerrainTexture);
@@ -258,10 +261,9 @@ function generateBlocks() {
       "minecraft:destructible_by_mining": { seconds_to_destroy: Math.max(0.05, (block.hardness ?? 1) / 1.5) },
       "minecraft:destructible_by_explosion": { explosion_resistance: (block.hardness ?? 1) * 5 },
     };
+    if (block.kind === "planks") components["minecraft:flammable"] = { catch_chance_modifier: 5, destroy_chance_modifier: 20 };
     if (block.light) components["minecraft:light_emission"] = block.light;
-    if (SOUND_MAP[block.sound]) {
-      components["minecraft:material_instances"]["*"].sound = SOUND_MAP[block.sound][0];
-    }
+    // Block sounds are resource-pack metadata, not material-instance fields.
 
     // collision / selection
     if (block.kind === "air_like") {
@@ -288,6 +290,33 @@ function generateBlocks() {
       }
     }
 
+    // Vanilla-style juniper interactions use explicit states derived from the
+    // audited Java variants; script handlers own placement and transitions.
+    if (["log", "slab", "stairs", "fence", "fence_gate", "door", "trapdoor", "button", "pressure_plate", "sign"].includes(block.kind)) {
+      const source = readJsonSafe(path.join(JAVA_ASSETS, `blockstates/${block.id}.json`));
+      description.states ??= {};
+      const values = new Map();
+      for (const key of Object.keys(source?.variants ?? {})) for (const pair of key.split(",")) {
+        const [prop, raw] = pair.split("=");
+        if (!raw || prop === "waterlogged") continue;
+        const value = raw === "true" ? true : raw === "false" ? false : /^\d+$/.test(raw) ? Number(raw) : raw;
+        if (!values.has(prop)) values.set(prop, new Set());
+        values.get(prop).add(value);
+      }
+      for (const [prop, set] of values) description.states[`psychedelicraft:${prop}`] = [...set];
+      if (block.kind === "fence") for (const face of ["north", "south", "east", "west"]) description.states[`psychedelicraft:${face}`] = [false, true];
+      if (block.kind === "sign" && !description.states["psychedelicraft:facing"]) description.states["psychedelicraft:facing"] = ["north", "east", "south", "west"];
+      components["minecraft:tick"] = { interval_range: [1, 1], looping: true };
+      components["minecraft:loot"] = "loot_tables/empty.json";
+      if (["button", "pressure_plate", "sign"].includes(block.kind)) components["minecraft:collision_box"] = false;
+      components["minecraft:flammable"] = { catch_chance_modifier: 5, destroy_chance_modifier: block.kind === "log" ? 5 : 20 };
+    }
+    if (block.machine === "barrel") description.states = { "psychedelicraft:tap_open": [false, true] };
+    if (block.id === "rift_jar") {
+      components["minecraft:tick"] = { interval_range: [1, 1], looping: true };
+      components["minecraft:loot"] = "loot_tables/empty.json";
+    }
+
     // facing for machines with directional processing (distillery)
     if (block.id === "distillery") {
       description.traits = {
@@ -300,6 +329,7 @@ function generateBlocks() {
 
     // custom components bind behaviour implemented in behavior_pack/scripts
     const custom = [];
+    if (["log", "slab", "stairs", "fence", "fence_gate", "door", "trapdoor", "button", "pressure_plate", "sign"].includes(block.kind)) custom.push("psychedelicraft:wood");
     if (block.kind === "machine") custom.push(`psychedelicraft:${block.machine ?? "machine"}`);
     if (block.kind === "crop") custom.push("psychedelicraft:crop");
     if (block.kind === "nightshade") custom.push("psychedelicraft:nightshade");
@@ -336,12 +366,17 @@ function generateBlocks() {
       }
     }
     if (block.kind === "leaves") {
+      components["minecraft:flammable"] = { catch_chance_modifier: 30, destroy_chance_modifier: 60 };
       components["minecraft:material_instances"]["*"].render_method = "alpha_test";
       components["minecraft:light_dampening"] = 1;
     }
 
+    if (["button", "pressure_plate"].includes(block.kind)) {
+      components["minecraft:redstone_producer"] = { power: 0, strongly_powered_face: "down", transform_relative: true };
+      for (const permutation of permutations) if (permutation.condition.includes(":powered') == true")) permutation.components["minecraft:redstone_producer"] = { power: 15, strongly_powered_face: "down", transform_relative: true };
+    }
     writeJson(path.join(BP, "blocks", `${block.id}.json`), {
-      format_version: "1.21.10",
+      format_version: ["button", "pressure_plate"].includes(block.kind) ? "1.21.120" : "1.21.10",
       "minecraft:block": {
         description,
         components,
@@ -369,11 +404,17 @@ function generateItems() {
       menu_category: { category: item.kind === "food" || item.kind === "seeds" ? "nature" : "items" },
     };
     const components = {
-      // 1.21.90+ schema: icon is a textures map with a "default" key
-      "minecraft:icon": { textures: { default: item.tex } },
+      // String form works with the targeted 1.21.10 item format.
+      "minecraft:icon": item.tex,
       "minecraft:display_name": { value: `item.psychedelicraft:${item.id}.name` },
       "minecraft:max_stack_size": item.maxStack ?? (item.kind === "smokeable" || item.kind === "bong" ? 1 : 64),
     };
+    if (item.kind === "placeable") {
+      components["minecraft:block_placer"] = { block: `psychedelicraft:${item.block ?? item.id}` };
+    }
+    if (item.kind === "container" || item.kind === "syringe" || item.id === "rift_jar" || item.kind === "molotov") components["minecraft:max_stack_size"] = 1;
+    if (item.kind === "food" || item.kind === "suspicious") components["minecraft:use_animation"] = "eat";
+    if (item.kind === "container") components["minecraft:use_animation"] = "drink";
     if (item.fuel) components["minecraft:fuel"] = { duration: item.fuel / 20 };
     if (item.kind === "food" || item.kind === "suspicious") {
       components["minecraft:food"] = {
@@ -382,7 +423,7 @@ function generateItems() {
         ...(item.canAlwaysEat ? { can_always_eat: true } : {}),
       };
       // engine requirement: food needs a non-zero use_duration
-      components["minecraft:use_modifiers"] = { use_duration: 32, movement_modifier: 0.35 };
+      components["minecraft:use_modifiers"] = { use_duration: 1.6, movement_modifier: 0.35 };
     }
     if (item.kind === "smokeable" || item.kind === "bong") {
       components["minecraft:durability"] = { max_durability: item.damage ?? 1 };
@@ -390,7 +431,7 @@ function generateItems() {
       components["minecraft:hand_equipped"] = true;
     }
     if (item.kind === "container" || item.kind === "syringe") {
-      components["minecraft:use_modifiers"] = { use_duration: item.useDuration ?? 32, movement_modifier: 0.35 };
+      components["minecraft:use_modifiers"] = { use_duration: (item.useDuration ?? 32) / 20, movement_modifier: 0.35 };
     }
     if (item.kind === "molotov") {
       components["minecraft:throwable"] = {
@@ -408,10 +449,13 @@ function generateItems() {
     if (item.kind === "smokeable") custom.push("psychedelicraft:smokeable");
     if (item.kind === "bong") custom.push("psychedelicraft:bong");
     if (item.kind === "seeds") custom.push("psychedelicraft:seeds");
-    if (item.influences) custom.push("psychedelicraft:consumable");
-    if (item.kind === "molotov") custom.push("psychedelicraft:molotov");
+    // Consume events require minecraft:food; smokeable/bong influences apply
+    // through their own use handlers instead (SmokeableItem/BongItem).
+    if (item.influences && (item.kind === "food" || item.kind === "suspicious")) custom.push("psychedelicraft:consumable");
     if (item.kind === "paper_bag") custom.push("psychedelicraft:paper_bag");
     if (item.kind === "suspicious") custom.push("psychedelicraft:suspicious");
+    if (item.kind === "boat") custom.push("psychedelicraft:boat");
+    if (item.id === "rift_jar") custom.push("psychedelicraft:jar_item");
     if (custom.length) components["minecraft:custom_components"] = custom;
 
     writeJson(path.join(BP, "items", `${item.id}.json`), {
@@ -425,6 +469,10 @@ function generateItems() {
 // DATA FOR SCRIPTS (single source of truth consumed by behavior_pack/scripts)
 // ---------------------------------------------------------------------------
 function generateData() {
+  const misc = readJsonSafe(path.join(BP, "data/psychedelicraft/ported_data.json")) ?? {};
+  const tags = Object.fromEntries(Object.entries(misc.tags ?? {}).filter(([key]) => key.includes(":items/")).map(([key, value]) => [key.replace(":items/", ":"), value.values.map((entry) => typeof entry === "string" ? entry : entry.id)]));
+  fs.mkdirSync(path.join(BP, "scripts/data"), { recursive: true });
+  fs.writeFileSync(path.join(BP, "scripts/data/tags.js"), `// GENERATED from source item tags.\nexport const ITEM_TAGS = ${JSON.stringify(tags, null, 2)};\n`);
   writeJson(path.join(BP, "data/psychedelicraft/content.json"), {
     blocks: BLOCKS,
     items: ITEMS,

@@ -13,6 +13,10 @@
         "*": {
           "texture": "cannabis_stage3",
           "render_method": "opaque"
+        },
+        "tex_cannabis_stage3": {
+          "texture": "cannabis_stage3",
+          "render_method": "opaque"
         }
       },
       "minecraft:destructible_by_mining": {

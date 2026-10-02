@@ -8,15 +8,14 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "jungle_barrel"
-        }
-      },
+      "minecraft:icon": "jungle_barrel",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:jungle_barrel.name"
       },
-      "minecraft:max_stack_size": 16
+      "minecraft:max_stack_size": 16,
+      "minecraft:block_placer": {
+        "block": "psychedelicraft:jungle_barrel"
+      }
     }
   }
 }

@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "cannabis_buds"
-        }
-      },
+      "minecraft:icon": "cannabis_buds",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:cannabis_buds.name"
       },

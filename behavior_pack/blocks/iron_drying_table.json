@@ -14,24 +14,16 @@
           "texture": "iron_drying_table_bottom",
           "render_method": "opaque"
         },
-        "up": {
+        "tex_iron_drying_table": {
+          "texture": "iron_drying_table",
+          "render_method": "opaque"
+        },
+        "tex_iron_drying_table_top": {
           "texture": "iron_drying_table_top",
           "render_method": "opaque"
         },
-        "north": {
-          "texture": "iron_drying_table",
-          "render_method": "opaque"
-        },
-        "south": {
-          "texture": "iron_drying_table",
-          "render_method": "opaque"
-        },
-        "east": {
-          "texture": "iron_drying_table",
-          "render_method": "opaque"
-        },
-        "west": {
-          "texture": "iron_drying_table",
+        "tex_iron_drying_table_bottom": {
+          "texture": "iron_drying_table_bottom",
           "render_method": "opaque"
         }
       },

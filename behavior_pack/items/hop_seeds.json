@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "hop_seeds"
-        }
-      },
+      "minecraft:icon": "hop_seeds",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:hop_seeds.name"
       },

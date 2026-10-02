@@ -1,5 +1,5 @@
 {
-  "geometry.format_version": "1.12.0",
+  "format_version": "1.21.0",
   "minecraft:geometry": [
     {
       "description": {
@@ -14,264 +14,256 @@
           0
         ]
       },
-      "cubes": [
+      "bones": [
         {
-          "origin": [
-            -8,
+          "name": "root",
+          "pivot": [
             0,
-            -8
-          ],
-          "size": [
-            16,
-            8,
-            16
-          ],
-          "uv": {
-            "north": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            },
-            "south": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            },
-            "east": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            },
-            "west": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            },
-            "up": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            },
-            "down": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            }
-          }
-        },
-        {
-          "origin": [
-            -8,
-            8,
-            -8
-          ],
-          "size": [
-            16,
-            8,
-            8
-          ],
-          "uv": {
-            "north": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            },
-            "south": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            },
-            "east": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            },
-            "west": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            },
-            "up": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            },
-            "down": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            }
-          }
-        },
-        {
-          "origin": [
-            -8,
-            8,
+            0,
             0
           ],
-          "size": [
-            8,
-            8,
-            8
-          ],
-          "uv": {
-            "north": {
-              "uv": [
+          "cubes": [
+            {
+              "origin": [
+                -8,
                 0,
-                0,
-                0,
-                0
+                -8
               ],
-              "uv_size": [
-                0,
-                0
-              ]
+              "size": [
+                16,
+                8,
+                16
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    8
+                  ],
+                  "uv_size": [
+                    16,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_planks"
+                },
+                "south": {
+                  "uv": [
+                    0,
+                    8
+                  ],
+                  "uv_size": [
+                    16,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_planks"
+                },
+                "east": {
+                  "uv": [
+                    0,
+                    8
+                  ],
+                  "uv_size": [
+                    16,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_planks"
+                },
+                "west": {
+                  "uv": [
+                    0,
+                    8
+                  ],
+                  "uv_size": [
+                    16,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_planks"
+                },
+                "up": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "material_instance": "tex_juniper_planks"
+                },
+                "down": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    16
+                  ],
+                  "material_instance": "tex_juniper_planks"
+                }
+              }
             },
-            "south": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
+            {
+              "origin": [
+                -8,
+                8,
+                -8
               ],
-              "uv_size": [
-                0,
-                0
-              ]
+              "size": [
+                16,
+                8,
+                8
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_planks"
+                },
+                "south": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_planks"
+                },
+                "east": {
+                  "uv": [
+                    8,
+                    0
+                  ],
+                  "uv_size": [
+                    8,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_planks"
+                },
+                "west": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    8,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_planks"
+                },
+                "up": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    16,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_planks"
+                },
+                "down": {
+                  "uv": [
+                    0,
+                    8
+                  ],
+                  "uv_size": [
+                    16,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_planks"
+                }
+              }
             },
-            "east": {
-              "uv": [
-                0,
-                0,
-                0,
+            {
+              "origin": [
+                -8,
+                8,
                 0
               ],
-              "uv_size": [
-                0,
-                0
-              ]
-            },
-            "west": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
+              "size": [
+                8,
+                8,
+                8
               ],
-              "uv_size": [
-                0,
-                0
-              ]
-            },
-            "up": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            },
-            "down": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
+              "uv": {
+                "north": {
+                  "uv": [
+                    8,
+                    0
+                  ],
+                  "uv_size": [
+                    8,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_planks"
+                },
+                "south": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    8,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_planks"
+                },
+                "east": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    8,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_planks"
+                },
+                "west": {
+                  "uv": [
+                    8,
+                    0
+                  ],
+                  "uv_size": [
+                    8,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_planks"
+                },
+                "up": {
+                  "uv": [
+                    0,
+                    8
+                  ],
+                  "uv_size": [
+                    8,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_planks"
+                },
+                "down": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    8,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_planks"
+                }
+              }
             }
-          }
+          ]
         }
       ]
     }

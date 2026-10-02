@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "agave_leaf"
-        }
-      },
+      "minecraft:icon": "agave_leaf",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:agave_leaf.name"
       },

@@ -8,15 +8,14 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "juniper_door"
-        }
-      },
+      "minecraft:icon": "juniper_door",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:juniper_door.name"
       },
-      "minecraft:max_stack_size": 64
+      "minecraft:max_stack_size": 64,
+      "minecraft:block_placer": {
+        "block": "psychedelicraft:juniper_door"
+      }
     }
   }
 }

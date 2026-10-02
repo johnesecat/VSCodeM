@@ -8,15 +8,14 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "distillery"
-        }
-      },
+      "minecraft:icon": "distillery",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:distillery.name"
       },
-      "minecraft:max_stack_size": 16
+      "minecraft:max_stack_size": 16,
+      "minecraft:block_placer": {
+        "block": "psychedelicraft:distillery"
+      }
     }
   }
 }

@@ -1,0 +1,26 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "psychedelicraft:juniper_chest_boat"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "ingredients": [
+      {
+        "item": "minecraft:chest"
+      },
+      {
+        "item": "psychedelicraft:juniper_boat"
+      }
+    ],
+    "result": {
+      "item": "psychedelicraft:juniper_chest_boat",
+      "count": 1
+    }
+  }
+}

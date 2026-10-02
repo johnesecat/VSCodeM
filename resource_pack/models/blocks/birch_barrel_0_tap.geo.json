@@ -1,0 +1,69 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "psychedelicraft:geometry.birch_barrel_0_tap",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 3,
+        "visible_bounds_offset": [
+          0,
+          1,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": []
+        },
+        {
+          "name": "tap",
+          "pivot": [
+            0,
+            5,
+            -8
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -1,
+                4,
+                -9
+              ],
+              "size": [
+                2,
+                4,
+                1
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    0
+                  ],
+                  "uv_size": [
+                    2,
+                    4
+                  ]
+                }
+              }
+            }
+          ],
+          "rotation": [
+            0,
+            0,
+            90
+          ]
+        }
+      ]
+    }
+  ]
+}

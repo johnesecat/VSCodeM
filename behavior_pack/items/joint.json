@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "joint"
-        }
-      },
+      "minecraft:icon": "joint",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:joint.name"
       },
@@ -29,8 +25,7 @@
       },
       "minecraft:hand_equipped": true,
       "minecraft:custom_components": [
-        "psychedelicraft:smokeable",
-        "psychedelicraft:consumable"
+        "psychedelicraft:smokeable"
       ]
     }
   }

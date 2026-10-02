@@ -1,5 +1,5 @@
 {
-  "geometry.format_version": "1.12.0",
+  "format_version": "1.21.0",
   "minecraft:geometry": [
     {
       "description": {
@@ -14,436 +14,405 @@
           0
         ]
       },
-      "cubes": [
+      "bones": [
         {
-          "origin": [
-            -16,
+          "name": "root",
+          "pivot": [
             0,
-            -16
+            0,
+            0
           ],
-          "size": [
-            32,
-            16,
-            32
-          ],
-          "uv": {
-            "north": {
-              "uv": [
-                4,
-                8,
-                8,
-                12
-              ],
-              "uv_size": [
-                4,
-                4
-              ]
-            },
-            "south": {
-              "uv": [
-                4,
-                8,
-                8,
-                12
-              ],
-              "uv_size": [
-                4,
-                4
-              ]
-            },
-            "east": {
-              "uv": [
-                4,
-                8,
-                8,
-                12
-              ],
-              "uv_size": [
-                4,
-                4
-              ]
-            },
-            "west": {
-              "uv": [
-                4,
-                8,
-                8,
-                12
-              ],
-              "uv_size": [
-                4,
-                4
-              ]
-            },
-            "up": {
-              "uv": [
-                8,
+          "cubes": [
+            {
+              "origin": [
+                -16,
                 0,
+                -16
+              ],
+              "size": [
+                32,
+                16,
+                32
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    4,
+                    8
+                  ],
+                  "uv_size": [
+                    4,
+                    4
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "south": {
+                  "uv": [
+                    4,
+                    8
+                  ],
+                  "uv_size": [
+                    4,
+                    4
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "east": {
+                  "uv": [
+                    4,
+                    8
+                  ],
+                  "uv_size": [
+                    4,
+                    4
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "west": {
+                  "uv": [
+                    4,
+                    8
+                  ],
+                  "uv_size": [
+                    4,
+                    4
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "up": {
+                  "uv": [
+                    8,
+                    0
+                  ],
+                  "uv_size": [
+                    4,
+                    8
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "down": {
+                  "uv": [
+                    4,
+                    0
+                  ],
+                  "uv_size": [
+                    4,
+                    8
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                }
+              }
+            },
+            {
+              "origin": [
+                15,
+                16,
+                15
+              ],
+              "size": [
+                -30,
+                -15,
+                -30
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0,
+                    8
+                  ],
+                  "uv_size": [
+                    4,
+                    4
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "south": {
+                  "uv": [
+                    0,
+                    8
+                  ],
+                  "uv_size": [
+                    4,
+                    4
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "east": {
+                  "uv": [
+                    0,
+                    8
+                  ],
+                  "uv_size": [
+                    4,
+                    4
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "west": {
+                  "uv": [
+                    0,
+                    8
+                  ],
+                  "uv_size": [
+                    4,
+                    4
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "up": {
+                  "uv": [
+                    4,
+                    0
+                  ],
+                  "uv_size": [
+                    4,
+                    8
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                }
+              }
+            },
+            {
+              "origin": [
+                -17,
                 12,
-                8
+                -17
               ],
-              "uv_size": [
-                4,
-                8
-              ]
+              "size": [
+                34,
+                2,
+                34
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    4,
+                    8.5
+                  ],
+                  "uv_size": [
+                    4,
+                    0.5
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "south": {
+                  "uv": [
+                    4,
+                    8.5
+                  ],
+                  "uv_size": [
+                    4,
+                    0.5
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "east": {
+                  "uv": [
+                    4,
+                    8.5
+                  ],
+                  "uv_size": [
+                    4,
+                    0.5
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "west": {
+                  "uv": [
+                    4,
+                    8.5
+                  ],
+                  "uv_size": [
+                    4,
+                    0.5
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "up": {
+                  "uv": [
+                    8,
+                    0
+                  ],
+                  "uv_size": [
+                    4,
+                    8
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "down": {
+                  "uv": [
+                    8,
+                    0
+                  ],
+                  "uv_size": [
+                    4,
+                    8
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                }
+              }
             },
-            "down": {
-              "uv": [
-                4,
-                0,
-                8,
-                8
+            {
+              "origin": [
+                -17,
+                7,
+                -17
               ],
-              "uv_size": [
-                4,
-                8
-              ]
+              "size": [
+                34,
+                2,
+                34
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    4,
+                    8.5
+                  ],
+                  "uv_size": [
+                    4,
+                    0.5
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "south": {
+                  "uv": [
+                    4,
+                    8.5
+                  ],
+                  "uv_size": [
+                    4,
+                    0.5
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "east": {
+                  "uv": [
+                    4,
+                    8.5
+                  ],
+                  "uv_size": [
+                    4,
+                    0.5
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "west": {
+                  "uv": [
+                    4,
+                    8.5
+                  ],
+                  "uv_size": [
+                    4,
+                    0.5
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "up": {
+                  "uv": [
+                    8,
+                    0
+                  ],
+                  "uv_size": [
+                    4,
+                    8
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "down": {
+                  "uv": [
+                    8,
+                    0
+                  ],
+                  "uv_size": [
+                    4,
+                    8
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                }
+              }
+            },
+            {
+              "origin": [
+                -17,
+                2,
+                -17
+              ],
+              "size": [
+                34,
+                2,
+                34
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    4,
+                    8.5
+                  ],
+                  "uv_size": [
+                    4,
+                    0.5
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "south": {
+                  "uv": [
+                    4,
+                    8.5
+                  ],
+                  "uv_size": [
+                    4,
+                    0.5
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "east": {
+                  "uv": [
+                    4,
+                    8.5
+                  ],
+                  "uv_size": [
+                    4,
+                    0.5
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "west": {
+                  "uv": [
+                    4,
+                    8.5
+                  ],
+                  "uv_size": [
+                    4,
+                    0.5
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "up": {
+                  "uv": [
+                    8,
+                    0
+                  ],
+                  "uv_size": [
+                    4,
+                    8
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                },
+                "down": {
+                  "uv": [
+                    8,
+                    0
+                  ],
+                  "uv_size": [
+                    4,
+                    8
+                  ],
+                  "material_instance": "tex_wooden_vat"
+                }
+              }
             }
-          }
-        },
-        {
-          "origin": [
-            15,
-            16,
-            15
-          ],
-          "size": [
-            -30,
-            -15,
-            -30
-          ],
-          "uv": {
-            "north": {
-              "uv": [
-                0,
-                8,
-                4,
-                12
-              ],
-              "uv_size": [
-                4,
-                4
-              ]
-            },
-            "south": {
-              "uv": [
-                0,
-                8,
-                4,
-                12
-              ],
-              "uv_size": [
-                4,
-                4
-              ]
-            },
-            "east": {
-              "uv": [
-                0,
-                8,
-                4,
-                12
-              ],
-              "uv_size": [
-                4,
-                4
-              ]
-            },
-            "west": {
-              "uv": [
-                0,
-                8,
-                4,
-                12
-              ],
-              "uv_size": [
-                4,
-                4
-              ]
-            },
-            "up": {
-              "uv": [
-                4,
-                0,
-                8,
-                8
-              ],
-              "uv_size": [
-                4,
-                8
-              ]
-            },
-            "down": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            }
-          }
-        },
-        {
-          "origin": [
-            -17,
-            12,
-            -17
-          ],
-          "size": [
-            34,
-            2,
-            34
-          ],
-          "uv": {
-            "north": {
-              "uv": [
-                4,
-                8.5,
-                8,
-                9
-              ],
-              "uv_size": [
-                4,
-                0.5
-              ]
-            },
-            "south": {
-              "uv": [
-                4,
-                8.5,
-                8,
-                9
-              ],
-              "uv_size": [
-                4,
-                0.5
-              ]
-            },
-            "east": {
-              "uv": [
-                4,
-                8.5,
-                8,
-                9
-              ],
-              "uv_size": [
-                4,
-                0.5
-              ]
-            },
-            "west": {
-              "uv": [
-                4,
-                8.5,
-                8,
-                9
-              ],
-              "uv_size": [
-                4,
-                0.5
-              ]
-            },
-            "up": {
-              "uv": [
-                8,
-                0,
-                12,
-                8
-              ],
-              "uv_size": [
-                4,
-                8
-              ]
-            },
-            "down": {
-              "uv": [
-                8,
-                0,
-                12,
-                8
-              ],
-              "uv_size": [
-                4,
-                8
-              ]
-            }
-          }
-        },
-        {
-          "origin": [
-            -17,
-            7,
-            -17
-          ],
-          "size": [
-            34,
-            2,
-            34
-          ],
-          "uv": {
-            "north": {
-              "uv": [
-                4,
-                8.5,
-                8,
-                9
-              ],
-              "uv_size": [
-                4,
-                0.5
-              ]
-            },
-            "south": {
-              "uv": [
-                4,
-                8.5,
-                8,
-                9
-              ],
-              "uv_size": [
-                4,
-                0.5
-              ]
-            },
-            "east": {
-              "uv": [
-                4,
-                8.5,
-                8,
-                9
-              ],
-              "uv_size": [
-                4,
-                0.5
-              ]
-            },
-            "west": {
-              "uv": [
-                4,
-                8.5,
-                8,
-                9
-              ],
-              "uv_size": [
-                4,
-                0.5
-              ]
-            },
-            "up": {
-              "uv": [
-                8,
-                0,
-                12,
-                8
-              ],
-              "uv_size": [
-                4,
-                8
-              ]
-            },
-            "down": {
-              "uv": [
-                8,
-                0,
-                12,
-                8
-              ],
-              "uv_size": [
-                4,
-                8
-              ]
-            }
-          }
-        },
-        {
-          "origin": [
-            -17,
-            2,
-            -17
-          ],
-          "size": [
-            34,
-            2,
-            34
-          ],
-          "uv": {
-            "north": {
-              "uv": [
-                4,
-                8.5,
-                8,
-                9
-              ],
-              "uv_size": [
-                4,
-                0.5
-              ]
-            },
-            "south": {
-              "uv": [
-                4,
-                8.5,
-                8,
-                9
-              ],
-              "uv_size": [
-                4,
-                0.5
-              ]
-            },
-            "east": {
-              "uv": [
-                4,
-                8.5,
-                8,
-                9
-              ],
-              "uv_size": [
-                4,
-                0.5
-              ]
-            },
-            "west": {
-              "uv": [
-                4,
-                8.5,
-                8,
-                9
-              ],
-              "uv_size": [
-                4,
-                0.5
-              ]
-            },
-            "up": {
-              "uv": [
-                8,
-                0,
-                12,
-                8
-              ],
-              "uv_size": [
-                4,
-                8
-              ]
-            },
-            "down": {
-              "uv": [
-                8,
-                0,
-                12,
-                8
-              ],
-              "uv_size": [
-                4,
-                8
-              ]
-            }
-          }
+          ]
         }
       ]
     }

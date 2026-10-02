@@ -9,6 +9,7 @@
 // State is persisted on the block (dynamic property "ps:state") so it survives
 // chunk unload, world reload and server restart (persistence parity, §31).
 
+import { world, ItemStack } from "@minecraft/server";
 import {
   ProcessType,
   UNCONVERTABLE,
@@ -24,6 +25,7 @@ import { CONTENT } from "../data/content.js";
 import { RECIPES } from "../data/recipes.js";
 import { formatDrinkName, translate } from "../data/lang.js";
 import { clamp } from "./util.js";
+import { ingredientMatches, fluidMatches, attributesOf } from "./crafting.js";
 
 export const TICK_STEPS = 20; // blocks tick every 20 ticks (minecraft:tick interval)
 
@@ -47,7 +49,7 @@ function mirrorKey(block) {
 
 export function loadState(block) {
   try {
-    const raw = block.getDynamicProperty("ps:state");
+    const raw = world.getDynamicProperty(`ps:machine:${mirrorKey(block)}`);
     if (raw) return JSON.parse(raw);
   } catch {
     /* block removed - fall back to the mirror */
@@ -60,7 +62,7 @@ export function saveState(block, state) {
   const key = mirrorKey(block);
   if (key) stateMirror.set(key, state);
   try {
-    block.setDynamicProperty("ps:state", JSON.stringify(state));
+    world.setDynamicProperty(`ps:machine:${key}`, JSON.stringify(state));
   } catch {
     /* dynamic property unavailable - state stays session-local (documented) */
   }
@@ -72,7 +74,7 @@ export function takeState(block) {
   const key = mirrorKey(block);
   if (key) stateMirror.delete(key);
   try {
-    block.setDynamicProperty("ps:state", undefined);
+    world.setDynamicProperty(`ps:machine:${key}`, undefined);
   } catch {
     /* block removed */
   }
@@ -91,7 +93,7 @@ export function tankCapacity(kindOrId) {
 
 function dropItemAt(block, id, amount) {
   try {
-    block.dimension.spawnItem({ type: { typeId: id }, amount }, block.location);
+    if (amount > 0) block.dimension.spawnItem(new ItemStack(id, amount), block.location);
   } catch {
     /* dimension unavailable */
   }
@@ -148,10 +150,12 @@ export const barrel = {
     state.processType = ProcessType.MATURE;
     tickProcessing(state);
     if (state.tapOpen > 0) state.tapOpen -= TICK_STEPS;
+    if (block.permutation.getAllStates()["psychedelicraft:tap_open"] !== undefined) block.setPermutation(block.permutation.withState("psychedelicraft:tap_open", (state.tapOpen ?? 0) > 0));
     saveState(block, state);
   },
   onPlayerInteract(event) {
-    return { openUi: "barrel" };
+    const state = loadState(event.block); state.tapOpen = 40; saveState(event.block, state);
+    return { openUi: "barrel", sound: "random.click" };
   },
   onPlayerDestroy(event) {
     return dropMachineContents(event, "barrel");
@@ -294,29 +298,32 @@ export const mash_tub_edge = {
 // ingredients are tallied per item; a mashing recipe whose base fluid matches
 // the tub's pool completes when the multiset matches exactly (MatchResult.BOTH).
 export function depositIngredient(state, itemId) {
-  const recipes = RECIPES.mashing ?? [];
+  const recipes = (RECIPES.mashing ?? []).filter((r) => fluidMatches(state.fluid, r.base_fluid));
+  const candidate = { typeId: itemId };
+  if (!recipes.some((r) => r.ingredients.some((i) => ingredientMatches(candidate, i)))) return { accepted: false, crafted: false };
   const tally = (state.ingredientTally ??= {});
   tally[itemId] = (tally[itemId] ?? 0) + 1;
 
-  const poolFluid = state.fluid?.id ?? "minecraft:water";
+  const poolFluid = state.fluid.id;
   for (const recipe of recipes) {
     const base = recipe.base_fluid?.fluid ?? "minecraft:water";
     if (base !== poolFluid && base !== "minecraft:water") continue;
-    const need = {};
-    for (const ing of recipe.ingredients ?? []) {
-      if (ing.item) need[ing.item] = (need[ing.item] ?? 0) + 1;
-    }
-    const complete = Object.entries(need).every(([item, count]) => (tally[item] ?? 0) >= count);
-    const exact = Object.keys(tally).every((item) => need[item] != null);
+    const remaining = { ...tally };
+    const complete = recipe.ingredients.every((ingredient) => {
+      const id = Object.keys(remaining).find((id) => remaining[id] > 0 && ingredientMatches({ typeId: id }, ingredient));
+      if (!id) return false;
+      remaining[id]--; return true;
+    });
+    const exact = Object.values(remaining).every((count) => count === 0);
     if (complete && exact) {
       // result fluid fills the tub (level defaults to full capacity - inferred,
       // MashingRecipe result JSON carries no level; see docs/03-feature-ledger)
-      state.fluid = makeFluidState(recipe.result.fluid.replace(/^psychedelicraft:/, ""), VOLUMES.VAT);
+      state.fluid = { ...makeFluidState(recipe.result.fluid.replace(/^psychedelicraft:/, ""), state.fluid.level), ...attributesOf(recipe.result.attributes) };
       state.ingredientTally = {};
-      return { crafted: true, fluid: state.fluid };
+      return { accepted: true, crafted: true, fluid: state.fluid };
     }
   }
-  return { crafted: false };
+  return { accepted: true, crafted: false };
 }
 
 // ---------------------------------------------------------------------------
@@ -498,11 +505,15 @@ export function dropMachineContents(event, kind) {
 export function tankDeposit(state, fluid) {
   const capacity = state.capacity ?? VOLUMES.VAT;
   if (!state.fluid) {
-    state.fluid = fluid;
-    state.fluid.level = Math.min(fluid.level, capacity);
-    return { transferred: state.fluid.level, remaining: fluid.level - state.fluid.level };
+    const transferred = Math.min(fluid.level, capacity);
+    state.fluid = { ...fluid, level: transferred };
+    return { transferred, remaining: fluid.level - transferred };
   }
-  if (state.fluid.id !== fluid.id) return { transferred: 0, remaining: fluid.level };
+  if (state.fluid.level <= 0) {
+    const transferred = Math.min(fluid.level, capacity); state.fluid = { ...fluid, level: transferred };
+    return { transferred, remaining: fluid.level - transferred };
+  }
+  if (["id", "fermentation", "distillation", "maturation", "vinegar", "temperature"].some((key) => state.fluid[key] !== fluid[key])) return { transferred: 0, remaining: fluid.level };
   const space = capacity - state.fluid.level;
   const transferred = Math.min(space, fluid.level);
   state.fluid.level += transferred;

@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "vomit"
-        }
-      },
+      "minecraft:icon": "vomit",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:vomit.name"
       },

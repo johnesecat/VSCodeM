@@ -1,6 +1,10 @@
 # J. FINAL ERROR REPORT (§45: "No known fixable errors should remain")
 
-## Build-time errors
+## Compatibility correction (2026-10-02)
+
+The user reported broken textures and item usage. The prior build checks did not validate engine schemas or API behavior and missed real fixable defects; the previous "no known fixable errors" verdict is withdrawn. See **docs/09-bedrock-compatibility-audit.md** for repaired defects, executed mock tests, and unresolved functional gaps. Earlier VERIFIED statuses mean source/static review, not in-game verification.
+
+## Historical build-time errors
 **None.** `tools/validate.mjs` passes with 0 errors / 0 warnings on the final build
 (466 JSON files, 15 script modules, 156 identifiers, packaging verified).
 

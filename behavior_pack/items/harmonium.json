@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "harmonium"
-        }
-      },
+      "minecraft:icon": "harmonium",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:harmonium.name"
       },

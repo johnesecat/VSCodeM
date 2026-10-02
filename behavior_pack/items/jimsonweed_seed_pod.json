@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "jimsonweed_seed_pod"
-        }
-      },
+      "minecraft:icon": "jimsonweed_seed_pod",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:jimsonweed_seed_pod.name"
       },

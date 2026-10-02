@@ -5,12 +5,23 @@
       "identifier": "psychedelicraft:juniper_slab",
       "menu_category": {
         "category": "nature"
+      },
+      "states": {
+        "psychedelicraft:type": [
+          "bottom",
+          "double",
+          "top"
+        ]
       }
     },
     "components": {
       "minecraft:geometry": "psychedelicraft:geometry.juniper_slab_0",
       "minecraft:material_instances": {
         "*": {
+          "texture": "juniper_planks",
+          "render_method": "opaque"
+        },
+        "tex_juniper_planks": {
           "texture": "juniper_planks",
           "render_method": "opaque"
         }
@@ -20,7 +31,118 @@
       },
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 10
+      },
+      "minecraft:tick": {
+        "interval_range": [
+          1,
+          1
+        ],
+        "looping": true
+      },
+      "minecraft:loot": "loot_tables/empty.json",
+      "minecraft:flammable": {
+        "catch_chance_modifier": 5,
+        "destroy_chance_modifier": 20
+      },
+      "minecraft:custom_components": [
+        "psychedelicraft:wood"
+      ]
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('psychedelicraft:type') == 'bottom'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_slab_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:collision_box": {
+            "origin": [
+              -8,
+              0,
+              -8
+            ],
+            "size": [
+              16,
+              8,
+              16
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:type') == 'double'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_slab_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:collision_box": true
+        }
+      },
+      {
+        "condition": "q.block_state('psychedelicraft:type') == 'top'",
+        "components": {
+          "minecraft:geometry": "psychedelicraft:geometry.juniper_slab_2",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            },
+            "tex_juniper_planks": {
+              "texture": "juniper_planks",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:collision_box": {
+            "origin": [
+              -8,
+              8,
+              -8
+            ],
+            "size": [
+              16,
+              8,
+              16
+            ]
+          }
+        }
       }
-    }
+    ]
   }
 }

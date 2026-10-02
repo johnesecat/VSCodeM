@@ -1,5 +1,5 @@
 {
-  "geometry.format_version": "1.12.0",
+  "format_version": "1.21.0",
   "minecraft:geometry": [
     {
       "description": {
@@ -14,198 +14,196 @@
           0
         ]
       },
-      "cubes": [
+      "bones": [
         {
-          "origin": [
-            -4,
-            0,
-            -4
-          ],
-          "size": [
-            8,
-            8,
-            8
-          ],
+          "name": "root",
           "pivot": [
             0,
-            8,
-            0
-          ],
-          "rotation": [
             0,
-            -45,
             0
           ],
-          "uv": {
-            "north": {
-              "uv": [
+          "cubes": [
+            {
+              "origin": [
+                -4,
                 0,
+                -4
+              ],
+              "size": [
+                8,
+                8,
+                8
+              ],
+              "pivot": [
                 0,
-                0,
+                8,
                 0
               ],
-              "uv_size": [
+              "rotation": [
                 0,
+                -45,
                 0
-              ]
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    4,
+                    8
+                  ],
+                  "uv_size": [
+                    8,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_sapling"
+                },
+                "south": {
+                  "uv": [
+                    4,
+                    8
+                  ],
+                  "uv_size": [
+                    8,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_sapling"
+                },
+                "east": {
+                  "uv": [
+                    4,
+                    8
+                  ],
+                  "uv_size": [
+                    8,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_sapling"
+                },
+                "west": {
+                  "uv": [
+                    4,
+                    8
+                  ],
+                  "uv_size": [
+                    8,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_sapling"
+                },
+                "up": {
+                  "uv": [
+                    4,
+                    4
+                  ],
+                  "uv_size": [
+                    8,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_sapling"
+                },
+                "down": {
+                  "uv": [
+                    4,
+                    4
+                  ],
+                  "uv_size": [
+                    8,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_sapling"
+                }
+              }
             },
-            "south": {
-              "uv": [
+            {
+              "origin": [
+                -4,
                 0,
+                -4
+              ],
+              "size": [
+                8,
+                8,
+                8
+              ],
+              "pivot": [
                 0,
-                0,
+                8,
                 0
               ],
-              "uv_size": [
+              "rotation": [
                 0,
-                0
-              ]
-            },
-            "east": {
-              "uv": [
-                0,
-                0,
-                0,
+                45,
                 0
               ],
-              "uv_size": [
-                0,
-                0
-              ]
-            },
-            "west": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            },
-            "up": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            },
-            "down": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
+              "uv": {
+                "north": {
+                  "uv": [
+                    4,
+                    8
+                  ],
+                  "uv_size": [
+                    8,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_sapling"
+                },
+                "south": {
+                  "uv": [
+                    4,
+                    8
+                  ],
+                  "uv_size": [
+                    8,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_sapling"
+                },
+                "east": {
+                  "uv": [
+                    4,
+                    8
+                  ],
+                  "uv_size": [
+                    8,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_sapling"
+                },
+                "west": {
+                  "uv": [
+                    4,
+                    8
+                  ],
+                  "uv_size": [
+                    8,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_sapling"
+                },
+                "up": {
+                  "uv": [
+                    4,
+                    4
+                  ],
+                  "uv_size": [
+                    8,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_sapling"
+                },
+                "down": {
+                  "uv": [
+                    4,
+                    4
+                  ],
+                  "uv_size": [
+                    8,
+                    8
+                  ],
+                  "material_instance": "tex_juniper_sapling"
+                }
+              }
             }
-          }
-        },
-        {
-          "origin": [
-            -4,
-            0,
-            -4
-          ],
-          "size": [
-            8,
-            8,
-            8
-          ],
-          "pivot": [
-            0,
-            8,
-            0
-          ],
-          "rotation": [
-            0,
-            45,
-            0
-          ],
-          "uv": {
-            "north": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            },
-            "south": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            },
-            "east": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            },
-            "west": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            },
-            "up": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            },
-            "down": {
-              "uv": [
-                0,
-                0,
-                0,
-                0
-              ],
-              "uv_size": [
-                0,
-                0
-              ]
-            }
-          }
+          ]
         }
       ]
     }

@@ -20,8 +20,7 @@
       "minecraft:material_instances": {
         "*": {
           "texture": "lattice",
-          "render_method": "alpha_test",
-          "sound": "wood"
+          "render_method": "alpha_test"
         }
       },
       "minecraft:destructible_by_mining": {

@@ -29,6 +29,10 @@
         "*": {
           "texture": "coffea_stage0",
           "render_method": "alpha_test"
+        },
+        "tex_coffea_stage0": {
+          "texture": "coffea_stage0",
+          "render_method": "alpha_test"
         }
       },
       "minecraft:destructible_by_mining": {
@@ -77,8 +81,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 0 && q.block_state('psychedelicraft:top') == false",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coffea_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coffea_stage0",
+              "render_method": "alpha_test"
+            },
+            "tex_coffea_stage0": {
               "texture": "coffea_stage0",
               "render_method": "alpha_test"
             }
@@ -89,8 +104,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 1 && q.block_state('psychedelicraft:top') == false",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coffea_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coffea_stage0",
+              "render_method": "alpha_test"
+            },
+            "tex_coffea_stage0": {
               "texture": "coffea_stage0",
               "render_method": "alpha_test"
             }
@@ -101,8 +127,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 2 && q.block_state('psychedelicraft:top') == false",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coffea_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coffea_stage1",
+              "render_method": "alpha_test"
+            },
+            "tex_coffea_stage1": {
               "texture": "coffea_stage1",
               "render_method": "alpha_test"
             }
@@ -113,8 +150,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 3 && q.block_state('psychedelicraft:top') == false",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coffea_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coffea_stage1",
+              "render_method": "alpha_test"
+            },
+            "tex_coffea_stage1": {
               "texture": "coffea_stage1",
               "render_method": "alpha_test"
             }
@@ -125,8 +173,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 4 && q.block_state('psychedelicraft:top') == false",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coffea_2",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coffea_stage2",
+              "render_method": "alpha_test"
+            },
+            "tex_coffea_stage2": {
               "texture": "coffea_stage2",
               "render_method": "alpha_test"
             }
@@ -137,8 +196,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 5 && q.block_state('psychedelicraft:top') == false",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coffea_2",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coffea_stage2",
+              "render_method": "alpha_test"
+            },
+            "tex_coffea_stage2": {
               "texture": "coffea_stage2",
               "render_method": "alpha_test"
             }
@@ -149,8 +219,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 6 && q.block_state('psychedelicraft:top') == false",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coffea_3",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coffea_stage3",
+              "render_method": "alpha_test"
+            },
+            "tex_coffea_stage3": {
               "texture": "coffea_stage3",
               "render_method": "alpha_test"
             }
@@ -161,8 +242,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 7 && q.block_state('psychedelicraft:top') == false",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coffea_3",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coffea_stage3",
+              "render_method": "alpha_test"
+            },
+            "tex_coffea_stage3": {
               "texture": "coffea_stage3",
               "render_method": "alpha_test"
             }
@@ -173,8 +265,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 0 && q.block_state('psychedelicraft:top') == true",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coffea_4",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coffea_top_stage0",
+              "render_method": "alpha_test"
+            },
+            "tex_coffea_top_stage0": {
               "texture": "coffea_top_stage0",
               "render_method": "alpha_test"
             }
@@ -185,8 +288,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 1 && q.block_state('psychedelicraft:top') == true",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coffea_4",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coffea_top_stage0",
+              "render_method": "alpha_test"
+            },
+            "tex_coffea_top_stage0": {
               "texture": "coffea_top_stage0",
               "render_method": "alpha_test"
             }
@@ -197,8 +311,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 2 && q.block_state('psychedelicraft:top') == true",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coffea_5",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coffea_top_stage1",
+              "render_method": "alpha_test"
+            },
+            "tex_coffea_top_stage1": {
               "texture": "coffea_top_stage1",
               "render_method": "alpha_test"
             }
@@ -209,8 +334,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 3 && q.block_state('psychedelicraft:top') == true",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coffea_5",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coffea_top_stage1",
+              "render_method": "alpha_test"
+            },
+            "tex_coffea_top_stage1": {
               "texture": "coffea_top_stage1",
               "render_method": "alpha_test"
             }
@@ -221,8 +357,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 4 && q.block_state('psychedelicraft:top') == true",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coffea_6",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coffea_top_stage2",
+              "render_method": "alpha_test"
+            },
+            "tex_coffea_top_stage2": {
               "texture": "coffea_top_stage2",
               "render_method": "alpha_test"
             }
@@ -233,8 +380,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 5 && q.block_state('psychedelicraft:top') == true",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coffea_6",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coffea_top_stage2",
+              "render_method": "alpha_test"
+            },
+            "tex_coffea_top_stage2": {
               "texture": "coffea_top_stage2",
               "render_method": "alpha_test"
             }
@@ -245,8 +403,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 6 && q.block_state('psychedelicraft:top') == true",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coffea_7",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coffea_top_stage3",
+              "render_method": "alpha_test"
+            },
+            "tex_coffea_top_stage3": {
               "texture": "coffea_top_stage3",
               "render_method": "alpha_test"
             }
@@ -257,8 +426,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 7 && q.block_state('psychedelicraft:top') == true",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.coffea_7",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "coffea_top_stage3",
+              "render_method": "alpha_test"
+            },
+            "tex_coffea_top_stage3": {
               "texture": "coffea_top_stage3",
               "render_method": "alpha_test"
             }

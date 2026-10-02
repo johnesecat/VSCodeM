@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "dried_cannabis_leaf"
-        }
-      },
+      "minecraft:icon": "dried_cannabis_leaf",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:dried_cannabis_leaf.name"
       },

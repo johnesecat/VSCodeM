@@ -219,6 +219,11 @@ export const ITEMS = [
   { id: "juniper_leaves", kind: "placeable", tex: "juniper_leaves", block: "juniper_leaves" },
   { id: "fruiting_juniper_leaves", kind: "placeable", tex: "fruiting_juniper_leaves", block: "fruiting_juniper_leaves" },
 
+  // Native Bedrock vehicles retain steering/chest behavior; custom juniper
+  // boat items spawn them without overriding every vanilla boat texture.
+  { id: "juniper_boat", kind: "boat", tex: "juniper_boat", maxStack: 1 },
+  { id: "juniper_chest_boat", kind: "boat", tex: "juniper_chest_boat", maxStack: 1 },
+
   // specials
   { id: "molotov_cocktail", kind: "molotov", tex: "molotov_cocktail", maxStack: 16 },
   { id: "harmonium", kind: "harmonium", tex: "harmonium" },

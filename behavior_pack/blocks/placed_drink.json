@@ -13,6 +13,10 @@
         "*": {
           "texture": "wooden_vat",
           "render_method": "opaque"
+        },
+        "tex_wooden_vat": {
+          "texture": "wooden_vat",
+          "render_method": "opaque"
         }
       },
       "minecraft:destructible_by_mining": {

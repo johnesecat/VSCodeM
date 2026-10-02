@@ -8,15 +8,14 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "acacia_barrel"
-        }
-      },
+      "minecraft:icon": "acacia_barrel",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:acacia_barrel.name"
       },
-      "minecraft:max_stack_size": 16
+      "minecraft:max_stack_size": 16,
+      "minecraft:block_placer": {
+        "block": "psychedelicraft:acacia_barrel"
+      }
     }
   }
 }

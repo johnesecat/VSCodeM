@@ -24,11 +24,12 @@
       "minecraft:light_emission": 7,
       "minecraft:tick": {
         "interval_range": [
-          20,
-          20
+          1,
+          1
         ],
         "looping": true
       },
+      "minecraft:loot": "loot_tables/empty.json",
       "minecraft:custom_components": [
         "psychedelicraft:rift_jar"
       ]

@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "tobacco"
-        }
-      },
+      "minecraft:icon": "tobacco",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:tobacco.name"
       },

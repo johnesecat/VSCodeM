@@ -39,15 +39,15 @@ const PATCHES = [
 
 for (const patch of PATCHES) {
   writeJson(path.join(BP, "features", `${patch.id}_patch.json`), {
-    format_version: "1.21.10",
+    format_version: "1.13.0",
     "minecraft:single_block_feature": {
       description: { identifier: `psychedelicraft:${patch.id}_patch` },
-      places_block: patch.block,
-      may_place_on: patch.tilled
-        ? ["minecraft:dirt", "minecraft:grass_block", "minecraft:farmland", "minecraft:coarse_dirt", "minecraft:podzol"]
-        : ["minecraft:dirt", "minecraft:grass_block", "minecraft:sand", "minecraft:coarse_dirt", "minecraft:podzol", "minecraft:mycelium", "minecraft:rooted_dirt"],
+      places_block: {
+        name: patch.block,
+      },
       enforce_placement_rules: true,
-      enforce_survivability: true,
+      enforce_survivability_rules: true,
+      may_replace: ["minecraft:air"],
     },
   });
 

@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "coffea_cherries"
-        }
-      },
+      "minecraft:icon": "coffea_cherries",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:coffea_cherries.name"
       },

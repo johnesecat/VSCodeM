@@ -33,6 +33,10 @@
         "*": {
           "texture": "hop_stage0",
           "render_method": "alpha_test"
+        },
+        "tex_hop_stage0": {
+          "texture": "hop_stage0",
+          "render_method": "alpha_test"
         }
       },
       "minecraft:destructible_by_mining": {
@@ -81,8 +85,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 0",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.hop_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "hop_stage0",
+              "render_method": "alpha_test"
+            },
+            "tex_hop_stage0": {
               "texture": "hop_stage0",
               "render_method": "alpha_test"
             }
@@ -93,8 +108,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 1",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.hop_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "hop_stage0",
+              "render_method": "alpha_test"
+            },
+            "tex_hop_stage0": {
               "texture": "hop_stage0",
               "render_method": "alpha_test"
             }
@@ -105,8 +131,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 2",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.hop_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "hop_stage0",
+              "render_method": "alpha_test"
+            },
+            "tex_hop_stage0": {
               "texture": "hop_stage0",
               "render_method": "alpha_test"
             }
@@ -117,8 +154,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 3",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.hop_0",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "hop_stage0",
+              "render_method": "alpha_test"
+            },
+            "tex_hop_stage0": {
               "texture": "hop_stage0",
               "render_method": "alpha_test"
             }
@@ -129,8 +177,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 4",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.hop_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "hop_stage1",
+              "render_method": "alpha_test"
+            },
+            "tex_hop_stage1": {
               "texture": "hop_stage1",
               "render_method": "alpha_test"
             }
@@ -141,8 +200,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 5",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.hop_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "hop_stage1",
+              "render_method": "alpha_test"
+            },
+            "tex_hop_stage1": {
               "texture": "hop_stage1",
               "render_method": "alpha_test"
             }
@@ -153,8 +223,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 6",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.hop_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "hop_stage1",
+              "render_method": "alpha_test"
+            },
+            "tex_hop_stage1": {
               "texture": "hop_stage1",
               "render_method": "alpha_test"
             }
@@ -165,8 +246,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 7",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.hop_1",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "hop_stage1",
+              "render_method": "alpha_test"
+            },
+            "tex_hop_stage1": {
               "texture": "hop_stage1",
               "render_method": "alpha_test"
             }
@@ -177,8 +269,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 8",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.hop_2",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "hop_stage2",
+              "render_method": "alpha_test"
+            },
+            "tex_hop_stage2": {
               "texture": "hop_stage2",
               "render_method": "alpha_test"
             }
@@ -189,8 +292,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 9",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.hop_2",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "hop_stage2",
+              "render_method": "alpha_test"
+            },
+            "tex_hop_stage2": {
               "texture": "hop_stage2",
               "render_method": "alpha_test"
             }
@@ -201,8 +315,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 10",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.hop_2",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "hop_stage2",
+              "render_method": "alpha_test"
+            },
+            "tex_hop_stage2": {
               "texture": "hop_stage2",
               "render_method": "alpha_test"
             }
@@ -213,8 +338,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 11",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.hop_2",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "hop_stage2",
+              "render_method": "alpha_test"
+            },
+            "tex_hop_stage2": {
               "texture": "hop_stage2",
               "render_method": "alpha_test"
             }
@@ -225,8 +361,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 12",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.hop_3",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "hop_stage3",
+              "render_method": "alpha_test"
+            },
+            "tex_hop_stage3": {
               "texture": "hop_stage3",
               "render_method": "alpha_test"
             }
@@ -237,8 +384,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 13",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.hop_3",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "hop_stage3",
+              "render_method": "alpha_test"
+            },
+            "tex_hop_stage3": {
               "texture": "hop_stage3",
               "render_method": "alpha_test"
             }
@@ -249,8 +407,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 14",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.hop_3",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "hop_stage3",
+              "render_method": "alpha_test"
+            },
+            "tex_hop_stage3": {
               "texture": "hop_stage3",
               "render_method": "alpha_test"
             }
@@ -261,8 +430,19 @@
         "condition": "q.block_state('psychedelicraft:age') == 15",
         "components": {
           "minecraft:geometry": "psychedelicraft:geometry.hop_3",
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
           "minecraft:material_instances": {
             "*": {
+              "texture": "hop_stage3",
+              "render_method": "alpha_test"
+            },
+            "tex_hop_stage3": {
               "texture": "hop_stage3",
               "render_method": "alpha_test"
             }

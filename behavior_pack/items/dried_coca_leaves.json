@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "dried_coca_leaves"
-        }
-      },
+      "minecraft:icon": "dried_coca_leaves",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:dried_coca_leaves.name"
       },

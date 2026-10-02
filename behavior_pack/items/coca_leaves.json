@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "coca_leaves"
-        }
-      },
+      "minecraft:icon": "coca_leaves",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:coca_leaves.name"
       },

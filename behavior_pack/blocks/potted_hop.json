@@ -13,6 +13,10 @@
         "*": {
           "texture": "hop_stage3",
           "render_method": "opaque"
+        },
+        "tex_hop_stage3": {
+          "texture": "hop_stage3",
+          "render_method": "opaque"
         }
       },
       "minecraft:destructible_by_mining": {

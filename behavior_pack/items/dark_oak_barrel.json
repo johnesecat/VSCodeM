@@ -8,15 +8,14 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "dark_oak_barrel"
-        }
-      },
+      "minecraft:icon": "dark_oak_barrel",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:dark_oak_barrel.name"
       },
-      "minecraft:max_stack_size": 16
+      "minecraft:max_stack_size": 16,
+      "minecraft:block_placer": {
+        "block": "psychedelicraft:dark_oak_barrel"
+      }
     }
   }
 }

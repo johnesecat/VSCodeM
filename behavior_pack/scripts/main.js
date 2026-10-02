@@ -2,7 +2,7 @@
 // Mirrors Psychedelicraft.onInitialize() bootstrap order and the Fabric event
 // hooks (player copy-on-death, join capability sync, etc.).
 
-import { world, system } from "@minecraft/server";
+import { world, system, ItemStack } from "@minecraft/server";
 
 import { CONTENT } from "./data/content.js";
 import { DrugProperties, DrugInfluence } from "./lib/drugs.js";
@@ -27,12 +27,16 @@ import {
 import { COMPONENTS as CROP_COMPONENTS } from "./lib/crops.js";
 import { ITEM_COMPONENTS } from "./lib/items.js";
 import { dropsForBlock } from "./lib/loot.js";
-import { updateHallucinations, tickRifts } from "./lib/hallucinations.js";
-import { openMachineUi, openDryingUi } from "./lib/ui.js";
-import { unpackFluid, makeFluidState, drugInfluencesPerLiter, fluidDisplayName } from "./lib/fluids.js";
+import { updateHallucinations, tickRifts, updateHeatMotion } from "./lib/hallucinations.js";
+import { openMachineUi, openDryingUi, openFluidCrafting, heatHeldFluid } from "./lib/ui.js";
+import { unpackFluid, makeFluidState, drugInfluencesPerLiter, fluidDisplayName, readItemFluid, writeItemFluid, VOLUMES } from "./lib/fluids.js";
 import { translate } from "./data/lang.js";
 
-globalThis.__ps = { world };
+import { wood, WOOD_KINDS, placeWood, stripLog, mergeSlab, breakDoorPartner } from "./lib/wood.js";
+import { riftJar, jarDrop, chargedJar } from "./lib/rift.js";
+import { fillFromWorld, readFluid } from "./lib/crafting.js";
+
+globalThis.__ps = { world, addDrug: (player, drug, amount) => propsFor(player).addToDrug(drug, amount) };
 
 // ---------------------------------------------------------------------------
 // Per-player drug state (DrugProperties) with dynamic-property persistence
@@ -113,7 +117,8 @@ const MACHINE_COMPONENTS = {
   "psychedelicraft:bottle_rack": bottle_rack,
   "psychedelicraft:tray": tray,
   "psychedelicraft:bunsen_burner": bunsen_burner,
-  "psychedelicraft:rift_jar": rift_jar,
+  "psychedelicraft:rift_jar": riftJar,
+  "psychedelicraft:wood": wood,
   "psychedelicraft:placed_drink": placed_drink,
 };
 
@@ -141,8 +146,11 @@ function wrapBlockHandlers(handlers) {
 
 function wrapItemHandlers(handlers) {
   const out = {};
-  for (const key of ["onUse", "onUseOn", "onCompleteUse", "onConsume", "onHitBlock"]) {
-    if (handlers[key]) out[key] = (e) => runResult(handlers[key](e), e);
+  for (const key of ["onUse", "onUseOn", "onCompleteUse", "onConsume"]) {
+    if (handlers[key]) out[key] = (e) => {
+      const event = { ...e, player: e.source, itemStack: e.itemStack, block: e.block };
+      runResult(handlers[key](event), event);
+    };
   }
   return out;
 }
@@ -156,16 +164,21 @@ function runResult(result, event) {
     const loc = event.block?.location ?? player?.location;
     for (const drop of result.drops) {
       try {
-        dim.spawnItem({ type: { typeId: drop.id }, amount: drop.amount ?? 1 }, loc);
+        spawnDrop(dim, loc, drop);
       } catch {
         /* ignore */
       }
     }
   }
-  if (result.sound && (event.block || player)) {
+  if (Object.hasOwn(result, "setItemFluid") && player) {
+    const inv = player.getComponent("minecraft:inventory")?.container;
+    const stack = inv?.getItem(player.selectedSlotIndex);
+    if (stack) inv.setItem(player.selectedSlotIndex, writeItemFluid(stack, result.setItemFluid));
+  }
+  if ((result.sound || result.playSound) && (event.block || player)) {
     try {
       const dim = event.block?.dimension ?? player.dimension;
-      dim.playSound(result.sound, (event.block ?? player).location, { volume: 1 });
+      dim.playSound((result.sound ?? result.playSound).replace(/^minecraft:/, "").replace(/^psbed:/, "psybed:"), (event.block ?? player).location, { volume: 1 });
     } catch {
       /* ignore */
     }
@@ -192,11 +205,18 @@ function runResult(result, event) {
   }
   if (result.message && player) {
     try {
-      player.sendMessage({ translate: result.message });
+      player.sendMessage(translate(result.message));
     } catch {
       /* ignore */
     }
   }
+}
+
+function spawnDrop(dimension, location, drop) {
+  if ((drop.amount ?? 1) <= 0) return;
+  const stack = new ItemStack(drop.id, drop.amount ?? 1);
+  if (drop.fluid) writeItemFluid(stack, { ...drop.fluid, level: VOLUMES.BUCKET });
+  dimension.spawnItem(stack, location);
 }
 
 function damageHeldItem(player, amount) {
@@ -240,7 +260,21 @@ function consumeHeldItem(player) {
 world.afterEvents.playerBreakBlock?.subscribe((e) => {
   try {
     const player = e.player;
-    if (player?.getGameMode?.() === "creative") return;
+    const id = e.brokenBlockPermutation.type.id;
+    if (String(player?.getGameMode?.()).toLowerCase() === "creative") {
+      breakDoorPartner(e.block, e.brokenBlockPermutation);
+      if (id === "psychedelicraft:rift_jar") jarDrop(e.block);
+      return;
+    }
+    if (id === "psychedelicraft:rift_jar") {
+      for (const stack of jarDrop(e.block)) e.block.dimension.spawnItem(stack, e.block.location);
+      return;
+    }
+    if (id === "psychedelicraft:juniper_door") {
+      breakDoorPartner(e.block, e.brokenBlockPermutation);
+      e.block.dimension.spawnItem(new ItemStack(id), e.block.location);
+      return;
+    }
     const held = player?.getComponent("minecraft:inventory")?.container?.getItem(player.selectedSlotIndex);
     const enchantments = readEnchantments(held);
     const drops = dropsForBlock(e.brokenBlockPermutation.type.id, {
@@ -249,7 +283,7 @@ world.afterEvents.playerBreakBlock?.subscribe((e) => {
       enchantments,
     });
     for (const drop of drops) {
-      e.block.dimension.spawnItem({ type: { typeId: drop.id }, amount: drop.amount }, e.block.location);
+      spawnDrop(e.block.dimension, e.block.location, drop);
     }
   } catch {
     /* ignore */
@@ -259,12 +293,20 @@ world.afterEvents.playerBreakBlock?.subscribe((e) => {
 world.afterEvents.blockExplode?.subscribe((e) => {
   try {
     const typeId = e.explodedBlockPermutation.type.id;
+    if (typeId === "psychedelicraft:rift_jar") {
+      for (const stack of jarDrop(e.block)) e.block.dimension.spawnItem(stack, e.block.location);
+      return;
+    }
+    if (typeId === "psychedelicraft:juniper_door") {
+      breakDoorPartner(e.block, e.explodedBlockPermutation);
+      e.block.dimension.spawnItem(new ItemStack(typeId), e.block.location); return;
+    }
     // machine contents spill on explosion too (BlockEntityWithInventory drops
     // its inventory regardless of destruction cause) — dropMachineContents is
     // consume-once, so overlapping drop paths cannot duplicate items (X008)
     const result = dropMachineContents({ block: e.block }, typeId);
     for (const drop of result.drops) {
-      e.block.dimension.spawnItem({ type: { typeId: drop.id }, amount: drop.amount ?? 1 }, e.block.location);
+      spawnDrop(e.block.dimension, e.block.location, drop);
     }
     const drops = dropsForBlock(typeId, {
       blockState: readStates(e.explodedBlockPermutation),
@@ -272,7 +314,7 @@ world.afterEvents.blockExplode?.subscribe((e) => {
       enchantments: {},
     });
     for (const drop of drops) {
-      e.block.dimension.spawnItem({ type: { typeId: drop.id }, amount: drop.amount }, e.block.location);
+      spawnDrop(e.block.dimension, e.block.location, drop);
     }
   } catch {
     /* ignore */
@@ -328,6 +370,8 @@ system.runInterval(() => {
   for (const player of world.getAllPlayers()) {
     const props = propsFor(player);
     props.update();
+    if (props.age % 4 === 0) updateHeatMotion(player, props);
+    if (props.age % 20 !== 0) continue;
     applyEffects(player, props);
 
     // sleep/wake transitions (DrugProperties.onAwoken + drug onWakeUp behavior)
@@ -347,7 +391,7 @@ system.runInterval(() => {
 
     saveProps(player, props);
   }
-}, 20);
+}, 1);
 
 // ---------------------------------------------------------------------------
 // Interactions routed to machines (insert ingredients into mash tub etc.)
@@ -355,15 +399,17 @@ system.runInterval(() => {
 world.afterEvents.playerInteractWithBlock?.subscribe((e) => {
   try {
     const typeId = e.block.typeId;
+    if (typeId === "minecraft:crafting_table" && e.player.isSneaking) return; // before-event owns the form
+    if (/lit_furnace|lit_smoker|lit_blast_furnace|campfire|bunsen_burner/.test(typeId)) { heatHeldFluid(e.player, e.block); return; }
     if (typeId === "psychedelicraft:mash_tub" && e.itemStack) {
       const state = loadState(e.block);
-      const fluid = unpackFluid(e.itemStack.durability ?? 0, 0);
+      const fluid = readFluid(e.itemStack);
       if (fluid && fluid.level > 0) {
-        state.fluid = state.fluid ?? fluid;
-        saveState(e.block, state);
-        return;
+        return; // Container component/UI owns volume transfer; never copy fluid here.
       }
       const result = depositIngredient(state, e.itemStack.typeId);
+      if (!result.accepted) return;
+      consumeHeldItem(e.player);
       saveState(e.block, state);
       if (result.crafted) {
         e.block.dimension.playSound("minecraft:mob.cow.milk", e.block.location);
@@ -372,6 +418,45 @@ world.afterEvents.playerInteractWithBlock?.subscribe((e) => {
   } catch {
     /* ignore */
   }
+});
+
+// Cancel native placement only for the custom wood/charge paths; defer writes
+// out of before-event read-only execution. Revalidate the held item afterward.
+world.beforeEvents.playerInteractWithBlock?.subscribe((e) => {
+  if (e.block.typeId === "minecraft:crafting_table" && e.player.isSneaking) {
+    e.cancel = true;
+    const player = e.player, block = e.block;
+    system.run(() => openFluidCrafting(player, block).catch(console.warn)); return;
+  }
+  if (!e.itemStack) return;
+  const def = CONTENT.items.find((i) => `psychedelicraft:${i.id}` === e.itemStack.typeId);
+  const blockDef = CONTENT.blocks.find((b) => b.id === def?.block);
+  const customWood = WOOD_KINDS.has(blockDef?.kind);
+  const filledMachine = blockDef?.kind === "machine" && !!readItemFluid(e.itemStack);
+  const stripping = /juniper_(log|wood)$/.test(e.block.typeId) && /_axe$/.test(e.itemStack.typeId);
+  const worldFill = /^(minecraft:)(water|flowing_water|lava|flowing_lava)$/.test(e.block.typeId) && ["container", "syringe"].includes(def?.kind);
+  const jar = def?.id === "rift_jar";
+  if (!customWood && !stripping && !worldFill && !jar && !filledMachine) return;
+  e.cancel = true;
+  const player = e.player, block = e.block, typeId = e.itemStack.typeId;
+  const face = e.blockFace, faceLocation = e.faceLocation;
+  const charge = jar ? e.itemStack.getDynamicProperty("ps:riftFraction") ?? 0 : 0;
+  system.run(() => {
+    const inv = player.getComponent("minecraft:inventory")?.container, held = inv?.getItem(player.selectedSlotIndex);
+    if (!held || held.typeId !== typeId) return;
+    if (stripping) stripLog(block, held, player);
+    else if (worldFill) fillFromWorld(player, block);
+    else if (customWood) placeWood({ player, block, itemStack: held, blockFace: face, faceLocation });
+    else if (jar || filledMachine) {
+      const offsets = { Up: [0,1,0], Down: [0,-1,0], North: [0,0,-1], South: [0,0,1], East: [1,0,0], West: [-1,0,0] };
+      const delta = offsets[face]; if (!delta) return;
+      const target = block.dimension.getBlock({ x: block.location.x + delta[0], y: block.location.y + delta[1], z: block.location.z + delta[2] });
+      if (!target?.isAir || (held.getDynamicProperty("ps:riftFraction") ?? 0) !== charge) return;
+      target.setType(jar ? "psychedelicraft:rift_jar" : typeId);
+      saveState(target, jar ? { currentRiftFraction: charge, suckingRifts: true } : { fluid: readItemFluid(held) });
+      consumeHeldItem(player);
+    }
+  });
 });
 
 // Player join/leave lifecycle (Fabric: ServerPlayConnectionEvents.JOIN /
@@ -402,10 +487,10 @@ world.afterEvents.playerBreakBlock?.subscribe((e) => {
   try {
     const id = e.brokenBlockPermutation.type.id;
     const isMachine = Object.values(CONTENT.blocks).some((b) => b.kind === "machine" && `psychedelicraft:${b.id}` === id);
-    if (!isMachine) return;
+    if (!isMachine || id === "psychedelicraft:rift_jar") return;
     const result = dropMachineContents({ block: e.block }, id);
     for (const drop of result.drops) {
-      e.block.dimension.spawnItem({ type: { typeId: drop.id }, amount: drop.amount ?? 1 }, e.block.location);
+      spawnDrop(e.block.dimension, e.block.location, drop);
     }
   } catch {
     /* ignore */

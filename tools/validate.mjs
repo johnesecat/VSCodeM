@@ -85,7 +85,8 @@ for (const file of walk(path.join(BP, "blocks"), ".json")) {
 
   const mat = block.components?.["minecraft:material_instances"]?.["*"]?.texture;
   if (mat && !terrain[mat]) errors.push(`block ${id}: texture '${mat}' not in terrain_texture.json`);
-  const geo = block.components?.["minecraft:geometry"];
+  const geoComponent = block.components?.["minecraft:geometry"];
+  const geo = typeof geoComponent === "string" ? geoComponent : geoComponent?.identifier;
   if (geo && geo.startsWith("psychedelicraft:")) {
     const geoName = geo.replace("psychedelicraft:geometry.", "");
     if (!fs.existsSync(path.join(RP, `models/blocks/${geoName}.geo.json`))) {
@@ -119,13 +120,39 @@ for (const file of walk(path.join(BP, "items"), ".json")) {
   if (itemIds.has(id)) errors.push(`item: duplicate identifier ${id}`);
   itemIds.add(id);
   const iconComp = item.components?.["minecraft:icon"];
-  const icon = iconComp?.textures?.default ?? iconComp?.texture;
+  const icon = typeof iconComp === "string" ? iconComp : iconComp?.textures?.default ?? iconComp?.texture;
   if (icon && !itemTex[icon]) errors.push(`item ${id}: icon texture '${icon}' not in item_texture.json`);
   for (const comp of item.components?.["minecraft:custom_components"] ?? []) {
     if (!allScripts.includes(`"${comp}"`)) errors.push(`item ${id}: component ${comp} not registered in scripts`);
   }
 }
 ok.push(`items: ${itemIds.size} identifiers validated`);
+
+// Geometry/schema regressions that syntax-only validation missed originally.
+for (const file of walk(path.join(RP, "models"), ".json")) {
+  const model = JSON.parse(fs.readFileSync(file, "utf8"));
+  if (!model.format_version) errors.push(`geometry ${path.relative(RP, file)}: missing format_version`);
+  for (const geometry of model["minecraft:geometry"] ?? []) {
+    if (!geometry.bones?.length) errors.push(`geometry ${geometry.description?.identifier}: no bones`);
+    for (const bone of geometry.bones ?? []) for (const cube of bone.cubes ?? []) {
+      if (Array.isArray(cube.uv) && cube.uv.length !== 2) errors.push(`geometry ${geometry.description.identifier}: box UV must have 2 coordinates`);
+      if (!Array.isArray(cube.uv)) for (const face of Object.values(cube.uv ?? {})) {
+        if (face.uv?.length !== 2 || face.uv_size?.length !== 2) errors.push(`geometry ${geometry.description.identifier}: invalid face UV`);
+      }
+    }
+  }
+}
+const vanillaTextures = new Set(["textures/blocks/flower_pot", "textures/blocks/glass", "textures/blocks/planks_oak", "textures/blocks/planks_spruce", "textures/blocks/planks_birch", "textures/blocks/planks_jungle", "textures/blocks/planks_acacia", "textures/blocks/planks_big_oak"]);
+for (const [kind, atlas] of [["terrain", terrain], ["items", itemTex]]) {
+  for (const [key, entry] of Object.entries(atlas)) {
+    const refs = Array.isArray(entry.textures) ? entry.textures : [entry.textures];
+    for (const ref of refs) if (typeof ref === "string" && !fs.existsSync(path.join(RP, `${ref}.png`)) && !vanillaTextures.has(ref)) errors.push(`${kind} texture ${key}: missing PNG ${ref}`);
+  }
+}
+for (const entry of JSON.parse(fs.readFileSync(path.join(RP, "textures/flipbook_textures.json"), "utf8"))) {
+  if (!fs.existsSync(path.join(RP, `${entry.flipbook_texture}.png`))) errors.push(`flipbook ${entry.atlas_tile}: missing PNG`);
+}
+ok.push("geometry schemas, UV dimensions, texture files, and flipbook paths checked");
 
 // 5. Recipes
 const knownIds = new Set([...blockIds, ...itemIds]);

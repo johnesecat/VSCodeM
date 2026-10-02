@@ -13,6 +13,10 @@
         "*": {
           "texture": "juniper_leaves",
           "render_method": "alpha_test"
+        },
+        "tex_juniper_leaves": {
+          "texture": "juniper_leaves",
+          "render_method": "alpha_test"
         }
       },
       "minecraft:destructible_by_mining": {
@@ -20,6 +24,10 @@
       },
       "minecraft:destructible_by_explosion": {
         "explosion_resistance": 1
+      },
+      "minecraft:flammable": {
+        "catch_chance_modifier": 30,
+        "destroy_chance_modifier": 60
       },
       "minecraft:light_dampening": 1
     }

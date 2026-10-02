@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "cannabis_leaf"
-        }
-      },
+      "minecraft:icon": "cannabis_leaf",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:cannabis_leaf.name"
       },

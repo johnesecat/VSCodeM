@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "peyote_joint"
-        }
-      },
+      "minecraft:icon": "peyote_joint",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:peyote_joint.name"
       },
@@ -29,8 +25,7 @@
       },
       "minecraft:hand_equipped": true,
       "minecraft:custom_components": [
-        "psychedelicraft:smokeable",
-        "psychedelicraft:consumable"
+        "psychedelicraft:smokeable"
       ]
     }
   }

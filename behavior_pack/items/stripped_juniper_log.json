@@ -8,15 +8,14 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "stripped_juniper_log"
-        }
-      },
+      "minecraft:icon": "stripped_juniper_log",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:stripped_juniper_log.name"
       },
-      "minecraft:max_stack_size": 64
+      "minecraft:max_stack_size": 64,
+      "minecraft:block_placer": {
+        "block": "psychedelicraft:stripped_juniper_log"
+      }
     }
   }
 }

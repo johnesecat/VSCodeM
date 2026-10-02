@@ -13,6 +13,10 @@
         "*": {
           "texture": "bottle_rack",
           "render_method": "opaque"
+        },
+        "tex_bottle_rack": {
+          "texture": "bottle_rack",
+          "render_method": "opaque"
         }
       },
       "minecraft:destructible_by_mining": {

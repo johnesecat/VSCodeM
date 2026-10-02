@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "morning_glory"
-        }
-      },
+      "minecraft:icon": "morning_glory",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:morning_glory.name"
       },

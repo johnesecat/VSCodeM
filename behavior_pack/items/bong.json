@@ -8,11 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": {
-        "textures": {
-          "default": "bong_empty"
-        }
-      },
+      "minecraft:icon": "bong_empty",
       "minecraft:display_name": {
         "value": "item.psychedelicraft:bong.name"
       },

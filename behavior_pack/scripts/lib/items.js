@@ -5,8 +5,10 @@
 //   InjectableItem -> syringe component
 //   AliasedBlockItem seeds -> seeds component (plants crop block)
 //   EdibleItem influences -> consumable component (drug influence on eat)
-//   MolotovCocktailItem / PaperBagItem / SuspiciousItem / HarmoniumItem
+//   PaperBagItem / SuspiciousItem / HarmoniumItem
+//   (MolotovCocktailItem throws via vanilla throwable/projectile components)
 
+import { BlockPermutation } from "@minecraft/server";
 import { CONTENT } from "../data/content.js";
 import { DrugInfluence } from "./drugs.js";
 import {
@@ -14,6 +16,8 @@ import {
   makeFluidState,
   packFluid,
   unpackFluid,
+  readItemFluid,
+  fluidDef,
   influenceForLevel,
 } from "./fluids.js";
 
@@ -42,8 +46,8 @@ export const container = {
     const { player, itemStack } = event;
     const def = itemDef(itemStack.typeId);
     const capacity = def?.capacity ?? VOLUMES.MUG;
-    const aux = itemStack.durability ?? 0;
-    const fluid = unpackFluid(aux, capacity);
+    const fluid = readItemFluid(itemStack);
+    if (fluid && !fluidDef(fluid.id)?.drinkable && fluidDef(fluid.id)?.kind !== "alcohol") return { message: "This fluid is not drinkable." };
     if (!fluid || fluid.level <= 0) return {};
 
     // DrinkableItem.FLUID_PER_DRINKING = 1/4 of the container per use
@@ -56,14 +60,15 @@ export const container = {
     return {
       addInfluences: influences,
       playSound: "minecraft:random.drink",
-      setItemAux: packFluid(fluid),
+      setItemFluid: fluid,
       fluidRemaining: fluid.level,
     };
   },
 
   onUseOn(event) {
-    // fill from targeted tank (machine) or fluid block
-    return { openUi: "container_fill" };
+    // World water/lava is handled before interaction; tank forms are already
+    // opened by the machine block component. Do not open a duplicate form.
+    return {};
   },
 };
 
@@ -112,7 +117,10 @@ function findInInventory(player, typeId) {
     if (!inv) return null;
     for (let i = 0; i < inv.size; i++) {
       const stack = inv.getItem(i);
-      if (stack && stack.typeId === typeId) return inv;
+      if (stack && stack.typeId === typeId) return { setItem: () => {
+        if (stack.amount > 1) { stack.amount--; inv.setItem(i, stack); }
+        else inv.setItem(i, undefined);
+      } };
     }
     for (let i = 0; i < inv.size; i++) {
       const stack = inv.getItem(i);
@@ -130,17 +138,17 @@ function findInInventory(player, typeId) {
 export const syringe = {
   onUse(event) {
     const { itemStack } = event;
-    const aux = itemStack.durability ?? 0;
-    const fluid = unpackFluid(aux, VOLUMES.SYRINGE);
+    const fluid = readItemFluid(itemStack);
+    if (fluid && !fluidDef(fluid.id)?.injectable) return { message: "This fluid is not injectable." };
     if (!fluid || fluid.level <= 0) return {};
     return {
       addInfluences: influenceForLevel(fluid, fluid.level),
-      setItemAux: 0,
+      setItemFluid: null,
       playSound: "psbed:drug.generic",
     };
   },
   onUseOn() {
-    return { openUi: "container_fill" };
+    return {};
   },
 };
 
@@ -162,10 +170,7 @@ export const seeds = {
         ? PLANTABLE_SOIL.includes(soil.typeId)
         : soil.typeId === "minecraft:farmland" || PLANTABLE_SOIL.includes(soil.typeId);
       if (!soilOk || !target.isAir) return {};
-      target.setPermutation(
-        target.permutation.withState("psychedelicraft:age", 0),
-      );
-      target.setType(`psychedelicraft:${def.plant}`);
+      target.setPermutation(BlockPermutation.resolve(`psychedelicraft:${def.plant}`, { "psychedelicraft:age": 0 }));
       return { consumeItem: true };
     } catch {
       return {};
@@ -177,20 +182,13 @@ export const seeds = {
 // Consumable (EdibleItem drug influences) - fires when eating completes
 // ---------------------------------------------------------------------------
 export const consumable = {
-  onCompleteUse(event) {
-    const def = itemDef(event.itemStack?.typeId ?? "");
-    return {
-      addInfluences: influencesOf(def),
-      playSound: "psbed:drug.generic",
-    };
-  },
   onConsume(event) {
     const def = itemDef(event.itemStack?.typeId ?? "");
     if (def?.kind === "suspicious") {
       // SuspiciousItem: eating bag_o_vomit may transform into a random form
       return { transformInto: pick(["minecraft:cookie", "minecraft:mushroom_stew", "minecraft:golden_apple", "minecraft:cooked_beef", "minecraft:cooked_chicken"]) };
     }
-    return {};
+    return { addInfluences: influencesOf(def), playSound: "psbed:drug.generic" };
   },
 };
 
@@ -201,12 +199,6 @@ function pick(list) {
 // ---------------------------------------------------------------------------
 // MolotovCocktailItem / PaperBagItem
 // ---------------------------------------------------------------------------
-export const molotov = {
-  onHitBlock() {
-    return { ignite: true };
-  },
-};
-
 export const paper_bag = {
   onUse() {
     return { openUi: "paper_bag" };
@@ -215,15 +207,27 @@ export const paper_bag = {
 
 export const suspicious = consumable;
 
+export const boat = {
+  onUseOn({ block, itemStack, player }) {
+    if (!block || !player) return {};
+    const target = block.above(1);
+    if (!target || !target.isAir && !/water/.test(target.typeId)) return {};
+    const chest = itemStack.typeId.endsWith("chest_boat");
+    block.dimension.spawnEntity(chest ? "minecraft:chest_boat" : "minecraft:boat", { x: target.location.x + 0.5, y: target.location.y, z: target.location.z + 0.5 });
+    return { consumeItem: true };
+  },
+};
+
 // keys must match the custom component names emitted by tools/gen-content.mjs
 export const ITEM_COMPONENTS = {
+  "psychedelicraft:boat": boat,
+  "psychedelicraft:jar_item": {},
   "psychedelicraft:container": container,
   "psychedelicraft:smokeable": smokeable,
   "psychedelicraft:bong": bong,
   "psychedelicraft:syringe": syringe,
   "psychedelicraft:seeds": seeds,
   "psychedelicraft:consumable": consumable,
-  "psychedelicraft:molotov": molotov,
   "psychedelicraft:paper_bag": paper_bag,
   "psychedelicraft:suspicious": suspicious,
 };

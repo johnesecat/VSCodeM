@@ -13,6 +13,10 @@
         "*": {
           "texture": "juniper_sapling",
           "render_method": "opaque"
+        },
+        "tex_juniper_sapling": {
+          "texture": "juniper_sapling",
+          "render_method": "opaque"
         }
       },
       "minecraft:destructible_by_mining": {
