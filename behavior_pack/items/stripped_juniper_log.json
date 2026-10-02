@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "psychedelicraft:stripped_juniper_log",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "stripped_juniper_log"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.psychedelicraft:stripped_juniper_log.name"
+      },
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

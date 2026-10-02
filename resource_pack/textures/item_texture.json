@@ -1,0 +1,371 @@
+{
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "acacia_barrel": {
+      "textures": "textures/items/acacia_barrel"
+    },
+    "agave_leaf": {
+      "textures": "textures/items/agave_leaf"
+    },
+    "bag_o_vomit": {
+      "textures": "textures/items/bag_o_vomit"
+    },
+    "belladonna_berries": {
+      "textures": "textures/items/belladonna_berries"
+    },
+    "belladonna_leaf": {
+      "textures": "textures/items/belladonna_leaf"
+    },
+    "belladonna_seeds": {
+      "textures": "textures/items/belladonna_seeds"
+    },
+    "birch_barrel": {
+      "textures": "textures/items/birch_barrel"
+    },
+    "bong_empty": {
+      "textures": "textures/items/bong_empty"
+    },
+    "bong_filled": {
+      "textures": "textures/items/bong_filled"
+    },
+    "bottle": {
+      "textures": "textures/items/bottle"
+    },
+    "bottle_liquid": {
+      "textures": "textures/items/bottle_liquid"
+    },
+    "bottle_on_ground": {
+      "textures": "textures/items/bottle_on_ground"
+    },
+    "bottle_overlay": {
+      "textures": "textures/items/bottle_overlay"
+    },
+    "bowl_liquid": {
+      "textures": "textures/items/bowl_liquid"
+    },
+    "brown_magic_mushrooms": {
+      "textures": "textures/items/brown_magic_mushrooms"
+    },
+    "bucket_liquid": {
+      "textures": "textures/items/bucket_liquid"
+    },
+    "cannabis_buds": {
+      "textures": "textures/items/cannabis_buds"
+    },
+    "cannabis_leaf": {
+      "textures": "textures/items/cannabis_leaf"
+    },
+    "cannabis_seeds": {
+      "textures": "textures/items/cannabis_seeds"
+    },
+    "cigar": {
+      "textures": "textures/items/cigar"
+    },
+    "cigar_1": {
+      "textures": "textures/items/cigar_1"
+    },
+    "cigar_2": {
+      "textures": "textures/items/cigar_2"
+    },
+    "cigar_3": {
+      "textures": "textures/items/cigar_3"
+    },
+    "cigar_using": {
+      "textures": "textures/items/cigar_using"
+    },
+    "cigar_using_1": {
+      "textures": "textures/items/cigar_using_1"
+    },
+    "cigar_using_2": {
+      "textures": "textures/items/cigar_using_2"
+    },
+    "cigar_using_3": {
+      "textures": "textures/items/cigar_using_3"
+    },
+    "cigarette": {
+      "textures": "textures/items/cigarette"
+    },
+    "cigarette_using": {
+      "textures": "textures/items/cigarette_using"
+    },
+    "coca_leaves": {
+      "textures": "textures/items/coca_leaves"
+    },
+    "coca_seeds": {
+      "textures": "textures/items/coca_seeds"
+    },
+    "cocaine_powder": {
+      "textures": "textures/items/cocaine_powder"
+    },
+    "coffea_cherries": {
+      "textures": "textures/items/coffea_cherries"
+    },
+    "coffee_beans": {
+      "textures": "textures/items/coffee_beans"
+    },
+    "cup_placed": {
+      "textures": "textures/items/cup_placed"
+    },
+    "dark_oak_barrel": {
+      "textures": "textures/items/dark_oak_barrel"
+    },
+    "dried_belladonna_leaf": {
+      "textures": "textures/items/dried_belladonna_leaf"
+    },
+    "dried_cannabis_buds": {
+      "textures": "textures/items/dried_cannabis_buds"
+    },
+    "dried_cannabis_leaf": {
+      "textures": "textures/items/dried_cannabis_leaf"
+    },
+    "dried_coca_leaves": {
+      "textures": "textures/items/dried_coca_leaves"
+    },
+    "dried_jimsonweed_leaf": {
+      "textures": "textures/items/dried_jimsonweed_leaf"
+    },
+    "dried_peyote": {
+      "textures": "textures/items/dried_peyote"
+    },
+    "dried_redstone_dust": {
+      "textures": "textures/items/dried_redstone_dust"
+    },
+    "dried_tobacco": {
+      "textures": "textures/items/dried_tobacco"
+    },
+    "glass_chalice": {
+      "textures": "textures/items/glass_chalice"
+    },
+    "glass_chalice_liquid": {
+      "textures": "textures/items/glass_chalice_liquid"
+    },
+    "glass_chalice_on_ground": {
+      "textures": "textures/items/glass_chalice_on_ground"
+    },
+    "harmonium": {
+      "textures": "textures/items/harmonium"
+    },
+    "harmonium_glowstone": {
+      "textures": "textures/items/harmonium_glowstone"
+    },
+    "hash_muffin": {
+      "textures": "textures/items/hash_muffin"
+    },
+    "hop_cones": {
+      "textures": "textures/items/hop_cones"
+    },
+    "hop_seeds": {
+      "textures": "textures/items/hop_seeds"
+    },
+    "jimsonweed_leaf": {
+      "textures": "textures/items/jimsonweed_leaf"
+    },
+    "jimsonweed_seed_pod": {
+      "textures": "textures/items/jimsonweed_seed_pod"
+    },
+    "jimsonweed_seeds": {
+      "textures": "textures/items/jimsonweed_seeds"
+    },
+    "joint": {
+      "textures": "textures/items/joint"
+    },
+    "joint_using": {
+      "textures": "textures/items/joint_using"
+    },
+    "jolly_rancher": {
+      "textures": "textures/items/jolly_rancher"
+    },
+    "jungle_barrel": {
+      "textures": "textures/items/jungle_barrel"
+    },
+    "juniper_berries": {
+      "textures": "textures/items/juniper_berries"
+    },
+    "juniper_boat": {
+      "textures": "textures/items/juniper_boat"
+    },
+    "juniper_chest_boat": {
+      "textures": "textures/items/juniper_chest_boat"
+    },
+    "juniper_door": {
+      "textures": "textures/items/juniper_door"
+    },
+    "juniper_hanging_sign": {
+      "textures": "textures/items/juniper_hanging_sign"
+    },
+    "juniper_sign": {
+      "textures": "textures/items/juniper_sign"
+    },
+    "lsd_pill": {
+      "textures": "textures/items/lsd_pill"
+    },
+    "lsd_square": {
+      "textures": "textures/items/lsd_square"
+    },
+    "molotov_cloth": {
+      "textures": "textures/items/molotov_cloth"
+    },
+    "molotov_cocktail": {
+      "textures": "textures/items/molotov_cocktail"
+    },
+    "molotov_cocktail_liquid": {
+      "textures": "textures/items/molotov_cocktail_liquid"
+    },
+    "molotov_cocktail_overlay": {
+      "textures": "textures/items/molotov_cocktail_overlay"
+    },
+    "morning_glory": {
+      "textures": "textures/items/morning_glory"
+    },
+    "morning_glory_seeds": {
+      "textures": "textures/items/morning_glory_seeds"
+    },
+    "mug_placed": {
+      "textures": "textures/items/mug_placed"
+    },
+    "oak_barrel": {
+      "textures": "textures/items/oak_barrel"
+    },
+    "obsidian_bottle": {
+      "textures": "textures/items/obsidian_bottle"
+    },
+    "obsidian_dust": {
+      "textures": "textures/items/obsidian_dust"
+    },
+    "paper_bag": {
+      "textures": "textures/items/paper_bag"
+    },
+    "paper_bag_filled": {
+      "textures": "textures/items/paper_bag_filled"
+    },
+    "paper_bag_overflowing": {
+      "textures": "textures/items/paper_bag_overflowing"
+    },
+    "peyote": {
+      "textures": "textures/items/peyote"
+    },
+    "peyote_joint": {
+      "textures": "textures/items/peyote_joint"
+    },
+    "peyote_joint_using": {
+      "textures": "textures/items/peyote_joint_using"
+    },
+    "red_magic_mushrooms": {
+      "textures": "textures/items/red_magic_mushrooms"
+    },
+    "shot_glass": {
+      "textures": "textures/items/shot_glass"
+    },
+    "shot_glass_liquid": {
+      "textures": "textures/items/shot_glass_liquid"
+    },
+    "shot_glass_on_ground": {
+      "textures": "textures/items/shot_glass_on_ground"
+    },
+    "smoking_pipe": {
+      "textures": "textures/items/smoking_pipe"
+    },
+    "spruce_barrel": {
+      "textures": "textures/items/spruce_barrel"
+    },
+    "stone_cup": {
+      "textures": "textures/items/stone_cup"
+    },
+    "stone_cup_liquid": {
+      "textures": "textures/items/stone_cup_liquid"
+    },
+    "syringe": {
+      "textures": "textures/items/syringe"
+    },
+    "syringe_liquid": {
+      "textures": "textures/items/syringe_liquid"
+    },
+    "thrown_molotov_cocktail": {
+      "textures": "textures/items/thrown_molotov_cocktail"
+    },
+    "tobacco": {
+      "textures": "textures/items/tobacco"
+    },
+    "tobacco_seeds": {
+      "textures": "textures/items/tobacco_seeds"
+    },
+    "tomato": {
+      "textures": "textures/items/tomato"
+    },
+    "tomato_leaf": {
+      "textures": "textures/items/tomato_leaf"
+    },
+    "tomato_seeds": {
+      "textures": "textures/items/tomato_seeds"
+    },
+    "vomit": {
+      "textures": "textures/items/vomit"
+    },
+    "wine_grapes": {
+      "textures": "textures/items/wine_grapes"
+    },
+    "wooden_mug": {
+      "textures": "textures/items/wooden_mug"
+    },
+    "wooden_mug_liquid": {
+      "textures": "textures/items/wooden_mug_liquid"
+    },
+    "wooden_vat": {
+      "textures": "textures/blocks/wooden_vat"
+    },
+    "flask": {
+      "textures": "textures/blocks/flask"
+    },
+    "distillery": {
+      "textures": "textures/blocks/distillery"
+    },
+    "rift_jar": {
+      "textures": "textures/blocks/rift_jar"
+    },
+    "bottle_rack": {
+      "textures": "textures/blocks/bottle_rack"
+    },
+    "drying_table": {
+      "textures": "textures/blocks/drying_table"
+    },
+    "iron_drying_table": {
+      "textures": "textures/blocks/iron_drying_table"
+    },
+    "tray": {
+      "textures": "textures/blocks/tray"
+    },
+    "burner_base_top": {
+      "textures": "textures/blocks/burner_base_top"
+    },
+    "lattice": {
+      "textures": "textures/blocks/lattice"
+    },
+    "wine_grape_lattice": {
+      "textures": "textures/blocks/wine_grape_lattice_0"
+    },
+    "morning_glory_lattice": {
+      "textures": "textures/blocks/morning_glory_lattice_0"
+    },
+    "juniper_sapling": {
+      "textures": "textures/blocks/juniper_sapling"
+    },
+    "juniper_planks": {
+      "textures": "textures/blocks/juniper_planks"
+    },
+    "juniper_trapdoor": {
+      "textures": "textures/blocks/juniper_trapdoor"
+    },
+    "juniper_log": {
+      "textures": "textures/blocks/juniper_log"
+    },
+    "stripped_juniper_log": {
+      "textures": "textures/blocks/stripped_juniper_log"
+    },
+    "juniper_leaves": {
+      "textures": "textures/blocks/juniper_leaves"
+    },
+    "fruiting_juniper_leaves": {
+      "textures": "textures/blocks/fruiting_juniper_leaves"
+    }
+  }
+}

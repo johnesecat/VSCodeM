@@ -1,0 +1,56 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:block": {
+    "description": {
+      "identifier": "psychedelicraft:iron_drying_table",
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:geometry": "psychedelicraft:geometry.iron_drying_table_0",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "iron_drying_table_bottom",
+          "render_method": "opaque"
+        },
+        "up": {
+          "texture": "iron_drying_table_top",
+          "render_method": "opaque"
+        },
+        "north": {
+          "texture": "iron_drying_table",
+          "render_method": "opaque"
+        },
+        "south": {
+          "texture": "iron_drying_table",
+          "render_method": "opaque"
+        },
+        "east": {
+          "texture": "iron_drying_table",
+          "render_method": "opaque"
+        },
+        "west": {
+          "texture": "iron_drying_table",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 3.3333333333333335
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 25
+      },
+      "minecraft:tick": {
+        "interval_range": [
+          20,
+          20
+        ],
+        "looping": true
+      },
+      "minecraft:custom_components": [
+        "psychedelicraft:drying_table"
+      ]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "psychedelicraft:belladonna_seeds"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "ingredients": [
+      {
+        "item": "psychedelicraft:belladonna_berries"
+      }
+    ],
+    "result": {
+      "item": "psychedelicraft:belladonna_seeds",
+      "count": 6
+    }
+  }
+}

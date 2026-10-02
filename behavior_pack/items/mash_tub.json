@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "psychedelicraft:mash_tub",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "wooden_vat"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.psychedelicraft:mash_tub.name"
+      },
+      "minecraft:max_stack_size": 16
+    }
+  }
+}

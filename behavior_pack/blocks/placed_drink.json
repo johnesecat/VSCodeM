@@ -1,0 +1,36 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:block": {
+    "description": {
+      "identifier": "psychedelicraft:placed_drink",
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:geometry": "psychedelicraft:geometry.placed_drink_0",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "wooden_vat",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0.05
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 0
+      },
+      "minecraft:tick": {
+        "interval_range": [
+          20,
+          20
+        ],
+        "looping": true
+      },
+      "minecraft:custom_components": [
+        "psychedelicraft:placed_drink"
+      ]
+    }
+  }
+}

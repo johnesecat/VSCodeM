@@ -1,0 +1,23 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "psychedelicraft:morning_glory_to_seeds"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "ingredients": [
+      {
+        "item": "psychedelicraft:morning_glory"
+      }
+    ],
+    "result": {
+      "item": "psychedelicraft:morning_glory_seeds",
+      "count": 6
+    }
+  }
+}

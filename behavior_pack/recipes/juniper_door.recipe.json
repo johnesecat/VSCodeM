@@ -1,0 +1,28 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "psychedelicraft:juniper_door"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "pattern": [
+      "##",
+      "##",
+      "##"
+    ],
+    "key": {
+      "#": {
+        "item": "psychedelicraft:juniper_planks"
+      }
+    },
+    "result": {
+      "item": "psychedelicraft:juniper_door",
+      "count": 3
+    }
+  }
+}

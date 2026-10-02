@@ -1,0 +1,47 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.reality_rift.spin": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "rotation": ["0", "query.life_time * 12", "0"]
+        }
+      }
+    },
+    "animation.reality_rift.bob": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "position": ["0", "math.sin(query.life_time * 2.2) * 2.5", "0"],
+          "scale": ["1.0 + math.sin(query.life_time * 1.7) * 0.12", "1.0 + math.cos(query.life_time * 1.3) * 0.12", "1.0"]
+        }
+      }
+    },
+    "animation.reality_rift.screen_pulse": {
+      "loop": true,
+      "bones": {
+        "screen": {
+          "scale": ["1.0 + math.sin(query.life_time * 4.0) * 0.18", "1.0 + math.sin(query.life_time * 4.0) * 0.18", "1.0"]
+        }
+      }
+    },
+    "animation.hallucination.float": {
+      "loop": true,
+      "bones": {
+        "body": {
+          "position": ["0", "math.sin(query.life_time * 2.0) * 1.8", "0"],
+          "scale": ["1.0 + math.sin(query.life_time * 3.1) * 0.15", "1.0 + math.sin(query.life_time * 3.1) * 0.15", "1.0 + math.sin(query.life_time * 3.1) * 0.15"]
+        }
+      }
+    },
+    "animation.hallucination.spin": {
+      "loop": true,
+      "bones": {
+        "body": {
+          "rotation": ["0", "query.life_time * 20", "math.sin(query.life_time * 1.5) * 12"]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "psychedelicraft:mash_tub"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "pattern": [
+      "# #",
+      "I I",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "tag": "minecraft:planks"
+      },
+      "I": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "psychedelicraft:mash_tub",
+      "count": 1
+    }
+  }
+}

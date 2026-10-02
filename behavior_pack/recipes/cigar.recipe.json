@@ -1,0 +1,31 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "psychedelicraft:cigar"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "pattern": [
+      "TTT",
+      "TTT",
+      "PPP"
+    ],
+    "key": {
+      "P": {
+        "item": "minecraft:paper"
+      },
+      "T": {
+        "item": "psychedelicraft:dried_tobacco"
+      }
+    },
+    "result": {
+      "item": "psychedelicraft:cigar",
+      "count": 1
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "psychedelicraft:coffea_patch"
+    },
+    "places_block": "psychedelicraft:coffea",
+    "may_place_on": [
+      "minecraft:dirt",
+      "minecraft:grass_block",
+      "minecraft:farmland",
+      "minecraft:coarse_dirt",
+      "minecraft:podzol"
+    ],
+    "enforce_placement_rules": true,
+    "enforce_survivability": true
+  }
+}

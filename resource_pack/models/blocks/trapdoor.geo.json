@@ -1,0 +1,39 @@
+{
+  "geometry.format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "psychedelicraft:geometry.trapdoor",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 3,
+        "visible_bounds_offset": [
+          0,
+          1,
+          0
+        ]
+      },
+      "cubes": [
+        {
+          "origin": [
+            -8,
+            0,
+            -2
+          ],
+          "size": [
+            16,
+            16,
+            4
+          ],
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ]
+        }
+      ]
+    }
+  ]
+}

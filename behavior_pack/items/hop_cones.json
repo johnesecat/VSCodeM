@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "psychedelicraft:hop_cones",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "hop_cones"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.psychedelicraft:hop_cones.name"
+      },
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

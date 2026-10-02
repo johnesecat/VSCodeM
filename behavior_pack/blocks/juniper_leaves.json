@@ -1,0 +1,27 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:block": {
+    "description": {
+      "identifier": "psychedelicraft:juniper_leaves",
+      "menu_category": {
+        "category": "nature"
+      }
+    },
+    "components": {
+      "minecraft:geometry": "psychedelicraft:geometry.juniper_leaves_0",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "juniper_leaves",
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0.13333333333333333
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 1
+      },
+      "minecraft:light_dampening": 1
+    }
+  }
+}

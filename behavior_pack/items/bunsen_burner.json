@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "psychedelicraft:bunsen_burner",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "burner_base_top"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.psychedelicraft:bunsen_burner.name"
+      },
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

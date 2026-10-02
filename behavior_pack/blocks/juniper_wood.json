@@ -1,0 +1,26 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:block": {
+    "description": {
+      "identifier": "psychedelicraft:juniper_wood",
+      "menu_category": {
+        "category": "nature"
+      }
+    },
+    "components": {
+      "minecraft:geometry": "psychedelicraft:geometry.juniper_wood_0",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "juniper_log",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1.3333333333333333
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 10
+      }
+    }
+  }
+}

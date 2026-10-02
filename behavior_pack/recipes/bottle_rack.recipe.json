@@ -1,0 +1,31 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "psychedelicraft:bottle_rack"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "pattern": [
+      "I#I",
+      "#I#",
+      "I#I"
+    ],
+    "key": {
+      "#": {
+        "tag": "minecraft:planks"
+      },
+      "I": {
+        "item": "minecraft:stick"
+      }
+    },
+    "result": {
+      "item": "psychedelicraft:bottle_rack",
+      "count": 1
+    }
+  }
+}

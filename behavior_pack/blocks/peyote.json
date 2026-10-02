@@ -1,0 +1,81 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:block": {
+    "description": {
+      "identifier": "psychedelicraft:peyote",
+      "menu_category": {
+        "category": "nature"
+      },
+      "states": {
+        "psychedelicraft:age": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "components": {
+      "minecraft:geometry": "psychedelicraft:geometry.peyote_0",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "peyote",
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0.6666666666666666
+      },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 5
+      },
+      "minecraft:collision_box": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "size": [
+          0,
+          0,
+          0
+        ]
+      },
+      "minecraft:selection_box": {
+        "origin": [
+          -4,
+          0,
+          -4
+        ],
+        "size": [
+          8,
+          12,
+          8
+        ]
+      },
+      "minecraft:tick": {
+        "interval_range": [
+          20,
+          20
+        ],
+        "looping": true
+      },
+      "minecraft:custom_components": [
+        "psychedelicraft:crop"
+      ]
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('psychedelicraft:age') == 0 || q.block_state('psychedelicraft:age') == 1 || q.block_state('psychedelicraft:age') == 2 || q.block_state('psychedelicraft:age') == 3",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "peyote",
+              "render_method": "alpha_test"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

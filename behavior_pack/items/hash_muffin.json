@@ -1,0 +1,33 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "psychedelicraft:hash_muffin",
+      "menu_category": {
+        "category": "nature"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "hash_muffin"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.psychedelicraft:hash_muffin.name"
+      },
+      "minecraft:max_stack_size": 64,
+      "minecraft:food": {
+        "nutrition": 6,
+        "saturation_modifier": 0.6
+      },
+      "minecraft:use_modifiers": {
+        "use_duration": 32,
+        "movement_modifier": 0.35
+      },
+      "minecraft:custom_components": [
+        "psychedelicraft:consumable"
+      ]
+    }
+  }
+}

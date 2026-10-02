@@ -1,0 +1,31 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "psychedelicraft:joint"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "pattern": [
+      "P",
+      "C",
+      "P"
+    ],
+    "key": {
+      "P": {
+        "item": "minecraft:paper"
+      },
+      "C": {
+        "item": "psychedelicraft:dried_cannabis_buds"
+      }
+    },
+    "result": {
+      "item": "psychedelicraft:joint",
+      "count": 1
+    }
+  }
+}

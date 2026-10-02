@@ -1,0 +1,18 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "psychedelicraft:molotov_cocktail",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/items/thrown_molotov_cocktail"
+      },
+      "geometry": {
+        "default": "geometry.molotov_cocktail"
+      },
+      "render_controllers": ["controller.render.molotov"]
+    }
+  }
+}

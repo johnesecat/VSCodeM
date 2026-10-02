@@ -1,0 +1,20 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "psychedelicraft:morning_glory_patch"
+    },
+    "places_block": "psychedelicraft:morning_glory",
+    "may_place_on": [
+      "minecraft:dirt",
+      "minecraft:grass_block",
+      "minecraft:sand",
+      "minecraft:coarse_dirt",
+      "minecraft:podzol",
+      "minecraft:mycelium",
+      "minecraft:rooted_dirt"
+    ],
+    "enforce_placement_rules": true,
+    "enforce_survivability": true
+  }
+}

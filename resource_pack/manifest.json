@@ -1,0 +1,17 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Psychedelicraft (Bedrock) — Resources",
+    "description": "Forensic port of Psychedelicraft (Java 1.20.1 Fabric, commit 319a4ea): textures, models, particles, sounds and localization converted from the original assets.",
+    "uuid": "9063380b-6261-4979-99ee-edb1fcddad3f",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 0]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "1f7c4a02-9c3b-4c6e-8e2a-3b9d5c7e1a48",
+      "version": [1, 0, 0]
+    }
+  ]
+}

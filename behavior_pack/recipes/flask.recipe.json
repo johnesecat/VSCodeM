@@ -1,0 +1,31 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "psychedelicraft:flask"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "pattern": [
+      " # ",
+      "#G#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:copper_ingot"
+      },
+      "G": {
+        "item": "minecraft:glass"
+      }
+    },
+    "result": {
+      "item": "psychedelicraft:flask",
+      "count": 1
+    }
+  }
+}

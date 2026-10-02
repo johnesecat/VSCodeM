@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "psychedelicraft:fruiting_juniper_leaves",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "fruiting_juniper_leaves"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.psychedelicraft:fruiting_juniper_leaves.name"
+      },
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

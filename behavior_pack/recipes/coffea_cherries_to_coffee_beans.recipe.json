@@ -1,0 +1,20 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "psychedelicraft:coffea_cherries_to_coffee_beans"
+    },
+    "tags": [
+      "furnace",
+      "smoker",
+      "blast_furnace"
+    ],
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "input": {
+      "item": "psychedelicraft:coffea_cherries"
+    },
+    "output": "psychedelicraft:coffee_beans"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "psychedelicraft:rift_jar"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "pattern": [
+      "O-O",
+      "GO ",
+      "OIO"
+    ],
+    "key": {
+      "O": {
+        "item": "minecraft:glass"
+      },
+      "-": {
+        "tag": "minecraft:planks"
+      },
+      "G": {
+        "item": "minecraft:gold_ingot"
+      },
+      "I": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "psychedelicraft:rift_jar",
+      "count": 1
+    }
+  }
+}

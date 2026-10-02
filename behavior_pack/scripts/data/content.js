@@ -1,0 +1,2109 @@
+// GENERATED from tools/content-spec.mjs - do not edit by hand.
+export const CONTENT = {
+  "blocks": [
+    {
+      "id": "mash_tub",
+      "kind": "machine",
+      "machine": "mash_tub",
+      "tex": "wooden_vat",
+      "hardness": 2,
+      "sound": "wood",
+      "light": 0
+    },
+    {
+      "id": "mash_tub_edge",
+      "kind": "machine",
+      "machine": "mash_tub_edge",
+      "tex": "wooden_vat",
+      "hardness": 2,
+      "sound": "wood"
+    },
+    {
+      "id": "oak_barrel",
+      "kind": "machine",
+      "machine": "barrel",
+      "tex": "oak_barrel",
+      "hardness": 2,
+      "sound": "wood"
+    },
+    {
+      "id": "spruce_barrel",
+      "kind": "machine",
+      "machine": "barrel",
+      "tex": "spruce_barrel",
+      "hardness": 2,
+      "sound": "wood"
+    },
+    {
+      "id": "birch_barrel",
+      "kind": "machine",
+      "machine": "barrel",
+      "tex": "birch_barrel",
+      "hardness": 2,
+      "sound": "wood"
+    },
+    {
+      "id": "jungle_barrel",
+      "kind": "machine",
+      "machine": "barrel",
+      "tex": "jungle_barrel",
+      "hardness": 2,
+      "sound": "wood"
+    },
+    {
+      "id": "acacia_barrel",
+      "kind": "machine",
+      "machine": "barrel",
+      "tex": "acacia_barrel",
+      "hardness": 2,
+      "sound": "wood"
+    },
+    {
+      "id": "dark_oak_barrel",
+      "kind": "machine",
+      "machine": "barrel",
+      "tex": "dark_oak_barrel",
+      "hardness": 2,
+      "sound": "wood"
+    },
+    {
+      "id": "flask",
+      "kind": "machine",
+      "machine": "flask",
+      "tex": "flask",
+      "hardness": 1,
+      "sound": "copper"
+    },
+    {
+      "id": "distillery",
+      "kind": "machine",
+      "machine": "distillery",
+      "tex": "distillery",
+      "hardness": 1,
+      "sound": "copper",
+      "geometry": "distillery"
+    },
+    {
+      "id": "bottle_rack",
+      "kind": "machine",
+      "machine": "bottle_rack",
+      "tex": "bottle_rack",
+      "hardness": 0.5,
+      "sound": "wood",
+      "geometry": "bottle_rack"
+    },
+    {
+      "id": "drying_table",
+      "kind": "machine",
+      "machine": "drying_table",
+      "tex": "drying_table",
+      "hardness": 2,
+      "sound": "wood",
+      "geometry": "table"
+    },
+    {
+      "id": "iron_drying_table",
+      "kind": "machine",
+      "machine": "drying_table",
+      "tex": "iron_drying_table",
+      "hardness": 5,
+      "sound": "metal",
+      "geometry": "table"
+    },
+    {
+      "id": "tray",
+      "kind": "machine",
+      "machine": "tray",
+      "tex": "tray",
+      "hardness": 0.7,
+      "sound": "metal",
+      "geometry": "tray"
+    },
+    {
+      "id": "bunsen_burner",
+      "kind": "machine",
+      "machine": "bunsen_burner",
+      "tex": "burner_base_top",
+      "hardness": 0.7,
+      "sound": "metal",
+      "geometry": "burner"
+    },
+    {
+      "id": "rift_jar",
+      "kind": "machine",
+      "machine": "rift_jar",
+      "tex": "rift_jar",
+      "hardness": 0.5,
+      "sound": "glass",
+      "geometry": "jar",
+      "light": 7
+    },
+    {
+      "id": "placed_drink",
+      "kind": "machine",
+      "machine": "placed_drink",
+      "tex": "mug_placed",
+      "hardness": 0,
+      "sound": "glass",
+      "geometry": "small",
+      "light": 0
+    },
+    {
+      "id": "glitch",
+      "kind": "air_like",
+      "tex": "glitch",
+      "hardness": 0,
+      "light": 15
+    },
+    {
+      "id": "cannabis",
+      "kind": "crop",
+      "tex": "cannabis_stage",
+      "maxAge": 15,
+      "food": "cannabis_seeds"
+    },
+    {
+      "id": "hop",
+      "kind": "crop",
+      "tex": "hop_stage",
+      "maxAge": 15,
+      "food": "hop_seeds"
+    },
+    {
+      "id": "tobacco",
+      "kind": "crop",
+      "tex": "tobacco_stage",
+      "maxAge": 7,
+      "topState": true,
+      "food": "tobacco_seeds"
+    },
+    {
+      "id": "coca",
+      "kind": "crop",
+      "tex": "coca_stage",
+      "maxAge": 12,
+      "food": "coca_seeds"
+    },
+    {
+      "id": "coffea",
+      "kind": "crop",
+      "tex": "coffea_stage",
+      "maxAge": 7,
+      "topState": true,
+      "food": "coffea_cherries"
+    },
+    {
+      "id": "jimsonweed",
+      "kind": "nightshade",
+      "tex": "jimsonweed_stage",
+      "maxAge": 7,
+      "food": "jimsonweed_seeds",
+      "fruit": "jimsonweed_seed_pod",
+      "leaf": "jimsonweed_leaf"
+    },
+    {
+      "id": "belladonna",
+      "kind": "nightshade",
+      "tex": "belladonna_stage",
+      "maxAge": 7,
+      "food": "belladonna_seeds",
+      "fruit": "belladonna_berries",
+      "leaf": "belladonna_leaf"
+    },
+    {
+      "id": "tomatoes",
+      "kind": "nightshade",
+      "tex": "tomatoes_stage",
+      "maxAge": 7,
+      "food": "tomato_seeds",
+      "fruit": "tomato",
+      "leaf": "tomato_leaf"
+    },
+    {
+      "id": "peyote",
+      "kind": "crop",
+      "tex": "peyote_stage",
+      "maxAge": 3,
+      "food": "peyote"
+    },
+    {
+      "id": "agave_plant",
+      "kind": "crop",
+      "tex": "agave_stage",
+      "maxAge": 5,
+      "food": "agave_leaf"
+    },
+    {
+      "id": "morning_glory",
+      "kind": "vine",
+      "tex": "morning_glory",
+      "maxAge": 4,
+      "food": "morning_glory_seeds"
+    },
+    {
+      "id": "lattice",
+      "kind": "lattice",
+      "tex": "lattice",
+      "hardness": 0.3,
+      "sound": "wood"
+    },
+    {
+      "id": "wine_grape_lattice",
+      "kind": "lattice_crop",
+      "tex": "wine_grape_lattice",
+      "maxAge": 3,
+      "hardness": 0.3,
+      "sound": "wood"
+    },
+    {
+      "id": "morning_glory_lattice",
+      "kind": "lattice_crop",
+      "tex": "morning_glory_lattice",
+      "maxAge": 3,
+      "hardness": 0.3,
+      "sound": "wood"
+    },
+    {
+      "id": "juniper_leaves",
+      "kind": "leaves",
+      "tex": "juniper_leaves",
+      "hardness": 0.2,
+      "sound": "grass"
+    },
+    {
+      "id": "fruiting_juniper_leaves",
+      "kind": "leaves",
+      "tex": "fruiting_juniper_leaves",
+      "hardness": 0.2,
+      "sound": "grass"
+    },
+    {
+      "id": "juniper_log",
+      "kind": "log",
+      "tex": "juniper_log",
+      "top": "juniper_log_top",
+      "hardness": 2,
+      "sound": "wood"
+    },
+    {
+      "id": "juniper_wood",
+      "kind": "log",
+      "tex": "juniper_log",
+      "top": "juniper_log",
+      "hardness": 2,
+      "sound": "wood"
+    },
+    {
+      "id": "stripped_juniper_log",
+      "kind": "log",
+      "tex": "stripped_juniper_log",
+      "top": "stripped_juniper_log_top",
+      "hardness": 2,
+      "sound": "wood"
+    },
+    {
+      "id": "stripped_juniper_wood",
+      "kind": "log",
+      "tex": "stripped_juniper_log",
+      "top": "stripped_juniper_log",
+      "hardness": 2,
+      "sound": "wood"
+    },
+    {
+      "id": "juniper_sapling",
+      "kind": "sapling",
+      "tex": "juniper_sapling",
+      "hardness": 0,
+      "sound": "grass"
+    },
+    {
+      "id": "juniper_planks",
+      "kind": "planks",
+      "tex": "juniper_planks",
+      "hardness": 2,
+      "sound": "wood"
+    },
+    {
+      "id": "juniper_slab",
+      "kind": "slab",
+      "tex": "juniper_planks",
+      "hardness": 2,
+      "sound": "wood"
+    },
+    {
+      "id": "juniper_stairs",
+      "kind": "stairs",
+      "tex": "juniper_planks",
+      "hardness": 2,
+      "sound": "wood"
+    },
+    {
+      "id": "juniper_fence",
+      "kind": "fence",
+      "tex": "juniper_planks",
+      "hardness": 2,
+      "sound": "wood"
+    },
+    {
+      "id": "juniper_fence_gate",
+      "kind": "fence_gate",
+      "tex": "juniper_planks",
+      "hardness": 2,
+      "sound": "wood"
+    },
+    {
+      "id": "juniper_door",
+      "kind": "door",
+      "tex": "juniper_door",
+      "hardness": 3,
+      "sound": "wood"
+    },
+    {
+      "id": "juniper_trapdoor",
+      "kind": "trapdoor",
+      "tex": "juniper_trapdoor",
+      "hardness": 3,
+      "sound": "wood"
+    },
+    {
+      "id": "juniper_button",
+      "kind": "button",
+      "tex": "juniper_planks",
+      "hardness": 0.5,
+      "sound": "wood"
+    },
+    {
+      "id": "juniper_pressure_plate",
+      "kind": "pressure_plate",
+      "tex": "juniper_planks",
+      "hardness": 0.5,
+      "sound": "wood"
+    },
+    {
+      "id": "juniper_sign",
+      "kind": "sign",
+      "tex": "juniper_planks",
+      "hardness": 1,
+      "sound": "wood"
+    },
+    {
+      "id": "juniper_wall_sign",
+      "kind": "sign",
+      "tex": "juniper_planks",
+      "hardness": 1,
+      "sound": "wood"
+    },
+    {
+      "id": "juniper_hanging_sign",
+      "kind": "sign",
+      "tex": "juniper_planks",
+      "hardness": 1,
+      "sound": "wood"
+    },
+    {
+      "id": "juniper_wall_hanging_sign",
+      "kind": "sign",
+      "tex": "juniper_planks",
+      "hardness": 1,
+      "sound": "wood"
+    },
+    {
+      "id": "potted_morning_glory",
+      "kind": "pot",
+      "tex": "flower_pot",
+      "hardness": 0
+    },
+    {
+      "id": "potted_juniper_sapling",
+      "kind": "pot",
+      "tex": "flower_pot",
+      "hardness": 0
+    },
+    {
+      "id": "potted_cannabis",
+      "kind": "pot",
+      "tex": "flower_pot",
+      "hardness": 0
+    },
+    {
+      "id": "potted_hop",
+      "kind": "pot",
+      "tex": "flower_pot",
+      "hardness": 0
+    },
+    {
+      "id": "potted_tobacco",
+      "kind": "pot",
+      "tex": "flower_pot",
+      "hardness": 0
+    },
+    {
+      "id": "potted_coca",
+      "kind": "pot",
+      "tex": "flower_pot",
+      "hardness": 0
+    },
+    {
+      "id": "potted_coffea",
+      "kind": "pot",
+      "tex": "flower_pot",
+      "hardness": 0
+    }
+  ],
+  "items": [
+    {
+      "id": "wooden_mug",
+      "kind": "container",
+      "capacity": 500,
+      "tex": "wooden_mug",
+      "fuel": 50
+    },
+    {
+      "id": "stone_cup",
+      "kind": "container",
+      "capacity": 250,
+      "tex": "stone_cup"
+    },
+    {
+      "id": "glass_chalice",
+      "kind": "container",
+      "capacity": 200,
+      "tex": "glass_chalice"
+    },
+    {
+      "id": "shot_glass",
+      "kind": "container",
+      "capacity": 40,
+      "tex": "shot_glass",
+      "useDuration": 8
+    },
+    {
+      "id": "bottle",
+      "kind": "container",
+      "capacity": 2000,
+      "tex": "bottle"
+    },
+    {
+      "id": "filled_glass_bottle",
+      "kind": "container",
+      "capacity": 125,
+      "tex": "bottle_liquid"
+    },
+    {
+      "id": "filled_bowl",
+      "kind": "container",
+      "capacity": 50,
+      "tex": "bowl_liquid"
+    },
+    {
+      "id": "filled_bucket",
+      "kind": "container",
+      "capacity": 1000,
+      "tex": "bucket_liquid",
+      "maxStack": 1
+    },
+    {
+      "id": "obsidian_bottle",
+      "kind": "misc",
+      "tex": "obsidian_bottle",
+      "maxStack": 16
+    },
+    {
+      "id": "cigarette",
+      "kind": "smokeable",
+      "tex": "cigarette",
+      "damage": 1,
+      "uses": 2,
+      "smoke": [
+        1,
+        1,
+        1
+      ],
+      "fuel": 50,
+      "influences": [
+        [
+          "tobacco",
+          0,
+          0.1,
+          0.02,
+          0.7
+        ]
+      ]
+    },
+    {
+      "id": "cigar",
+      "kind": "smokeable",
+      "tex": "cigar",
+      "damage": 3,
+      "uses": 4,
+      "smoke": [
+        0.6,
+        0.6,
+        0.5
+      ],
+      "fuel": 80,
+      "influences": [
+        [
+          "tobacco",
+          0,
+          0.1,
+          0.02,
+          0.7
+        ]
+      ]
+    },
+    {
+      "id": "joint",
+      "kind": "smokeable",
+      "tex": "joint",
+      "damage": 2,
+      "uses": 2,
+      "smoke": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "fuel": 20,
+      "influences": [
+        [
+          "cannabis",
+          20,
+          0.002,
+          0.001,
+          0.2
+        ]
+      ]
+    },
+    {
+      "id": "peyote_joint",
+      "kind": "smokeable",
+      "tex": "peyote_joint",
+      "damage": 2,
+      "uses": 2,
+      "smoke": [
+        0.5,
+        0.9,
+        0.4
+      ],
+      "fuel": 20,
+      "influences": [
+        [
+          "peyote",
+          20,
+          0.003,
+          0.0015,
+          0.4
+        ],
+        [
+          "tobacco",
+          0,
+          0.1,
+          0.02,
+          0.1
+        ]
+      ]
+    },
+    {
+      "id": "smoking_pipe",
+      "kind": "bong",
+      "tex": "smoking_pipe",
+      "damage": 50,
+      "fuel": 200,
+      "consumables": [
+        {
+          "item": "psychedelicraft:dried_cannabis_buds",
+          "influences": [
+            [
+              "cannabis",
+              20,
+              0.002,
+              0.001,
+              0.25
+            ]
+          ]
+        },
+        {
+          "item": "psychedelicraft:dried_tobacco",
+          "influences": [
+            [
+              "tobacco",
+              20,
+              0.1,
+              0.02,
+              0.8
+            ]
+          ]
+        },
+        {
+          "item": "psychedelicraft:dried_belladonna_leaf",
+          "influences": [
+            [
+              "atropine",
+              20,
+              0.4,
+              0.1,
+              0.9
+            ]
+          ]
+        },
+        {
+          "item": "psychedelicraft:dried_jimsonweed_leaf",
+          "influences": [
+            [
+              "atropine",
+              20,
+              0.5,
+              0.1,
+              0.2
+            ]
+          ]
+        },
+        {
+          "item": "psychedelicraft:harmonium",
+          "influences": [
+            [
+              "harmonium",
+              20,
+              0.04,
+              0.01,
+              0.65
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bong",
+      "kind": "bong",
+      "tex": "bong_empty",
+      "damage": 128,
+      "consumables": [
+        {
+          "item": "psychedelicraft:dried_cannabis_buds",
+          "influences": [
+            [
+              "cannabis",
+              0,
+              0.002,
+              0.001,
+              0.2
+            ]
+          ]
+        },
+        {
+          "item": "psychedelicraft:dried_tobacco",
+          "influences": [
+            [
+              "tobacco",
+              0,
+              0.1,
+              0.02,
+              0.6
+            ]
+          ]
+        },
+        {
+          "item": "psychedelicraft:dried_belladonna_leaf",
+          "influences": [
+            [
+              "atropine",
+              0,
+              0.4,
+              0.1,
+              0.4
+            ]
+          ]
+        },
+        {
+          "item": "psychedelicraft:dried_jimsonweed_leaf",
+          "influences": [
+            [
+              "atropine",
+              0,
+              0.5,
+              0.1,
+              0.1
+            ]
+          ]
+        },
+        {
+          "item": "psychedelicraft:harmonium",
+          "influences": [
+            [
+              "harmonium",
+              0,
+              0.04,
+              0.01,
+              0.9
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "syringe",
+      "kind": "syringe",
+      "tex": "syringe",
+      "capacity": 10
+    },
+    {
+      "id": "hash_muffin",
+      "kind": "food",
+      "tex": "hash_muffin",
+      "nutrition": 6,
+      "saturation": 0.6,
+      "influences": [
+        [
+          "cannabis",
+          60,
+          0.004,
+          0.002,
+          0.7
+        ]
+      ]
+    },
+    {
+      "id": "brown_magic_mushrooms",
+      "kind": "food",
+      "tex": "brown_magic_mushrooms",
+      "nutrition": 1,
+      "saturation": 0.1,
+      "canAlwaysEat": true,
+      "influences": [
+        [
+          "brown_shrooms",
+          15,
+          0.005,
+          0.003,
+          0.5
+        ]
+      ]
+    },
+    {
+      "id": "red_magic_mushrooms",
+      "kind": "food",
+      "tex": "red_magic_mushrooms",
+      "nutrition": 1,
+      "saturation": 0.1,
+      "canAlwaysEat": true,
+      "influences": [
+        [
+          "red_shrooms",
+          15,
+          0.005,
+          0.003,
+          0.5
+        ]
+      ]
+    },
+    {
+      "id": "jolly_rancher",
+      "kind": "food",
+      "tex": "jolly_rancher",
+      "nutrition": 1,
+      "saturation": 0.1,
+      "canAlwaysEat": true,
+      "influences": [
+        [
+          "sugar",
+          15,
+          0.005,
+          0.003,
+          0.05
+        ]
+      ]
+    },
+    {
+      "id": "dried_peyote",
+      "kind": "food",
+      "tex": "dried_peyote",
+      "nutrition": 1,
+      "saturation": 0.1,
+      "canAlwaysEat": true,
+      "influences": [
+        [
+          "peyote",
+          15,
+          0.005,
+          0.003,
+          0.5
+        ]
+      ]
+    },
+    {
+      "id": "lsd_square",
+      "kind": "food",
+      "tex": "lsd_square",
+      "nutrition": 1,
+      "saturation": 0.1,
+      "canAlwaysEat": true,
+      "influences": [
+        [
+          "lsd",
+          30,
+          0.05,
+          0.003,
+          0.1
+        ]
+      ]
+    },
+    {
+      "id": "lsd_pill",
+      "kind": "food",
+      "tex": "lsd_pill",
+      "nutrition": 1,
+      "saturation": 0.1,
+      "canAlwaysEat": true,
+      "influences": [
+        [
+          "lsd",
+          15,
+          0.05,
+          0.003,
+          0.6
+        ]
+      ]
+    },
+    {
+      "id": "belladonna_berries",
+      "kind": "food",
+      "tex": "belladonna_berries",
+      "nutrition": 1,
+      "saturation": 1.5,
+      "canAlwaysEat": true,
+      "influences": [
+        [
+          "atropine",
+          15,
+          0.005,
+          0.003,
+          0.5
+        ]
+      ]
+    },
+    {
+      "id": "cocaine_powder",
+      "kind": "food",
+      "tex": "cocaine_powder",
+      "nutrition": 1,
+      "saturation": 0.1,
+      "canAlwaysEat": true,
+      "influences": [
+        [
+          "coccaine",
+          0,
+          0.002,
+          0.003,
+          0.35
+        ]
+      ]
+    },
+    {
+      "id": "obsidian_dust",
+      "kind": "food",
+      "tex": "obsidian_dust",
+      "nutrition": 1,
+      "saturation": 0.1,
+      "canAlwaysEat": true,
+      "influences": [
+        [
+          "bath_salts",
+          0,
+          0.002,
+          0.003,
+          0.35
+        ]
+      ]
+    },
+    {
+      "id": "wine_grapes",
+      "kind": "food",
+      "tex": "wine_grapes",
+      "nutrition": 1,
+      "saturation": 0.5
+    },
+    {
+      "id": "juniper_berries",
+      "kind": "food",
+      "tex": "juniper_berries",
+      "nutrition": 1,
+      "saturation": 0.5
+    },
+    {
+      "id": "tomato",
+      "kind": "food",
+      "tex": "tomato",
+      "nutrition": 3,
+      "saturation": 0.4
+    },
+    {
+      "id": "cannabis_seeds",
+      "kind": "seeds",
+      "tex": "cannabis_seeds",
+      "plant": "cannabis"
+    },
+    {
+      "id": "hop_seeds",
+      "kind": "seeds",
+      "tex": "hop_seeds",
+      "plant": "hop"
+    },
+    {
+      "id": "tobacco_seeds",
+      "kind": "seeds",
+      "tex": "tobacco_seeds",
+      "plant": "tobacco"
+    },
+    {
+      "id": "coca_seeds",
+      "kind": "seeds",
+      "tex": "coca_seeds",
+      "plant": "coca"
+    },
+    {
+      "id": "coffea_cherries",
+      "kind": "seeds",
+      "tex": "coffea_cherries",
+      "plant": "coffea"
+    },
+    {
+      "id": "jimsonweed_seeds",
+      "kind": "seeds",
+      "tex": "jimsonweed_seeds",
+      "plant": "jimsonweed"
+    },
+    {
+      "id": "belladonna_seeds",
+      "kind": "seeds",
+      "tex": "belladonna_seeds",
+      "plant": "belladonna"
+    },
+    {
+      "id": "tomato_seeds",
+      "kind": "seeds",
+      "tex": "tomato_seeds",
+      "plant": "tomatoes"
+    },
+    {
+      "id": "morning_glory_seeds",
+      "kind": "seeds",
+      "tex": "morning_glory_seeds",
+      "plant": "morning_glory"
+    },
+    {
+      "id": "agave_leaf",
+      "kind": "seeds",
+      "tex": "agave_leaf",
+      "plant": "agave_plant"
+    },
+    {
+      "id": "cannabis_leaf",
+      "kind": "misc",
+      "tex": "cannabis_leaf"
+    },
+    {
+      "id": "cannabis_buds",
+      "kind": "misc",
+      "tex": "cannabis_buds"
+    },
+    {
+      "id": "dried_cannabis_leaf",
+      "kind": "misc",
+      "tex": "dried_cannabis_leaf"
+    },
+    {
+      "id": "dried_cannabis_buds",
+      "kind": "misc",
+      "tex": "dried_cannabis_buds"
+    },
+    {
+      "id": "hop_cones",
+      "kind": "misc",
+      "tex": "hop_cones"
+    },
+    {
+      "id": "tobacco",
+      "kind": "misc",
+      "tex": "tobacco"
+    },
+    {
+      "id": "dried_tobacco",
+      "kind": "misc",
+      "tex": "dried_tobacco"
+    },
+    {
+      "id": "coca_leaves",
+      "kind": "misc",
+      "tex": "coca_leaves"
+    },
+    {
+      "id": "dried_coca_leaves",
+      "kind": "misc",
+      "tex": "dried_coca_leaves"
+    },
+    {
+      "id": "coffee_beans",
+      "kind": "misc",
+      "tex": "coffee_beans"
+    },
+    {
+      "id": "jimsonweed_seed_pod",
+      "kind": "misc",
+      "tex": "jimsonweed_seed_pod"
+    },
+    {
+      "id": "jimsonweed_leaf",
+      "kind": "misc",
+      "tex": "jimsonweed_leaf"
+    },
+    {
+      "id": "dried_jimsonweed_leaf",
+      "kind": "misc",
+      "tex": "dried_jimsonweed_leaf"
+    },
+    {
+      "id": "tomato_leaf",
+      "kind": "misc",
+      "tex": "tomato_leaf"
+    },
+    {
+      "id": "belladonna_leaf",
+      "kind": "misc",
+      "tex": "belladonna_leaf"
+    },
+    {
+      "id": "dried_belladonna_leaf",
+      "kind": "misc",
+      "tex": "dried_belladonna_leaf"
+    },
+    {
+      "id": "morning_glory",
+      "kind": "misc",
+      "tex": "morning_glory"
+    },
+    {
+      "id": "mash_tub",
+      "kind": "placeable",
+      "tex": "wooden_vat",
+      "block": "mash_tub",
+      "maxStack": 16
+    },
+    {
+      "id": "flask",
+      "kind": "placeable",
+      "tex": "flask",
+      "block": "flask",
+      "maxStack": 16
+    },
+    {
+      "id": "distillery",
+      "kind": "placeable",
+      "tex": "distillery",
+      "block": "distillery",
+      "maxStack": 16
+    },
+    {
+      "id": "oak_barrel",
+      "kind": "placeable",
+      "tex": "oak_barrel",
+      "block": "oak_barrel",
+      "maxStack": 16
+    },
+    {
+      "id": "spruce_barrel",
+      "kind": "placeable",
+      "tex": "spruce_barrel",
+      "block": "spruce_barrel",
+      "maxStack": 16
+    },
+    {
+      "id": "birch_barrel",
+      "kind": "placeable",
+      "tex": "birch_barrel",
+      "block": "birch_barrel",
+      "maxStack": 16
+    },
+    {
+      "id": "jungle_barrel",
+      "kind": "placeable",
+      "tex": "jungle_barrel",
+      "block": "jungle_barrel",
+      "maxStack": 16
+    },
+    {
+      "id": "acacia_barrel",
+      "kind": "placeable",
+      "tex": "acacia_barrel",
+      "block": "acacia_barrel",
+      "maxStack": 16
+    },
+    {
+      "id": "dark_oak_barrel",
+      "kind": "placeable",
+      "tex": "dark_oak_barrel",
+      "block": "dark_oak_barrel",
+      "maxStack": 16
+    },
+    {
+      "id": "rift_jar",
+      "kind": "placeable",
+      "tex": "rift_jar",
+      "block": "rift_jar",
+      "maxStack": 16
+    },
+    {
+      "id": "bottle_rack",
+      "kind": "placeable",
+      "tex": "bottle_rack",
+      "block": "bottle_rack"
+    },
+    {
+      "id": "drying_table",
+      "kind": "placeable",
+      "tex": "drying_table",
+      "block": "drying_table"
+    },
+    {
+      "id": "iron_drying_table",
+      "kind": "placeable",
+      "tex": "iron_drying_table",
+      "block": "iron_drying_table"
+    },
+    {
+      "id": "tray",
+      "kind": "placeable",
+      "tex": "tray",
+      "block": "tray"
+    },
+    {
+      "id": "bunsen_burner",
+      "kind": "placeable",
+      "tex": "burner_base_top",
+      "block": "bunsen_burner"
+    },
+    {
+      "id": "lattice",
+      "kind": "placeable",
+      "tex": "lattice",
+      "block": "lattice",
+      "fuel": 700
+    },
+    {
+      "id": "wine_grape_lattice",
+      "kind": "placeable",
+      "tex": "wine_grape_lattice",
+      "block": "wine_grape_lattice"
+    },
+    {
+      "id": "morning_glory_lattice",
+      "kind": "placeable",
+      "tex": "morning_glory_lattice",
+      "block": "morning_glory_lattice"
+    },
+    {
+      "id": "juniper_sapling",
+      "kind": "placeable",
+      "tex": "juniper_sapling",
+      "block": "juniper_sapling"
+    },
+    {
+      "id": "juniper_planks",
+      "kind": "placeable",
+      "tex": "juniper_planks",
+      "block": "juniper_planks"
+    },
+    {
+      "id": "juniper_slab",
+      "kind": "placeable",
+      "tex": "juniper_planks",
+      "block": "juniper_slab"
+    },
+    {
+      "id": "juniper_stairs",
+      "kind": "placeable",
+      "tex": "juniper_planks",
+      "block": "juniper_stairs"
+    },
+    {
+      "id": "juniper_fence",
+      "kind": "placeable",
+      "tex": "juniper_planks",
+      "block": "juniper_fence"
+    },
+    {
+      "id": "juniper_fence_gate",
+      "kind": "placeable",
+      "tex": "juniper_planks",
+      "block": "juniper_fence_gate"
+    },
+    {
+      "id": "juniper_door",
+      "kind": "placeable",
+      "tex": "juniper_door",
+      "block": "juniper_door"
+    },
+    {
+      "id": "juniper_trapdoor",
+      "kind": "placeable",
+      "tex": "juniper_trapdoor",
+      "block": "juniper_trapdoor"
+    },
+    {
+      "id": "juniper_button",
+      "kind": "placeable",
+      "tex": "juniper_planks",
+      "block": "juniper_button"
+    },
+    {
+      "id": "juniper_pressure_plate",
+      "kind": "placeable",
+      "tex": "juniper_planks",
+      "block": "juniper_pressure_plate"
+    },
+    {
+      "id": "juniper_sign",
+      "kind": "placeable",
+      "tex": "juniper_planks",
+      "block": "juniper_sign",
+      "maxStack": 16
+    },
+    {
+      "id": "juniper_hanging_sign",
+      "kind": "placeable",
+      "tex": "juniper_planks",
+      "block": "juniper_hanging_sign",
+      "maxStack": 16
+    },
+    {
+      "id": "juniper_log",
+      "kind": "placeable",
+      "tex": "juniper_log",
+      "block": "juniper_log"
+    },
+    {
+      "id": "juniper_wood",
+      "kind": "placeable",
+      "tex": "juniper_log",
+      "block": "juniper_wood"
+    },
+    {
+      "id": "stripped_juniper_log",
+      "kind": "placeable",
+      "tex": "stripped_juniper_log",
+      "block": "stripped_juniper_log"
+    },
+    {
+      "id": "stripped_juniper_wood",
+      "kind": "placeable",
+      "tex": "stripped_juniper_log",
+      "block": "stripped_juniper_wood"
+    },
+    {
+      "id": "juniper_leaves",
+      "kind": "placeable",
+      "tex": "juniper_leaves",
+      "block": "juniper_leaves"
+    },
+    {
+      "id": "fruiting_juniper_leaves",
+      "kind": "placeable",
+      "tex": "fruiting_juniper_leaves",
+      "block": "fruiting_juniper_leaves"
+    },
+    {
+      "id": "molotov_cocktail",
+      "kind": "molotov",
+      "tex": "molotov_cocktail",
+      "maxStack": 16
+    },
+    {
+      "id": "harmonium",
+      "kind": "harmonium",
+      "tex": "harmonium"
+    },
+    {
+      "id": "paper_bag",
+      "kind": "paper_bag",
+      "tex": "paper_bag"
+    },
+    {
+      "id": "bag_o_vomit",
+      "kind": "suspicious",
+      "tex": "bag_o_vomit",
+      "nutrition": 8,
+      "saturation": 0.8
+    },
+    {
+      "id": "vomit",
+      "kind": "misc",
+      "tex": "vomit"
+    }
+  ],
+  "fluids": [
+    {
+      "id": "wheat_hop",
+      "kind": "alcohol",
+      "alcohol": [
+        0.25,
+        1.7,
+        0.1
+      ],
+      "color": 2868816392,
+      "tick": [
+        36000,
+        72000,
+        120000,
+        36000
+      ]
+    },
+    {
+      "id": "wheat",
+      "kind": "alcohol",
+      "alcohol": [
+        0.25,
+        1.7,
+        0.1
+      ],
+      "color": 2868816392,
+      "tick": [
+        48000,
+        48000,
+        36000,
+        36000
+      ]
+    },
+    {
+      "id": "potato",
+      "kind": "alcohol",
+      "alcohol": [
+        0.45,
+        1.9,
+        0.15
+      ],
+      "color": 2868816392,
+      "viscosity": 2,
+      "tick": [
+        48000,
+        48000,
+        36000,
+        36000
+      ]
+    },
+    {
+      "id": "tomato",
+      "kind": "alcohol",
+      "alcohol": [
+        0.15,
+        0.9,
+        0.05
+      ],
+      "color": 2868881928,
+      "distilledColor": 2868838400,
+      "matureColor": 2868851456,
+      "viscosity": 1,
+      "tick": [
+        48000,
+        48000,
+        36000,
+        36000
+      ],
+      "extraDrug": [
+        "sugar",
+        20,
+        0.003,
+        0.002,
+        0.3
+      ]
+    },
+    {
+      "id": "red_grapes",
+      "kind": "alcohol",
+      "alcohol": [
+        0.55,
+        1.7,
+        0.2
+      ],
+      "color": 2868816392,
+      "distilledColor": 2571044898,
+      "matureColor": 3997108258,
+      "tick": [
+        48000,
+        48000,
+        36000,
+        36000
+      ]
+    },
+    {
+      "id": "rice",
+      "kind": "alcohol",
+      "alcohol": [
+        0.25,
+        1.7,
+        0.1
+      ],
+      "color": 4006266034,
+      "matureColor": 2295774352,
+      "tick": [
+        48000,
+        48000,
+        36000,
+        36000
+      ]
+    },
+    {
+      "id": "juniper",
+      "kind": "alcohol",
+      "alcohol": [
+        0.4,
+        1.7,
+        0.1
+      ],
+      "color": 3429912097,
+      "tick": [
+        48000,
+        48000,
+        36000,
+        36000
+      ]
+    },
+    {
+      "id": "honey",
+      "kind": "alcohol",
+      "alcohol": [
+        0.35,
+        1.7,
+        0.1
+      ],
+      "color": 3152653883,
+      "distilledColor": 2582228539,
+      "matureColor": 2865862733,
+      "viscosity": 5,
+      "tick": [
+        48000,
+        48000,
+        36000,
+        36000
+      ]
+    },
+    {
+      "id": "sugar_cane",
+      "kind": "alcohol",
+      "alcohol": [
+        0.35,
+        1.7,
+        0.1
+      ],
+      "color": 2868816392,
+      "tick": [
+        48000,
+        48000,
+        36000,
+        36000
+      ]
+    },
+    {
+      "id": "corn",
+      "kind": "alcohol",
+      "alcohol": [
+        0.25,
+        1.7,
+        0.1
+      ],
+      "color": 2868816392,
+      "tick": [
+        48000,
+        48000,
+        36000,
+        36000
+      ]
+    },
+    {
+      "id": "apple",
+      "kind": "alcohol",
+      "alcohol": [
+        0.35,
+        1.7,
+        0.1
+      ],
+      "color": 2582495547,
+      "distilledColor": 1726857531,
+      "matureColor": 2297282875,
+      "tick": [
+        48000,
+        48000,
+        36000,
+        36000
+      ]
+    },
+    {
+      "id": "pineapple",
+      "kind": "alcohol",
+      "alcohol": [
+        0.35,
+        1.7,
+        0.1
+      ],
+      "color": 2582495547,
+      "distilledColor": 1726857531,
+      "matureColor": 2297282875,
+      "viscosity": 2,
+      "tick": [
+        48000,
+        48000,
+        36000,
+        36000
+      ]
+    },
+    {
+      "id": "banana",
+      "kind": "alcohol",
+      "alcohol": [
+        0.35,
+        1.7,
+        0.1
+      ],
+      "color": 3152653883,
+      "distilledColor": 2582228539,
+      "matureColor": 2865862733,
+      "viscosity": 3,
+      "tick": [
+        48000,
+        48000,
+        36000,
+        36000
+      ]
+    },
+    {
+      "id": "milk",
+      "kind": "alcohol",
+      "alcohol": [
+        0.35,
+        1.7,
+        0.1
+      ],
+      "color": 2298478591,
+      "distilledColor": 2009777330,
+      "matureColor": 2295774352,
+      "viscosity": 2,
+      "tick": [
+        48000,
+        48000,
+        36000,
+        36000
+      ]
+    },
+    {
+      "id": "agave",
+      "kind": "alcohol",
+      "alcohol": [
+        0.15,
+        1.5,
+        0.05
+      ],
+      "color": 2006690658,
+      "distilledColor": 2006707042,
+      "matureColor": 2006707042,
+      "viscosity": 1,
+      "tick": [
+        48000,
+        1200,
+        36000,
+        36000
+      ]
+    },
+    {
+      "id": "coffee",
+      "kind": "drug",
+      "drug": null,
+      "color": 4289166677,
+      "drinkable": true
+    },
+    {
+      "id": "coca_tea",
+      "kind": "drug",
+      "drug": [
+        "coccaine",
+        60,
+        0.005,
+        0.002,
+        0.2
+      ],
+      "color": 1148746294,
+      "drinkable": true
+    },
+    {
+      "id": "cannabis_tea",
+      "kind": "drug",
+      "drug": [
+        "cannabis",
+        60,
+        0.005,
+        0.002,
+        0.25
+      ],
+      "color": 1148022588,
+      "drinkable": true
+    },
+    {
+      "id": "peyote_juice",
+      "kind": "drug",
+      "drug": [
+        "peyote",
+        15,
+        0.005,
+        0.003,
+        2
+      ],
+      "color": 2006690658,
+      "viscosity": 2,
+      "drinkable": true
+    },
+    {
+      "id": "kava",
+      "kind": "drug",
+      "drug": [
+        "kava",
+        20,
+        0.005,
+        0.003,
+        2
+      ],
+      "color": 2006690658,
+      "drinkable": true
+    },
+    {
+      "id": "cocaine",
+      "kind": "drug",
+      "drug": [
+        "coccaine",
+        0,
+        0.005,
+        0.01,
+        50
+      ],
+      "color": 1156117752,
+      "injectable": true
+    },
+    {
+      "id": "caffeine",
+      "kind": "drug",
+      "drug": [
+        "caffeine",
+        0,
+        0.005,
+        0.01,
+        85
+      ],
+      "color": 1726931667,
+      "injectable": true
+    },
+    {
+      "id": "bath_salts",
+      "kind": "drug",
+      "drug": [
+        "bath_salts",
+        0,
+        0.005,
+        0.01,
+        50
+      ],
+      "color": 573830392,
+      "injectable": true
+    },
+    {
+      "id": "morning_glory_extract",
+      "kind": "extract",
+      "drug": [
+        "lsd",
+        0,
+        0.005,
+        0.01,
+        25
+      ],
+      "color": 1726931667,
+      "injectable": true
+    },
+    {
+      "id": "belladonna_extract",
+      "kind": "extract",
+      "drug": [
+        "atropine",
+        0,
+        0.005,
+        0.01,
+        25
+      ],
+      "color": 1726931667,
+      "injectable": true
+    },
+    {
+      "id": "jimsonweed_extract",
+      "kind": "extract",
+      "drug": [
+        "atropine",
+        0,
+        0.005,
+        0.01,
+        25
+      ],
+      "color": 1726931667,
+      "injectable": true
+    },
+    {
+      "id": "slurry",
+      "kind": "slurry",
+      "color": 3429912097,
+      "viscosity": 4
+    }
+  ],
+  "drugs": [
+    {
+      "id": "alcohol",
+      "class": "AlcoholDrug",
+      "dec": [
+        1,
+        0.0002
+      ],
+      "modifiers": {
+        "viewWobblyness": "v*0.5",
+        "doubleVision": "il(v,0.25,1)",
+        "motionBlur": "il(v,0.5,1)*0.3"
+      },
+      "behavior": {
+        "alcoholPoisoningDamage": true,
+        "wakeUpHangover": true,
+        "headRotation": true
+      }
+    },
+    {
+      "id": "cannabis",
+      "class": "CannabisDrug",
+      "dec": [
+        1,
+        0.0002
+      ],
+      "modifiers": {
+        "speed": "1-(v-1)*0.5-0.5",
+        "digSpeed": "1-(v-1)*0.5-0.5",
+        "superSaturation": "il(v,0,0.5)*0.3",
+        "color": "il(v*1.3,0.5,1)*0.1",
+        "movement": "il(v*1.3,0.5,1)*0.1",
+        "contextual": "il(v*1.3,0.5,1)*0.1",
+        "headMotionInertness": "v*8",
+        "viewWobblyness": "v*0.02",
+        "hungerSuppression": "v*-0.2"
+      },
+      "behavior": {
+        "exhaustionPerTick": 0.03
+      }
+    },
+    {
+      "id": "brown_shrooms",
+      "class": "BrownShroomsDrug",
+      "dec": [
+        1,
+        0.0002
+      ],
+      "modifiers": {
+        "color": "v*0.8",
+        "movement": "v",
+        "contextual": "v*0.35",
+        "viewWobblyness": "v*0.03",
+        "hungerSuppression": "v*0.1"
+      }
+    },
+    {
+      "id": "red_shrooms",
+      "class": "RedShroomsDrug",
+      "dec": [
+        1,
+        0.0002
+      ],
+      "modifiers": {
+        "color": "v*1.3",
+        "movement": "v*0.7",
+        "contextual": "v*0.2",
+        "viewWobblyness": "v*0.03",
+        "hungerSuppression": "v*0.1"
+      }
+    },
+    {
+      "id": "tobacco",
+      "class": "TobaccoDrug",
+      "dec": [
+        1,
+        0.003
+      ],
+      "modifiers": {
+        "desaturation": "v*0.2"
+      }
+    },
+    {
+      "id": "coccaine",
+      "class": "CocaineDrug",
+      "dec": [
+        1,
+        0.0003
+      ],
+      "modifiers": {
+        "heartbeatVolume": "il(v,0.4,1)+(t*0.0001)*1.2",
+        "heartbeatSpeed": "v*0.1+(t*0.0001)",
+        "breathVolume": "il(v,0.4,1)*1.5",
+        "breathSpeed": "v*0.8",
+        "randomJumpChance": "il(v,0.6,1)*0.03",
+        "randomPunchChance": "il(v,0.5,1)*0.02",
+        "speed": "1+v*0.15",
+        "digSpeed": "1+v*0.15",
+        "desaturation": "v*0.75",
+        "handTremble": "il(v,0.6,1)",
+        "viewTremble": "il(v,0.8,1)",
+        "headMotionInertness": "v*10",
+        "bloom": "il(v,0,0.6)*1.5",
+        "color": "il(v*1.3,0.7,1)*0.05",
+        "movement": "il(v*1.3,0.7,1)*0.05",
+        "contextual": "il(v*1.3,0.7,1)*0.05"
+      }
+    },
+    {
+      "id": "caffeine",
+      "class": "CaffeineDrug",
+      "dec": [
+        1,
+        0.0002
+      ],
+      "modifiers": {
+        "heartbeatVolume": "il(v,0.6,1)+(t*0.001)",
+        "heartbeatSpeed": "v*0.2+(t*0.001)",
+        "breathVolume": "il(v,0.4,1)*0.5",
+        "breathSpeed": "v*0.3",
+        "randomJumpChance": "il(v,0.6,1)*0.07",
+        "randomPunchChance": "il(v,0.3,1)*0.05",
+        "speed": "1+v*0.2",
+        "digSpeed": "1+v*0.2",
+        "superSaturation": "v*0.3",
+        "handTremble": "il(v,0.6,1)",
+        "viewTremble": "il(v,0.8,1)",
+        "color": "il(v*1.3,0.7,1)*0.03",
+        "movement": "il(v*1.3,0.7,1)*0.03",
+        "contextual": "il(v*1.3,0.7,1)*0.05",
+        "hungerSuppression": "v*0.15"
+      }
+    },
+    {
+      "id": "sugar",
+      "class": "CaffeineDrug",
+      "dec": [
+        1,
+        0.0002
+      ],
+      "modifiers": {
+        "speed": "1+v*0.2",
+        "digSpeed": "1+v*0.2"
+      }
+    },
+    {
+      "id": "bath_salts",
+      "class": "BathSaltsDrug",
+      "dec": [
+        1,
+        0.00012
+      ],
+      "modifiers": {
+        "randomJumpChance": "il(v,0.6,1)*0.03",
+        "randomPunchChance": "il(v,0.5,1)*0.02",
+        "color": "v*0.8",
+        "movement": "v",
+        "bloom": "v*0.12",
+        "inversion": "v"
+      },
+      "behavior": {
+        "wakeUpDamage": true,
+        "nausea": 300
+      }
+    },
+    {
+      "id": "sleep_deprivation",
+      "class": "SleepDeprivationDrug",
+      "dec": [
+        1,
+        0
+      ],
+      "modifiers": {
+        "digSpeed": "1-max(0,v*0.9-0.4)",
+        "speed": "1-max(0,v*0.9-0.4)",
+        "motionBlur": "max(0,v-0.6)*3",
+        "drowsyness": "v",
+        "desaturation": "max(0,(v-0.5)*2)",
+        "sound": "1+max(0,(v-0.5)*2)",
+        "contextual": "max(0,v-0.8)*4",
+        "movement": "max(0,v-0.8)*3"
+      },
+      "behavior": {
+        "storedEnergyFromCaffeine": true
+      }
+    },
+    {
+      "id": "lsd",
+      "class": "LsdDrug",
+      "dec": [
+        1,
+        0.0003
+      ],
+      "harmful": false,
+      "modifiers": {
+        "handTremble": "il(v,0.6,1)",
+        "viewTremble": "il(v,0.8,1)",
+        "speed": "1+v*0.1",
+        "digSpeed": "1+v*0.1",
+        "sound": "1+v*1.75*str",
+        "movement": "max(0,v-0.6)*1.9",
+        "bloom": "v*0.12",
+        "superSaturation": "v*0.8",
+        "hungerSuppression": "v*0.2",
+        "weightlessness": "v>0.6? v*0.8 : v*0.2"
+      }
+    },
+    {
+      "id": "atropine",
+      "class": "AtropineDrug",
+      "dec": [
+        1,
+        0.0003
+      ],
+      "harmful": true,
+      "modifiers": {
+        "heartbeatVolume": "il(v,0.4,1)+(t*0.0001)*1.2",
+        "heartbeatSpeed": "v*0.1+(t*0.0001)",
+        "color": "v*1.4",
+        "movement": "v*0.7",
+        "contextual": "v*1.2",
+        "handTremble": "v*0.3",
+        "viewTremble": "v*0.4",
+        "viewWobblyness": "v*0.003",
+        "hungerSuppression": "v*0.1"
+      }
+    },
+    {
+      "id": "kava",
+      "class": "KavaDrug",
+      "dec": [
+        1,
+        0.0002
+      ],
+      "modifiers": {
+        "viewWobblyness": "v*0.5",
+        "drowsyness": "v*0.4",
+        "sound": "1-v",
+        "speed": "1+v*-0.2",
+        "digSpeed": "1+v*-0.2",
+        "desaturation": "il(v,0.4,1)*str",
+        "heartbeatVolume": "il(v,0.4,1)*1.2*str"
+      }
+    },
+    {
+      "id": "warmth",
+      "class": "WarmthDrug",
+      "dec": [
+        1,
+        0.004
+      ],
+      "modifiers": {
+        "bloom": "v*0.5",
+        "superSaturation": "v*0.1"
+      }
+    },
+    {
+      "id": "peyote",
+      "class": "PeyoteDrug",
+      "dec": [
+        1,
+        0.0002
+      ],
+      "modifiers": {
+        "color": "v*0.3",
+        "contextual": "v*0.6"
+      }
+    },
+    {
+      "id": "zero",
+      "class": "SimpleDrug",
+      "dec": [
+        1,
+        0.0001
+      ],
+      "modifiers": {}
+    },
+    {
+      "id": "power",
+      "class": "PowerDrug",
+      "dec": [
+        0.95,
+        0.0001
+      ],
+      "modifiers": {
+        "sound": "1-v",
+        "desaturation": "v*0.75",
+        "motionBlur": "v*0.3"
+      }
+    },
+    {
+      "id": "harmonium",
+      "class": "HarmoniumDrug",
+      "dec": [
+        1,
+        0.0003
+      ],
+      "modifiers": {},
+      "behavior": {
+        "colorization": true
+      }
+    }
+  ],
+  "dryingRecipes": [
+    {
+      "input": "minecraft:brown_mushroom",
+      "output": "psychedelicraft:brown_magic_mushrooms",
+      "count": 3
+    },
+    {
+      "input": "minecraft:red_mushroom",
+      "output": "psychedelicraft:red_magic_mushrooms",
+      "count": 3
+    },
+    {
+      "input": "psychedelicraft:cannabis_buds",
+      "output": "psychedelicraft:dried_cannabis_buds",
+      "count": 3
+    },
+    {
+      "input": "psychedelicraft:cannabis_leaf",
+      "output": "psychedelicraft:dried_cannabis_leaf",
+      "count": 3
+    },
+    {
+      "input": "psychedelicraft:coca_leaves",
+      "output": "psychedelicraft:dried_coca_leaves",
+      "count": 3
+    },
+    {
+      "input": "psychedelicraft:tobacco",
+      "output": "psychedelicraft:dried_tobacco",
+      "count": 3
+    },
+    {
+      "input": "psychedelicraft:jimsonweed_leaf",
+      "output": "psychedelicraft:dried_jimsonweed_leaf",
+      "count": 3
+    },
+    {
+      "input": "psychedelicraft:belladonna_leaf",
+      "output": "psychedelicraft:dried_belladonna_leaf",
+      "count": 3
+    },
+    {
+      "input": "psychedelicraft:peyote",
+      "output": "psychedelicraft:dried_peyote",
+      "count": 3
+    }
+  ]
+};

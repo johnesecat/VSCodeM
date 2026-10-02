@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "psychedelicraft:jimsonweed_seed_pod",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "jimsonweed_seed_pod"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.psychedelicraft:jimsonweed_seed_pod.name"
+      },
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

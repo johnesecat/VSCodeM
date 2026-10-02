@@ -1,0 +1,28 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "psychedelicraft:stone_cup"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "unlock": {
+      "context": "AlwaysUnlocked"
+    },
+    "pattern": [
+      "# #",
+      "# #",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:clay_ball"
+      }
+    },
+    "result": {
+      "item": "psychedelicraft:stone_cup",
+      "count": 1
+    }
+  }
+}

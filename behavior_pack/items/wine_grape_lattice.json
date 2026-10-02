@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "psychedelicraft:wine_grape_lattice",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "wine_grape_lattice"
+        }
+      },
+      "minecraft:display_name": {
+        "value": "item.psychedelicraft:wine_grape_lattice.name"
+      },
+      "minecraft:max_stack_size": 64
+    }
+  }
+}
