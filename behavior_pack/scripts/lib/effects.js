@@ -169,13 +169,13 @@ export function applyEffects(player, properties) {
 
   // heartbeat / breath loops (DrugMusicManager audible layer)
   if (heartbeatVolume > 0 && properties.age % 60 === 0) {
-    playAt(player, "psbed:entity.player.heartbeat", Math.min(1, heartbeatVolume));
+    playAt(player, "psybed:entity.player.heartbeat", Math.min(1, heartbeatVolume));
   }
   if (breathVolume > 0 && properties.age % 80 === 0) {
-    playAt(player, "psbed:entity.player.breath", Math.min(1, breathVolume));
+    playAt(player, "psybed:entity.player.breath", Math.min(1, breathVolume));
   }
   if (properties.isBreathingSmoke() && properties.age % 20 === 0) {
-    playAt(player, "psbed:drug.generic", 0.4);
+    playAt(player, "psybed:drug.generic", 0.4);
   }
 }
 

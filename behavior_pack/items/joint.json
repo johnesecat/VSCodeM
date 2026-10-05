@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.10",
+  "format_version": "1.21.120",
   "minecraft:item": {
     "description": {
       "identifier": "psychedelicraft:joint",
@@ -24,9 +24,7 @@
         "movement_modifier": 0.7
       },
       "minecraft:hand_equipped": true,
-      "minecraft:custom_components": [
-        "psychedelicraft:smokeable"
-      ]
+      "psychedelicraft:smokeable": {}
     }
   }
 }

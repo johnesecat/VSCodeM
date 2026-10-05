@@ -1,4 +1,10 @@
 {
+  "scripts": {
+    "validate": "node tools/validate.mjs",
+    "test": "node --experimental-vm-modules --test tools/test-runtime.mjs",
+    "package:addon": "node tools/package.mjs",
+    "test:bedrock": "node tools/test-bedrock.mjs"
+  },
   "devDependencies": {
     "@minecraft/creator-tools": "^0.19.0",
     "@minecraft/server": "^2.10.0",

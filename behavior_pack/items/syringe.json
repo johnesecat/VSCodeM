@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.10",
+  "format_version": "1.21.120",
   "minecraft:item": {
     "description": {
       "identifier": "psychedelicraft:syringe",
@@ -17,9 +17,7 @@
         "use_duration": 1.6,
         "movement_modifier": 0.35
       },
-      "minecraft:custom_components": [
-        "psychedelicraft:syringe"
-      ]
+      "psychedelicraft:syringe": {}
     }
   }
 }

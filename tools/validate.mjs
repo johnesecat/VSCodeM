@@ -93,7 +93,7 @@ for (const file of walk(path.join(BP, "blocks"), ".json")) {
       errors.push(`block ${id}: geometry '${geo}' missing`);
     }
   }
-  for (const comp of block.components?.["minecraft:custom_components"] ?? []) {
+  for (const comp of [...(block.components?.["minecraft:custom_components"] ?? []), ...Object.keys(block.components ?? {}).filter((key) => key.startsWith("psychedelicraft:"))]) {
     if (!allScripts.includes(`"${comp}"`)) errors.push(`block ${id}: component ${comp} not registered in scripts`);
   }
   for (const perm of block.permutations ?? []) {
@@ -122,7 +122,7 @@ for (const file of walk(path.join(BP, "items"), ".json")) {
   const iconComp = item.components?.["minecraft:icon"];
   const icon = typeof iconComp === "string" ? iconComp : iconComp?.textures?.default ?? iconComp?.texture;
   if (icon && !itemTex[icon]) errors.push(`item ${id}: icon texture '${icon}' not in item_texture.json`);
-  for (const comp of item.components?.["minecraft:custom_components"] ?? []) {
+  for (const comp of [...(item.components?.["minecraft:custom_components"] ?? []), ...Object.keys(item.components ?? {}).filter((key) => key.startsWith("psychedelicraft:"))]) {
     if (!allScripts.includes(`"${comp}"`)) errors.push(`item ${id}: component ${comp} not registered in scripts`);
   }
 }
@@ -195,6 +195,22 @@ for (const id of itemIds) {
   if (!lang.includes(`item.${id}.name=`)) warnings.push(`lang: missing item name ${id}`);
 }
 ok.push("lang: coverage checked");
+
+// Sound paths must resolve locally; event aliases reference native Bedrock events.
+const sounds = JSON.parse(fs.readFileSync(path.join(RP, "sounds/sound_definitions.json"), "utf8")).sound_definitions;
+for (const [id, definition] of Object.entries(sounds)) {
+  for (const sound of definition.sounds) {
+    const name = typeof sound === "string" ? sound : sound.name;
+    if (sound.type !== "event" && !fs.existsSync(path.join(RP, `${name}.ogg`))) errors.push(`sound ${id}: missing asset ${name}.ogg`);
+  }
+}
+for (const match of allScripts.matchAll(/["']((?:psybed|psbed):[^"']+)["']/g)) {
+  if (match[1].startsWith("psbed:") && !match[1].includes("rift_jar")) errors.push(`sound: legacy namespace ${match[1]}`);
+  const id = match[1].replace(/^psbed:/, "psybed:");
+  // Script translation keys also use psybed; only sound-shaped IDs matter.
+  if (/:(?:drug\.|block\.rift_jar\.|entity\.player\.)/.test(id) && !sounds[id]) errors.push(`sound: undefined event ${id}`);
+}
+ok.push("sounds: asset paths and custom event references resolve");
 
 // 7. Script syntax
 const tmpDir = path.join(ROOT, ".validate-tmp");

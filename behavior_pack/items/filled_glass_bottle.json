@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.10",
+  "format_version": "1.21.120",
   "minecraft:item": {
     "description": {
       "identifier": "psychedelicraft:filled_glass_bottle",
@@ -18,9 +18,7 @@
         "use_duration": 1.6,
         "movement_modifier": 0.35
       },
-      "minecraft:custom_components": [
-        "psychedelicraft:container"
-      ]
+      "psychedelicraft:container": {}
     }
   }
 }

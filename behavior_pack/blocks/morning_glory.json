@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.10",
+  "format_version": "1.21.120",
   "minecraft:block": {
     "description": {
       "identifier": "psychedelicraft:morning_glory",
@@ -61,9 +61,7 @@
         ],
         "looping": true
       },
-      "minecraft:custom_components": [
-        "psychedelicraft:vine"
-      ]
+      "psychedelicraft:vine": {}
     },
     "permutations": [
       {

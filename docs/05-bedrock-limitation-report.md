@@ -1,5 +1,7 @@
 # H. BEDROCK LIMITATION REPORT (§43)
 
+> **2026-10-05 correction:** Historical entries below are superseded by [the current audit](10-functionality-audit.md) where they conflict. Boats now spawn steerable native equivalents; wood orientation/state emulation exists; paper bags have a persistent storage form. Commands, advancements, NPC trading, structure conversion and bounded spilled-fluid simulation are potential emulation work, not all inherently impossible. None is implemented merely because its source data is preserved. Exact scene shaders still lack standard addon framebuffer access.
+
 Each entry: Java behavior → exact Bedrock limitation → alternatives investigated → implemented equivalent → remaining difference.
 
 1. **Custom shader pipeline (51 GLSL files: color hallucination, bloom, motion blur, double vision, desaturation, inversion, heat/water distortion)**

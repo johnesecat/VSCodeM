@@ -14,13 +14,16 @@ class MockForm {
 class ItemStack {
   constructor(typeId, amount = 1) { this.typeId = typeId; this.amount = amount; this.props = new Map(); }
   getDynamicProperty(key) { return this.props.get(key); }
+  getDynamicPropertyIds() { return [...this.props.keys()]; }
+  getLore() { return this.lore ?? []; }
+  get maxAmount() { return ['psychedelicraft:bottle', 'psychedelicraft:molotov_cocktail'].includes(this.typeId) ? 1 : 64; }
   setDynamicProperty(key, value) { if (value === undefined) this.props.delete(key); else this.props.set(key, value); }
   setLore(value) { this.lore = value; }
   clone() { const copy = new ItemStack(this.typeId, this.amount); copy.props = new Map(this.props); copy.lore = this.lore; return copy; }
 }
 const callbacks = new Map();
 const signal = (name) => ({ subscribe: (fn) => { const list = callbacks.get(name) ?? []; list.push(fn); callbacks.set(name, list); } });
-const events = ['playerBreakBlock','blockExplode','playerInteractWithBlock','playerSpawn','playerLeave'];
+const events = ['playerBreakBlock','blockExplode','playerInteractWithBlock','playerSpawn','playerLeave','projectileHitBlock','projectileHitEntity'];
 const mockWorld = {
   getDynamicProperty: (key) => properties.get(key),
   setDynamicProperty: (key, value) => { if (value === undefined) properties.delete(key); else properties.set(key, value); },
@@ -38,7 +41,7 @@ async function load(file) {
   cache.set(file, module);
   await module.link(async (specifier, parent) => {
     if (specifier === '@minecraft/server') {
-      const api = { ItemStack, BlockPermutation: { resolve: (id, states = {}) => ({ id, states, getAllStates: () => states }) }, world: mockWorld, system: mockSystem };
+      const api = { ItemStack, EntityDamageCause: { magic: 'magic' }, EnchantmentTypes: { get: (id) => ({ id }) }, BlockPermutation: { resolve: (id, states = {}) => ({ id, states, getAllStates: () => states }) }, world: mockWorld, system: mockSystem };
       const mock = new vm.SyntheticModule(Object.keys(api), function () { for (const [key, value] of Object.entries(api)) this.setExport(key, value); }, { context });
       return mock;
     }
@@ -61,6 +64,9 @@ const fluids = await exportsOf('behavior_pack/scripts/lib/fluids.js');
 const items = await exportsOf('behavior_pack/scripts/lib/items.js');
 const machines = await exportsOf('behavior_pack/scripts/lib/machines.js');
 const drugs = await exportsOf('behavior_pack/scripts/lib/drugs.js');
+const bags = await exportsOf('behavior_pack/scripts/lib/bags.js');
+const molotov = await exportsOf('behavior_pack/scripts/lib/molotov.js');
+mockWorld.gameRules = { mobGriefing: false };
 const { CONTENT } = await exportsOf('behavior_pack/scripts/data/content.js');
 await exportsOf('behavior_pack/scripts/main.js');
 const registeredItems = new Map(), registeredBlocks = new Map();
@@ -117,6 +123,154 @@ function fakePlayer(held) { const slots = [held]; return { selectedSlotIndex: 0,
 
 coreTests({ test, assert, fs, path, root, crafting, rift, wood, fluids, machines, RECIPES, ItemStack, stack, blockGrid, fakePlayer, formResults, items });
 
+test('paper bag stores matching items, rejects mixtures, and conserves counts', () => {
+  const bag = stack('psychedelicraft:paper_bag');
+  assert.equal(bags.insertBag(bag, stack('minecraft:cookie', 64)), 64);
+  assert.equal(bags.insertBag(bag, stack('minecraft:cookie', 20)), 20);
+  assert.equal(bags.insertBag(bag, stack('minecraft:spider_eye')), 0);
+  assert.equal(bags.insertBag(bag, stack('minecraft:diamond')), 0);
+  assert.equal(bags.withdrawBag(bag, 1).amount, 1);
+  assert.equal(bags.withdrawBag(bag).amount, 64);
+  assert.equal(bags.withdrawBag(bag).amount, 19);
+  assert.equal(bags.readBag(bag), null);
+});
+test('paper bag preserves fluid and dye properties and bottle capacity is one', () => {
+  const bag = stack('psychedelicraft:paper_bag');
+  const bottle = stack('psychedelicraft:bottle', 1, { ...fluids.makeFluidState('red_grapes', 1234), distillation: 5 });
+  bottle.setDynamicProperty('ps:dye', 'blue');
+  assert.equal(bags.insertBag(bag, bottle), 1);
+  assert.equal(bags.insertBag(bag, bottle), 0);
+  const out = bags.withdrawBag(bag);
+  assert.equal(fluids.readItemFluid(out).level, 1234);
+  assert.equal(fluids.readItemFluid(out).distillation, 5);
+  assert.equal(out.getDynamicProperty('ps:dye'), 'blue');
+});
+test('paper bag form inserts and drops through the user interface', async () => {
+  const slots = [stack('psychedelicraft:paper_bag'), stack('minecraft:cookie', 10)];
+  const dropped = [];
+  const player = { selectedSlotIndex: 0, location: {}, dimension: { spawnItem: (s) => dropped.push(s) }, getComponent: () => ({ container: { size: 2, getItem: (i) => slots[i]?.clone(), setItem: (i, s) => { slots[i] = s; } } }) };
+  formResults.push({ selection: 2 }); await bags.openPaperBag(player);
+  assert.equal(slots[1], undefined); assert.equal(bags.readBag(slots[0]).count, 10);
+  formResults.push({ selection: 0 }); await bags.openPaperBag(player);
+  assert.equal(dropped[0].amount, 1); assert.equal(bags.readBag(slots[0]).count, 9);
+});
+test('paper bag removes spawned drop when its inventory commit fails', async () => {
+  const original = stack('psychedelicraft:paper_bag');
+  bags.insertBag(original, stack('minecraft:cookie', 10));
+  let removed = false;
+  const player = { selectedSlotIndex: 0, location: {}, dimension: { spawnItem: () => ({ remove: () => { removed = true; } }) }, getComponent: () => ({ container: { size: 1, getItem: () => original.clone(), setItem: () => { throw new Error('inventory unavailable'); } } }) };
+  formResults.push({ selection: 0 });
+  await assert.rejects(bags.openPaperBag(player), /inventory unavailable/);
+  assert.equal(removed, true);
+  assert.equal(bags.readBag(original).count, 10);
+});
+test('nightshade harvesting damages shears without consuming the tool', () => {
+  const dim = blockGrid(), block = dim.getBlock({ x: 70, y: 0, z: 0 });
+  block.setPermutation({ id: 'psychedelicraft:jimsonweed', states: { 'psychedelicraft:age': 7 } });
+  const held = stack('minecraft:shears'); const durability = { maxDurability: 238, damage: 0 };
+  held.getComponent = () => durability;
+  const player = fakePlayer(held);
+  registeredBlocks.get('psychedelicraft:nightshade').onPlayerInteract({ block, player, itemStack: held });
+  assert.equal(player.getComponent().container.getItem(0), held);
+  assert.equal(durability.damage, 1);
+  assert.equal(block.permutation.getState('psychedelicraft:age'), 6);
+});
+test('bottle crafting refuses insufficient output slots without changing inputs', () => {
+  const recipe = RECIPES.shaped_fluid.find((r) => r.id === 'psychedelicraft:bottle');
+  const input = [stack('minecraft:blue_stained_glass', 6), undefined];
+  assert.equal(crafting.planRecipe(input, recipe), null);
+  assert.equal(input[0].amount, 6);
+});
+test('registered item components have actual event handlers', () => {
+  for (const [id, handlers] of registeredItems) assert.ok(Object.values(handlers).some((handler) => typeof handler === 'function'), id);
+});
+function molotovDimension() {
+  const impacts = { explosions: [], particles: [], sounds: [], removed: 0 };
+  const dimension = {
+    spawnEntity(typeId, location) {
+      const props = new Map();
+      const component = { shoot: (velocity) => { impacts.velocity = velocity; } };
+      const entity = { typeId, location, isValid: true, getComponent: () => component, getDynamicProperty: (k) => props.get(k), setDynamicProperty: (k, v) => props.set(k, v), remove: () => { entity.isValid = false; impacts.removed++; } };
+      impacts.entity = entity; return entity;
+    },
+    createExplosion: (location, radius, options) => impacts.explosions.push({ location, radius, options }),
+    spawnParticle: (id) => impacts.particles.push(id), playSound: (id) => impacts.sounds.push(id),
+  };
+  return { dimension, impacts };
+}
+test('molotov Java formula applies volume before clamp and scales combustion again', () => {
+  for (const fluid of [null, fluids.makeFluidState('minecraft:water', 2000), fluids.makeFluidState('red_grapes', 2000)]) {
+    const result = molotov.combustion(fluid);
+    assert.equal(result.fire, 0); assert.equal(result.explosion, 0); assert.equal(result.damage, 4);
+  }
+  const small = molotov.combustion({ ...fluids.makeFluidState('red_grapes', 500), fermentation: 2 });
+  assert.ok(Math.abs(small.fire - 0.275) < 1e-12);
+  assert.ok(Math.abs(small.explosion - 0.0825) < 1e-12);
+  const full = molotov.combustion({ ...fluids.makeFluidState('red_grapes', 2000), fermentation: 2 });
+  assert.equal(full.fire, 4); assert.equal(full.explosion, 1.2); assert.equal(full.fireSeconds, 0.6);
+  const distilled = molotov.combustion({ ...fluids.makeFluidState('red_grapes', 500), fermentation: 2, distillation: 16 });
+  assert.ok(distilled.fire > small.fire); assert.ok(distilled.explosion > small.explosion);
+});
+test('survival pouring fills a molotov and conserves fluid before launching', () => {
+  const wine = { ...fluids.makeFluidState('red_grapes', 1200), fermentation: 2 };
+  const plan = crafting.planPour([stack('psychedelicraft:bottle', 1, wine), stack(molotov.MOLOTOV)], 0, 1);
+  assert.ok(plan);
+  assert.equal(fluids.readItemFluid(plan[1]).level, 1200);
+  assert.equal(molotov.combustion(fluids.readItemFluid(plan[1])).fire, 1.584);
+});
+test('molotov item dispatch snapshots fluid and consumes exactly once', () => {
+  const { dimension, impacts } = molotovDimension();
+  const held = stack(molotov.MOLOTOV, 1, { ...fluids.makeFluidState('red_grapes', 500), fermentation: 2, maturation: 4 });
+  const player = fakePlayer(held); player.dimension = dimension; player.location = { x: 0, y: 80, z: 0 };
+  player.getViewDirection = () => ({ x: 1, y: 0, z: 0 }); player.getHeadLocation = () => ({ x: 0, y: 81, z: 0 });
+  registeredItems.get('psychedelicraft:molotov').onUse({ source: player, itemStack: held });
+  assert.equal(player.getComponent().container.getItem(0), undefined);
+  const copied = JSON.parse(impacts.entity.getDynamicProperty('ps:molotovFluid'));
+  assert.equal(copied.level, 500); assert.equal(copied.maturation, 4);
+  assert.equal(impacts.velocity.x, 0.5);
+  assert.equal(impacts.entity.getComponent().owner, player);
+});
+test('molotov registered impact callbacks distinguish water from alcohol and cannot detonate twice', () => {
+  for (const combustible of [false, true]) {
+    const { dimension, impacts } = molotovDimension();
+    const fluid = combustible ? { ...fluids.makeFluidState('red_grapes', 2000), fermentation: 2 } : fluids.makeFluidState('minecraft:water', 2000);
+    const projectile = molotov.launchMolotov(dimension, { x: 0, y: 80, z: 0 }, { x: 0, y: 0, z: 1 }, fluid);
+    const damage = [], fire = [], target = { applyDamage: (n) => damage.push(n), setOnFire: (n) => fire.push(n) };
+    const event = { projectile, dimension, location: projectile.location, getEntityHit: () => ({ entity: target }) };
+    for (const callback of callbacks.get('projectileHitEntity')) callback(event);
+    assert.equal(damage[0], 4); assert.equal(fire.length, combustible ? 1 : 0);
+    assert.equal(impacts.explosions.length, combustible ? 1 : 0);
+    if (combustible) { assert.equal(fire[0], 1); assert.equal(impacts.explosions[0].radius, 1.2); assert.equal(impacts.explosions[0].options.breaksBlocks, false); }
+    else { assert.equal(impacts.particles.length, 0); assert.ok(impacts.sounds.includes('random.fizz')); }
+    for (const callback of callbacks.get('projectileHitBlock')) callback(event);
+    assert.equal(impacts.removed, 1); assert.equal(damage.length, 1);
+  }
+});
+test('molotov ground fire respects mobGriefing and never replaces solid blocks', () => {
+  const originalRandom = context.Math.random; context.Math.random = () => 0;
+  try {
+    for (const allowed of [false, true]) {
+      mockWorld.gameRules.mobGriefing = allowed;
+      const { dimension, impacts } = molotovDimension(); let fire = 0;
+      dimension.getBlock = () => ({ isAir: true, below: () => ({ isSolid: true }), setType: (id) => { assert.equal(id, 'minecraft:fire'); fire++; } });
+      const entity = molotov.launchMolotov(dimension, { x: 0, y: 80, z: 0 }, {}, { ...fluids.makeFluidState('red_grapes', 2000), fermentation: 2 });
+      molotov.impactMolotov({ projectile: entity, dimension, location: entity.location });
+      assert.equal(fire > 0, allowed); assert.equal(impacts.removed, 1);
+    }
+    mockWorld.gameRules.mobGriefing = true;
+    const { dimension } = molotovDimension();
+    dimension.getBlock = () => ({ isAir: false, setType: () => assert.fail('solid block was replaced') });
+    const entity = molotov.launchMolotov(dimension, {}, {}, { ...fluids.makeFluidState('red_grapes', 2000), fermentation: 2 });
+    molotov.impactMolotov({ projectile: entity, dimension, location: { x: 0, y: 80, z: 0 } });
+  } finally { context.Math.random = originalRandom; mockWorld.gameRules.mobGriefing = false; }
+});
+test('molotov cleanup tolerates engine removal during its explosion', () => {
+  const { dimension, impacts } = molotovDimension();
+  const entity = molotov.launchMolotov(dimension, {}, {}, { ...fluids.makeFluidState('red_grapes', 2000), fermentation: 2 });
+  dimension.createExplosion = () => { entity.isValid = false; };
+  molotov.impactMolotov({ projectile: entity, dimension, location: {} });
+  assert.equal(impacts.removed, 0);
+});
 test('empty containers have no invented fluid; full process stages round-trip', () => {
   const stack = new ItemStack('psychedelicraft:bottle');
   assert.equal(fluids.readItemFluid(stack), null);

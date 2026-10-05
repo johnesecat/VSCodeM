@@ -280,8 +280,9 @@ export const nightshade = {
       const amount = 1 + Math.floor(Math.random() * 2);
       setAge(block, Math.max(0, age - 1));
       return {
-        consumeItem: isShears, // bone meal path returns PASS in Java (not consumed here)
-        damageItem: 1,
+        // Java damages shears without consuming them; mature bone meal
+        // harvest returns PASS and is not consumed by this handler.
+        damageItem: isShears ? 1 : 0,
         drops: [{ id: dropId, amount }],
         sound: isShears ? "minecraft:mob.sheep.shear" : null,
       };

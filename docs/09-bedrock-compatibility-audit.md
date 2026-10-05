@@ -1,5 +1,7 @@
 # Bedrock compatibility repair audit — 2026-10-02
 
+> Superseded for current release status by [the 2026-10-05 functionality audit](10-functionality-audit.md). Current minimum is 1.21.120, Script API 2.0.0, modern named custom components. A packaged BDS 1.26.52.3 smoke test is now available; it does not certify full Java parity.
+
 ## Status and target
 
 Candidate pack version **1.0.1**, minimum engine **1.21.50** (matching the declared `@minecraft/server` 1.15.0 dependency). This is NOT a certified in-game release or a claim of 100% Java parity. No Minecraft client or Bedrock Dedicated Server was available for this pass. Node mocks verify logic, not engine loading/rendering.

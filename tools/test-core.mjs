@@ -128,12 +128,15 @@ export function coreTests({ test, assert, fs, path, root, crafting, rift, wood, 
   test('bottle and molotov shaped recipes execute and retain glass dye metadata', () => {
     for (const recipe of RECIPES.shaped_fluid.filter((r) => !r.blocked)) {
       const ingredients = recipe.pattern.flatMap((row) => [...row].filter((c) => c !== ' ').map((c) => recipe.key[c]));
-      const input = [...ingredients.map((i) => stack(i.item ?? 'minecraft:blue_stained_glass')), undefined];
+      const input = [...ingredients.map((i) => stack(i.item ?? 'minecraft:blue_stained_glass')), ...Array(recipe.result.count).fill(undefined)];
       const plan = crafting.planRecipe(input, recipe);
       assert.ok(plan, recipe.id);
-      const output = plan.find((s) => s?.typeId === recipe.result.item);
-      assert.equal(output.amount, recipe.result.count);
-      assert.equal(output.getDynamicProperty('ps:dye'), 'blue');
+      const outputs = plan.filter((s) => s?.typeId === recipe.result.item);
+      assert.equal(outputs.reduce((n, s) => n + s.amount, 0), recipe.result.count);
+      for (const output of outputs) {
+        assert.ok(output.amount <= output.maxAmount);
+        assert.equal(output.getDynamicProperty('ps:dye'), 'blue');
+      }
     }
   });
   test('mashing requires real base fluid, supports tags, and retains pool volume', () => {
@@ -223,7 +226,7 @@ export function coreTests({ test, assert, fs, path, root, crafting, rift, wood, 
       const json = JSON.parse(fs.readFileSync(path.join(root, `behavior_pack/blocks/${id}.json`)));
       const block = json['minecraft:block']; assert.ok(Object.keys(block.description.states).length);
       assert.ok(block.permutations.length, id);
-      assert.ok(block.components['minecraft:custom_components'].includes('psychedelicraft:wood'));
+      assert.ok(Object.hasOwn(block.components, 'psychedelicraft:wood'));
     }
   });
 }

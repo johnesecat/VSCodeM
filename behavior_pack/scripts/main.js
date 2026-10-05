@@ -35,6 +35,9 @@ import { translate } from "./data/lang.js";
 import { wood, WOOD_KINDS, placeWood, stripLog, mergeSlab, breakDoorPartner } from "./lib/wood.js";
 import { riftJar, jarDrop, chargedJar } from "./lib/rift.js";
 import { fillFromWorld, readFluid } from "./lib/crafting.js";
+import { openPaperBag } from "./lib/bags.js";
+import { registerMolotovEvents } from "./lib/molotov.js";
+registerMolotovEvents();
 
 globalThis.__ps = { world, addDrug: (player, drug, amount) => propsFor(player).addToDrug(drug, amount) };
 
@@ -198,9 +201,11 @@ function runResult(result, event) {
   if (result.consumeItem && player) {
     consumeHeldItem(player);
   }
-  if (result.openUi && player && event.block) {
+  if (result.openUi && player) {
     const kind = result.openUi;
-    if (kind === "drying_table") openDryingUi(player, event.block);
+    if (kind === "paper_bag") openPaperBag(player).catch(console.warn);
+    else if (!event.block) return;
+    else if (kind === "drying_table") openDryingUi(player, event.block);
     else openMachineUi(player, kind, event.block).catch(() => {});
   }
   if (result.message && player) {
@@ -220,6 +225,7 @@ function spawnDrop(dimension, location, drop) {
 }
 
 function damageHeldItem(player, amount) {
+  if (String(player.getGameMode?.()).toLowerCase() === "creative") return;
   try {
     const inv = player.getComponent("minecraft:inventory")?.container;
     const stack = inv?.getItem(player.selectedSlotIndex);
@@ -238,6 +244,7 @@ function damageHeldItem(player, amount) {
 }
 
 function consumeHeldItem(player) {
+  if (String(player.getGameMode?.()).toLowerCase() === "creative") return;
   try {
     const inv = player.getComponent("minecraft:inventory")?.container;
     const stack = inv?.getItem(player.selectedSlotIndex);
@@ -336,8 +343,8 @@ function readStates(permutation) {
 function readEnchantments(stack) {
   const out = {};
   try {
-    const ench = stack?.getComponent("minecraft:enchantments")?.enchantments;
-    for (const e of ench) out[e.type.id.replace(/^minecraft:/, "")] = e.level;
+    const enchantable = stack?.getComponent("minecraft:enchantable");
+    for (const e of enchantable?.getEnchantments() ?? []) out[e.type.id.replace(/^minecraft:/, "")] = e.level;
   } catch {
     /* ignore */
   }

@@ -71,7 +71,7 @@ for (const patch of PATCHES) {
       },
       distribution: {
         iterations: 1,
-        coordinate_eval_order: "zyx",
+        coordinate_eval_order: "xzy",
         x: { distribution: "uniform", extent: [0, 16] },
         y: "q.heightmap(v.worldx, v.worldz)",
         z: { distribution: "uniform", extent: [0, 16] },
