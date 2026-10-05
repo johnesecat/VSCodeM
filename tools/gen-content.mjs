@@ -336,7 +336,7 @@ function generateBlocks() {
     if (block.kind === "vine") custom.push("psychedelicraft:vine");
     if (block.kind === "lattice_crop") custom.push("psychedelicraft:lattice_crop");
     if (block.kind === "sapling") custom.push("psychedelicraft:sapling");
-    if (custom.length) components["minecraft:custom_components"] = custom;
+    for (const name of custom) components[name] = {};
 
     // permutations
     const permutations = [];
@@ -376,7 +376,7 @@ function generateBlocks() {
       for (const permutation of permutations) if (permutation.condition.includes(":powered') == true")) permutation.components["minecraft:redstone_producer"] = { power: 15, strongly_powered_face: "down", transform_relative: true };
     }
     writeJson(path.join(BP, "blocks", `${block.id}.json`), {
-      format_version: ["button", "pressure_plate"].includes(block.kind) ? "1.21.120" : "1.21.10",
+      format_version: "1.21.120",
       "minecraft:block": {
         description,
         components,
@@ -434,13 +434,9 @@ function generateItems() {
       components["minecraft:use_modifiers"] = { use_duration: (item.useDuration ?? 32) / 20, movement_modifier: 0.35 };
     }
     if (item.kind === "molotov") {
-      components["minecraft:throwable"] = {
-        launch_power_scale: 2,
-        max_draw_duration: 1.5,
-        min_draw_duration: 0.3,
-        scale_power_by_draw_duration: true,
-      };
-      components["minecraft:projectile"] = { minimum_critical_power: 1.1, projectile_entity: "psychedelicraft:molotov_cocktail" };
+      // Script-owned launch snapshots fluid before consuming the item.
+      // Native throwable spawning cannot transfer ItemStack properties.
+      components["psychedelicraft:molotov"] = {};
     }
 
     const custom = [];
@@ -455,11 +451,10 @@ function generateItems() {
     if (item.kind === "paper_bag") custom.push("psychedelicraft:paper_bag");
     if (item.kind === "suspicious") custom.push("psychedelicraft:suspicious");
     if (item.kind === "boat") custom.push("psychedelicraft:boat");
-    if (item.id === "rift_jar") custom.push("psychedelicraft:jar_item");
-    if (custom.length) components["minecraft:custom_components"] = custom;
+    for (const name of custom) components[name] = {};
 
     writeJson(path.join(BP, "items", `${item.id}.json`), {
-      format_version: "1.21.10",
+      format_version: "1.21.120",
       "minecraft:item": { description, components },
     });
   }

@@ -72,7 +72,7 @@
     },
     "distribution": {
       "iterations": 1,
-      "coordinate_eval_order": "zyx",
+      "coordinate_eval_order": "xzy",
       "x": {
         "distribution": "uniform",
         "extent": [

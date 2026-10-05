@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.10",
+  "format_version": "1.21.120",
   "minecraft:block": {
     "description": {
       "identifier": "psychedelicraft:rift_jar",
@@ -30,9 +30,7 @@
         "looping": true
       },
       "minecraft:loot": "loot_tables/empty.json",
-      "minecraft:custom_components": [
-        "psychedelicraft:rift_jar"
-      ]
+      "psychedelicraft:rift_jar": {}
     }
   }
 }

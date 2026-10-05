@@ -172,6 +172,9 @@ function convertSounds() {
   for (const [id, def] of Object.entries(javaSounds)) {
     const sounds = (def.sounds || []).map((s) => {
       const name = typeof s === "string" ? s : s.name;
+      // Java's vanilla asset paths cannot be loaded by Bedrock. Use the
+      // vanilla sound event rather than inventing an absent OGG path.
+      if (name.startsWith("minecraft:")) return { name: "block.end_portal_frame.fill", type: "event" };
       const ogg = name.replace(/^psychedelicraft:/, "").replace(/\.ogg$/, "");
       return { name: `sounds/${ogg}`, ...(typeof s === "object" && s.stream ? { stream: true } : {}) };
     });

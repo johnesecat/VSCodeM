@@ -25,14 +25,11 @@
         "anchor": 1,
         "offset": [0, 0.2, 0],
         "on_hit": {
-          "catch_fire": {
-            "fire_affected_by_griefing": true
-          },
           "impact_damage": {
-            "damage": [2, 2],
-            "catch_fire": true
-          },
-          "remove_on_hit": {}
+            "damage": 0,
+            "catch_fire": false,
+            "destroy_on_hit": false
+          }
         }
       }
     }

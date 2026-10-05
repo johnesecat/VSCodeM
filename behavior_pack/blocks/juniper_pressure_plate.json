@@ -44,9 +44,7 @@
         "catch_chance_modifier": 5,
         "destroy_chance_modifier": 20
       },
-      "minecraft:custom_components": [
-        "psychedelicraft:wood"
-      ],
+      "psychedelicraft:wood": {},
       "minecraft:redstone_producer": {
         "power": 0,
         "strongly_powered_face": "down",

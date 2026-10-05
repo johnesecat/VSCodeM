@@ -38,6 +38,11 @@ export function tagMatches(id, tag, seen = new Set()) {
   // Vanilla/common tags absent from the Java mod tree.
   if (tag === "c:glass_blocks") return id === "minecraft:glass" || /^minecraft:.+_stained_glass$/.test(id);
   if (tag === "minecraft:wool") return /^minecraft:.+_wool$/.test(id) || id === "minecraft:wool";
+  if (tag === "minecraft:villager_plantable_seeds") return ["minecraft:wheat_seeds", "minecraft:beetroot_seeds", "minecraft:carrot", "minecraft:potato"].includes(id);
+  if (tag === "minecraft:buttons") return /^minecraft:.+_button$/.test(id);
+  if (tag === "minecraft:small_flowers") return /^minecraft:(dandelion|poppy|blue_orchid|allium|azure_bluet|.+_tulip|oxeye_daisy|cornflower|lily_of_the_valley|wither_rose|torchflower)$/.test(id);
+  if (tag === "c:apples") return id === "minecraft:apple" || id === "minecraft:golden_apple";
+  if (tag === "c:dyes") return /^minecraft:.+_dye$/.test(id);
   return false;
 }
 export function ingredientMatches(stack, ingredient) {
@@ -80,10 +85,10 @@ function takeOne(slots, index) {
   else slots[index] = undefined;
   return one;
 }
-function add(slots, stack) {
+function add(slots, stack, requestedAmount = stack.amount) {
   // Conservative: require empty slots instead of merging metadata-bearing items.
   const max = stack.maxAmount ?? 64;
-  let amount = stack.amount;
+  let amount = requestedAmount;
   while (amount > 0) {
     const index = slots.findIndex((s) => !s);
     if (index < 0) return false;
@@ -138,13 +143,13 @@ export function planRecipe(input, recipe, heldSlot = 0) {
   } else if (recipe.type.endsWith("change_receptical")) {
     const originals = consumed.filter((s) => capacityOf(s));
     if (originals.length !== 1) return null;
-    output = new ItemStack(recipe.result.item, recipe.result.count ?? 1);
+    output = new ItemStack(recipe.result.item, 1);
     const fluid = readFluid(originals[0]);
     if (fluid) output = setFluid(output, { ...fluid, level: Math.min(capacityOf(output), fluid.level) });
     const dye = originals[0].getDynamicProperty("ps:dye");
     if (dye !== undefined) output.setDynamicProperty("ps:dye", dye);
   } else {
-    output = new ItemStack(recipe.result.item, recipe.result.count ?? 1);
+    output = new ItemStack(recipe.result.item, 1);
     consumed.forEach((stack, n) => {
       const restriction = ingredients[n].fluid;
       if (typeof restriction === "object" && restriction.level > 0 && !remainder(stack)) {
@@ -155,7 +160,7 @@ export function planRecipe(input, recipe, heldSlot = 0) {
     const colored = consumed.find((s) => /_stained_glass$/.test(s.typeId));
     if (colored && recipe.type.endsWith("crafting_shaped")) output.setDynamicProperty("ps:dye", colored.typeId.replace(/^minecraft:|_stained_glass$/g, ""));
   }
-  if (output) extras.push(output);
+  if (output && !add(slots, output, recipe.result.count ?? 1)) return null;
   if (!extras.every((stack) => add(slots, stack))) return null;
   return slots;
 }
@@ -180,7 +185,7 @@ export function planHeat(input, slot, recipe) {
     const old = fluid[key] ?? 0, value = mod.value;
     fluid[key] = ({ set: () => value, add: () => old + value, subtract: () => old - value, multiply: () => old * value, divide: () => value ? Math.trunc(old / value) : old }[mod.type] ?? (() => old + value))();
   }
-  slots[slot] = setFluid(recipe.result.item ? new ItemStack(recipe.result.item, recipe.result.count ?? 1) : stack, fluid);
+  slots[slot] = setFluid(recipe.result.item ? new ItemStack(recipe.result.item, 1) : stack, fluid);
   return slots;
 }
 export function snapshot(inv) { return Array.from({ length: inv.size }, (_, i) => inv.getItem(i)); }

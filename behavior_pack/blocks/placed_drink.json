@@ -1,5 +1,5 @@
 {
-  "format_version": "1.21.10",
+  "format_version": "1.21.120",
   "minecraft:block": {
     "description": {
       "identifier": "psychedelicraft:placed_drink",
@@ -32,9 +32,7 @@
         ],
         "looping": true
       },
-      "minecraft:custom_components": [
-        "psychedelicraft:placed_drink"
-      ]
+      "psychedelicraft:placed_drink": {}
     }
   }
 }

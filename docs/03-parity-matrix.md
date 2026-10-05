@@ -1,5 +1,7 @@
 # F. JAVA vs BEDROCK PARITY MATRIX (§39-40)
 
+> **2026-10-05 correction:** This historical table is source accounting, not functional certification. See [the current functionality audit](10-functionality-audit.md). Current output contains 59 blocks, 99 items, 27 fluids and 48 native recipes. Boats now spawn native equivalents; wood states, fluid crafting and rift charge have implemented emulations. Containers use item dynamic properties, not aux values. Molotovs are NOT Java-exact: native fire/damage is not fluid-dependent. Villagers/houses, commands and advancements remain absent. “All other systems are exact” below is withdrawn pending individual engine/client tests.
+
 Every ledger row (docs/02) maps 1:1 here; columns: Java Feature | Java Evidence | Bedrock Implementation | Exact? | Equivalent? | Limitation | Tested?
 
 ## Summary by domain

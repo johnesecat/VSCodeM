@@ -6,10 +6,11 @@
 //   AliasedBlockItem seeds -> seeds component (plants crop block)
 //   EdibleItem influences -> consumable component (drug influence on eat)
 //   PaperBagItem / SuspiciousItem / HarmoniumItem
-//   (MolotovCocktailItem throws via vanilla throwable/projectile components)
+//   MolotovCocktailItem -> scripted fluid-preserving projectile launch
 
 import { BlockPermutation } from "@minecraft/server";
 import { CONTENT } from "../data/content.js";
+import { molotovItem } from "./molotov.js";
 import { DrugInfluence } from "./drugs.js";
 import {
   VOLUMES,
@@ -83,7 +84,7 @@ export const smokeable = {
       addInfluences: influencesOf(def),
       startBreathingSmoke: { time: 20, color: def?.smoke ?? [1, 1, 1] },
       damageItem: 1,
-      playSound: "psbed:drug.generic",
+      playSound: "psybed:drug.generic",
     };
   },
 };
@@ -144,7 +145,7 @@ export const syringe = {
     return {
       addInfluences: influenceForLevel(fluid, fluid.level),
       setItemFluid: null,
-      playSound: "psbed:drug.generic",
+      playSound: "psybed:drug.generic",
     };
   },
   onUseOn() {
@@ -184,17 +185,9 @@ export const seeds = {
 export const consumable = {
   onConsume(event) {
     const def = itemDef(event.itemStack?.typeId ?? "");
-    if (def?.kind === "suspicious") {
-      // SuspiciousItem: eating bag_o_vomit may transform into a random form
-      return { transformInto: pick(["minecraft:cookie", "minecraft:mushroom_stew", "minecraft:golden_apple", "minecraft:cooked_beef", "minecraft:cooked_chicken"]) };
-    }
-    return { addInfluences: influencesOf(def), playSound: "psbed:drug.generic" };
+    return { addInfluences: influencesOf(def), playSound: "psybed:drug.generic" };
   },
 };
-
-function pick(list) {
-  return list[Math.floor(Math.random() * list.length)];
-}
 
 // ---------------------------------------------------------------------------
 // MolotovCocktailItem / PaperBagItem
@@ -220,8 +213,8 @@ export const boat = {
 
 // keys must match the custom component names emitted by tools/gen-content.mjs
 export const ITEM_COMPONENTS = {
+  "psychedelicraft:molotov": molotovItem,
   "psychedelicraft:boat": boat,
-  "psychedelicraft:jar_item": {},
   "psychedelicraft:container": container,
   "psychedelicraft:smokeable": smokeable,
   "psychedelicraft:bong": bong,

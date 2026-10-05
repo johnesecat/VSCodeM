@@ -165,7 +165,7 @@ function spawnRealityRift(player) {
     const rift = player.dimension.spawnEntity("psychedelicraft:reality_rift", loc);
     rift.addTag("ps_rift");
     state.rifts.set(rift.id, { born: Date.now(), phase: Math.random() * Math.PI * 2 });
-    player.dimension.playSound("psbed:block.rift_jar.toggle", loc, { volume: 0.6 });
+    player.dimension.playSound("psybed:block.rift_jar.toggle", loc, { volume: 0.6 });
   } catch {
     /* entity unavailable */
   }

@@ -12,7 +12,7 @@ const OUT = path.join(ROOT, "Psychedelicraft-Bedrock.mcaddon");
 if (fs.existsSync(OUT)) fs.rmSync(OUT);
 execFileSync(
   "zip",
-  ["-r", "-q", OUT, "resource_pack", "behavior_pack", "-x", "*.DS_Store"],
+  ["-r", "-q", OUT, "resource_pack", "behavior_pack", "-x", "*.DS_Store", "*/source_assets/*", "behavior_pack/data/*"],
   { cwd: ROOT, stdio: "pipe" },
 );
 const size = fs.statSync(OUT).size;
